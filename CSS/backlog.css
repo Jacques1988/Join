@@ -1,0 +1,30 @@
+.assignment-headline {
+    text-transform: uppercase;
+    justify-content: space-between;
+}
+
+.backlog-field {
+width: 100%;
+height: 90px; 
+border-radius: 12px;
+align-items: center;
+justify-content: space-between;
+padding-right: 25px; 
+}
+
+.profile-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: tomato;
+    margin-left: 15px;
+}
+
+.profile {
+    flex-direction: column;
+    margin-left: 15px; 
+}
+
+.profil-container {
+    align-items: center;
+}

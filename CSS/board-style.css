@@ -1,12 +1,13 @@
 .board-menu {
     display: flex;
-
+    justify-content: space-between;
 }
 
 .task {
-    background-color: gray;
-    width: 100px;
+    background-color: #F4F3FB;
+    width: 18vw;
     height: 500px;
+    margin-top: 10px;
 }
 
 .task-container {
@@ -18,4 +19,10 @@
 
 .text-center {
     text-align: center;
+}
+
+.board-bold {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: uppercase;
 }

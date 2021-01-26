@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="./CSS/sidebar.css">
+    <link rel="stylesheet" href="./CSS/backlog.css">
+    <link rel="stylesheet" href="./CSS/mainstyle.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-        </style>
+    </style>
     <link rel="stylesheet" href="./materials_lite/material.min.css">
     <script src="./materials_lite/material.min.js"></script>
+    <script src="./JS/sidebar.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body>
+
+<body onload="loadSideBar()">
 
 
     <div class="always">
-        <div class="sidebar-container sidebar-import"></div>
-    
+        <div id="sidebar" class="sidebar-container sidebar-import"></div>
+
+        <div class="headline-backlog">
+            <h1 class="headline1">Backlog</h1>
+            <p class="blue">Learning Management System Project</p>
+
         </div>
-    
+
+        <div class="assignment">
+            <div class="d-flex assignment-headline blue">
+                <h2 class="headline2">Assigned to</h2>
+                <h2 class="headline2">Category</h2>
+                <h2 class="headline2">Details</h2>
+            </div>
+
+            <div class="backlog-input" id="backlog-input">
+                <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid teal;">
+                   <div class="profil-container d-flex">
+                    <div class="profile-img"></div>
+                    <div class="profile d-flex">
+                        <span id="username">Name</span>
+                        <span class="blue" id="mail-adress">Name</span>
+                    </div>
+                </div>
+                    <div class="category">Marketing</div>
+                    <div class="details">BlaBlaBla</div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>
