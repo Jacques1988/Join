@@ -1,0 +1,21 @@
+.board-menu {
+    display: flex;
+
+}
+
+.task {
+    background-color: gray;
+    width: 100px;
+    height: 500px;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.text-center {
+    text-align: center;
+}

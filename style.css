@@ -3,6 +3,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0; 
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.main {
+    display: flex; 
+    padding-top: 20px;
+    padding-bottom: 20px; 
 }
 
 .sidebar {
@@ -30,7 +37,6 @@ body {
     color: white;
 }
 
-.sidebar-menu {}
 
 .sidebar-logo {
     width: 30px;
@@ -41,4 +47,12 @@ body {
 .sidebar-logo img {
     width: 30px;
     height: 30px;
+}
+
+
+.current-input {
+    background-color: green;
+    width: 100vw;
+    height: 100vh;
+    margin-left: 180px;
 }
