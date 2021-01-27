@@ -2,14 +2,14 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     font-family: 'Poppins', sans-serif !important;
 }
 
 .main {
-    display: flex; 
+    display: flex;
     padding-top: 20px;
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
 }
 
 .sidebar {
@@ -17,7 +17,9 @@ body {
     height: 100vh;
     width: 100px;
     position: fixed;
-    padding: 20px; 
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     top: 0;
     left: 0;
     display: flex;
@@ -27,21 +29,20 @@ body {
 
 .sidebar-navigation {
     flex-direction: column;
-    display: flex;
     color: white;
-    font-size: 15px; 
+    font-size: 15px;
 }
 
 .sidebar-navigation a {
-    margin-bottom: 1rem;
     color: white;
     cursor: pointer;
+    text-decoration: none;
 }
-
 
 .sidebar-logo {
     width: 30px;
     margin-bottom: 7rem;
+    padding-left: 38px;
 }
 
 .sidebar-logo img {
@@ -49,6 +50,32 @@ body {
     height: 50px;
 }
 
+.hover-square {
+    width: 8px;
+    background-color: white;
+    margin-right: 15px;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.navigation-row {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-profile {
+    padding-bottom: 53px;
+    padding-left: 30px;
+}
+
+.sidebar-profile img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid white;
+}
 
 /* .current-input {
     background-color: green;

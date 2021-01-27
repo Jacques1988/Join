@@ -38,6 +38,12 @@ body {
 }
 
 
+/* brauchen wir öfter -Y- */
+.d-none {
+    display: none; 
+}
+
+
 
 /* Textstyle */
 .headline1 {
