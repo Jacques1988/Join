@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="./CSS/sidebar.css">
+    <link rel="stylesheet" href="./CSS/mainstyle.css">
+    <link rel="stylesheet" href="./CSS/addtask.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./materials_lite/material.min.css">
+    <script src="./materials_lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="./JS/sidebar.js"></script>
+</head>
+
+<body onload="loadSideBar()">
+
+    <div class="always">
+        <div id="sidebar" class="sidebar-container sidebar-import"></div>
+
+
+        <div class="headline-backlog">
+            <h1 class="headline1">Add Task</h1>
+            <p class="blue">Learning Management System Project</p>
+        </div>
+
+        <div class="assignment">
+
+            <div class="entries">
+                <h2 class="headline2 blue">Title</h2>
+                <input class="inputfield1" type="text" placeholder="Name title">
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Due Date</h2>
+                <div class="fieldcontainer"><input class="inputfield2" type="text" placeholder="Date">
+                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                </div>
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Category</h2>
+                <div class="fieldcontainer"><input class="inputfield2" type="text" placeholder="Choose category">
+                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                </div>
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Urgency</h2>
+                <div class="fieldcontainer"><input class="inputfield2" type="text" placeholder="Choose urgency">
+                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                </div>
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Description</h2>
+                <form>
+                    <textarea cols="67" rows="10">
+
+                    </textarea>
+                </form>
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue mt0">Assigned to</h2>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
