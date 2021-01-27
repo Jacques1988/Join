@@ -33,34 +33,39 @@
 
             <div class="entries">
                 <h2 class="headline2 blue">Title</h2>
-                <input class="inputfield1" type="text" placeholder="Name title">
+                <input required class="inputfield1" type="text" placeholder="Name title">
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Due Date</h2>
-                <div class="fieldcontainer"><input class="inputfield2" type="text" placeholder="Date">
-                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                <div class="fieldcontainer"><input class="calendar" type="date">                     
+                </div>
+            </div>
+           
+            <div class="entries">
+                <h2 class="headline2 blue">Category</h2>
+                <div class="fieldcontainer"><select class="dropdownmenu">
+                                                <option>Management</option>
+                                                <option>Sales</option>
+                                                <option>Product</option>
+                                            </select>
                 </div>
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Category</h2>
-                <div class="fieldcontainer"><input class="inputfield2" type="text" placeholder="Choose category">
-                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
-                </div>
-            </div>
-
-            <div class="entries">
-                <h2 class="headline2 blue">Urgency</h2>
-                <div class="fieldcontainer"><input class="inputfield2" type="text" placeholder="Choose urgency">
-                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                <div class="fieldcontainer"><select class="dropdownmenu">
+                                                <option>Low</option>
+                                                <option>Middle</option>
+                                                <option>High</option>
+                                            </select>
                 </div>
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Description</h2>
                 <form>
-                    <textarea cols="67" rows="10">
+                    <textarea required cols="67" rows="10">
 
                     </textarea>
                 </form>
@@ -68,6 +73,12 @@
 
             <div class="entries">
                 <h2 class="headline2 blue mt0">Assigned to</h2>
+                <div class="assigned-to-container">
+                    <div class="assigned-to-profile"><img src="./img/Jacques.JPG"> </div>
+                    <div class="assigned-to-plus"><img src="./img/icon plus.png" width="30px" height="30px"> </div>
+                    <div class="cancel headline2">cancel</div>
+                    <div class="createtaskbtn headline2">Create Task</div>
+                </div>
             </div>
 
         </div>
@@ -75,3 +86,31 @@
 </body>
 
 </html>
+
+
+
+
+
+<!--
+            <div class="entries">
+                <h2 class="headline2 blue">Category</h2>
+                <div class="fieldcontainer"><input required class="inputfield2" type="text" placeholder="Choose category">
+                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                </div>
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Urgency</h2>
+                <div class="fieldcontainer"><input required class="inputfield2" type="text"
+                        placeholder="Choose urgency">
+                    <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
+                </div>
+            </div>
+
+             <div class="entries">
+                <h2 class="headline2 blue">Due Date</h2>
+                <div class="fieldcontainer"><input required class="inputfield2" type="text" placeholder="Date">
+                    <div class="optionfield"><img src="./img/icons8-calendar-150.png" width="25" height="25"></div>
+                </div>
+            </div>
+        -->
