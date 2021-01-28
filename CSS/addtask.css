@@ -1,134 +1,183 @@
-
 .assignment {
     display: flex;
     justify-content: space-around;
-    flex-wrap:wrap;
-    width:100%;
+    flex-wrap: wrap;
+    width: 100%;
     height: 90%;
-    text-transform:uppercase;
+    text-transform: uppercase;
     background-color: #F4F3FB;
-    border-radius:12px;
-    padding-left:20px;
-   
+    border-radius: 12px;
+    padding-left: 20px;
 }
 
 .entries {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    width:50%;
+    width: 50%;
 }
 
 .inputfield1 {
-    width:486px;
-    height:40px;
-    font-size:1.2rem;
+    width: 486px;
+    height: 40px;
+    font-size: 1.2rem;
+    outline:none;
+    border:1px solid grey;
+    border-radius:8px;
+    padding-left:1rem;   
 }
 
 .inputfield2 {
-    width:500px;
-    height:40px;
-    font-size:1.2rem;
+    width: 500px;
+    height: 40px;
+    font-size: 1.2rem;
 }
 
 .fieldcontainer {
-    position:relative;
-    display:flex;
+    position: relative;
+    display: flex;
     justify-content: center;
-    align-items:center;
-    background-color:white;
-    width:490px;
+    align-items: center;
+    background-color: white;
+    width: 93%;
+    border-radius:8px;
 }
 
 .optionfield {
-    display:flex;
+    position:absolute;
+    display: flex;
     justify-content: center;
-    align-items:center;
-    width:44px;
-    height:44px;
-    border-top:1px solid grey;
-    border-right:1px solid grey;
-    border-bottom:1px solid grey;
-    cursor:pointer;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    right:0;
+    cursor: pointer;
+    border-left:1px solid grey;
 }
 
-.dropdownmenu {
-    width:100%;
-    height:47px;
-    font-size:1.2rem;
+.optionfield img{
+    width:25px;
+    height:15px;
+}
+
+.fieldcontainer select {
+    width: 100%;
+    height: 47px;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+    padding-left:1rem;
+    border:1px solid grey;
+    border-radius:8px;
+    outline:none;
 }
 
 .calendar {
-    width:100%;
-    height:40px;
-    font-size:1.2rem;
+    width: 100%;
+    height: 43px;
+    font-size: 1.2rem;
+    outline:none;
+    padding-left:1rem;
+    border:1px solid grey;
+    border-radius:8px;
+    -webkit-appearance: none;
+}
+
+.optionfield-calendar {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    right:0;
+    cursor: pointer;
+    border-left:1px solid grey;
+    pointer-events:inherit;
+}
+
+.optionfield-calendar img{
+    width:25px;
+    height:25px;
+    pointer-events:auto;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    background: url('icons8-calendar-150.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    border-width: thin;
 }
 
 textarea {
+    font-size:20px;
     margin-bottom: 2rem;
-    border:1 px solid grey;
+    border: 1 px solid grey;
+    outline:none;
+    border:1px solid grey;
+    border-radius:8px;
+    padding:1rem;
 }
 
 .assigned-to-container {
-    width:490px;
-    height:152px;
-    position:relative;
+    width: 490px;
+    height: 152px;
+    position: relative;
 }
 
 .assigned-to-profile {
-    position:absolute;
-    background-color:blue;
-    width:60px;
-    height:60px;
-    top: 40px ;
-    left:15px;
-    bottom:25px;
-    border-radius:50%;
+    position: absolute;
+    background-color: blue;
+    width: 60px;
+    height: 60px;
+    top: 40px;
+    left: 15px;
+    bottom: 25px;
+    border-radius: 50%;
 }
 
 .assigned-to-profile img {
-    width:60px;
-    height:60px;
-    object-fit:cover;
-    border-radius:50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .assigned-to-plus {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:absolute;
-    background-color:white;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    left:85px;
-    top:55px;
-    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    left: 85px;
+    top: 55px;
+    cursor: pointer;
 }
 
 .cancel {
     position: absolute;
-    right:150px;
-    bottom:0px;
-    cursor:pointer;
-    padding:1rem;
+    right: 150px;
+    bottom: 0px;
+    cursor: pointer;
+    padding: 1rem;
 }
 
 .createtaskbtn {
-    position:absolute;
-    right:0;
-    bottom:0;
-    padding:1rem ;
-    color:white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    color: white;
     background-color: #1b2d91;
     border-radius: 12px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .createtaskbtn:hover {
-    background-image:radial-gradient(darkblue, lightblue);
+    background-image: radial-gradient(darkblue, lightblue);
     transition: 2s ease-in-out;
 }
 
-
-  
