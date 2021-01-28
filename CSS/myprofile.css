@@ -29,6 +29,7 @@
 
 .whole-profile {
     display: flex;
+    align-items: center;
 }
 
 .assignment-profile {

@@ -1,6 +1,6 @@
-let currentNavigation = ['Board', 'Backlog', 'Add Task', 'Help', 'My Profile']
+let currentNavigation = ['Board', 'Backlog', 'Add Task', 'Help', 'My Profile', 'Impressum', 'Datenschutz'];
 
-/**Sidebar is loading while opening the html
+/**Menu is loaded when you open the current HTML file
  * 
  */
 function loadSideBar() {
@@ -15,10 +15,10 @@ function loadSideBar() {
         <div class="d-flex navigation-row"> <a href="board.html">  Board</a>  </div>
         <div class="d-flex navigation-row"> <a href="backlog.html">Backlog</a> </div>
         <div class="d-flex navigation-row"> <a href="addtask.html">Add Task</a> </div>
-        <div class="d-flex navigation-row"> <a href="help.html">   Help</a> </div>
+        <div class="d-flex navigation-row"> <a href="help.html">  Help</a> </div>
         <div class="d-flex navigation-row"> <a href="myprofile.html">   My Profile</a> </div>
-        <div class="d-flex navigation-row"> <a href="#.html">   Impressum</a> </div>
-        <div class="d-flex navigation-row"> <a href="#.html">   Datenschutz</a> </div>
+        <div class="d-flex navigation-row"> <a href="Impressum.html">   Impressum</a> </div>
+        <div class="d-flex navigation-row"> <a href="datenschutz.html">   Datenschutz</a> </div>
         </div>
 
     </div>
@@ -46,12 +46,11 @@ whiteborder.addEventListener("click", function(_whiteBorder) {
 /**Used do add the white Square in front of the current navigation
  * 
  */
-/* function addSquare() {
+/*  function addSquare() {
     for (let i = 1; i < currentNavigation; i++) {
         document.getElementById('opacity').classList.remove('opacity');
     }
-
-}  */
+}   */
 
 /* function addCurrentNavigation() {
     for (let index = 0; index < currentNavigation; index++) {
