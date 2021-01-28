@@ -1,6 +1,6 @@
 let currentNavigation = ['Board', 'Backlog', 'Add Task', 'Help', 'My Profile', 'Impressum', 'Datenschutz'];
 
-/**Menu is loaded when you open the current HTML file
+/**Menu is loaded on every HTML file
  * 
  */
 function loadSideBar() {
@@ -25,7 +25,7 @@ function loadSideBar() {
 
     <div class="sidebar-profile">
         <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg">
-
+        <button>Ausloggen</button> 
     </div>
 
 </div>`
@@ -33,18 +33,18 @@ function loadSideBar() {
 }
 
 function saveBorder() {
-let whiteborder = document.querySelector(".navigation-row");
+    let whiteborder = document.querySelector(".navigation-row");
 
-whiteborder.addEventListener("click", function(_whiteBorder) {
-   this.classList.toggle("is-active"); 
-});
+    whiteborder.addEventListener("click", function (_whiteBorder) {
+        this.classList.toggle("is-active");
+    });
 }
 
 
 
 
 /**Used do add the white Square in front of the current navigation
- * 
+ *
  */
 /*  function addSquare() {
     for (let i = 1; i < currentNavigation; i++) {
@@ -65,5 +65,5 @@ whiteborder.addEventListener("click", function(_whiteBorder) {
         <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="backlog.html" onclick="addSquare()">Backlog</a> </div>
         <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="addtask.html" onclick="addSquare()">Add Task</a> </div>
         <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="help.html" onclick="addSquare()">   Help</a> </div>
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="myprofile.html" onclick="addSquare()">   My Profile</a> </div> 
+        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="myprofile.html" onclick="addSquare()">   My Profile</a> </div>
         </div> */
