@@ -12,7 +12,7 @@ function loadSideBar() {
         <div class="d-flex navigation-row"> <div id="opacity2" class="hover-square opacity"></div> <a href="backlog.html" onclick="addSquare()">Backlog</a> </div>
         <div class="d-flex navigation-row"> <div id="opacity3" class="hover-square opacity"></div> <a href="addtask.html" onclick="addSquare()">Add Task</a> </div>
         <div class="d-flex navigation-row"> <div id="opacity4" class="hover-square opacity"></div> <a href="help.html" onclick="addSquare()">   Help</a> </div>
-        <div class="d-flex navigation-row"> <div id="opacity5" class="hover-square opacity"></div> <a href="myprofile" onclick="addSquare()">   My Profile</a> </div>
+        <div class="d-flex navigation-row"> <div id="opacity5" class="hover-square opacity"></div> <a href="myprofile.html" onclick="addSquare()">   My Profile</a> </div>
         </div>
     </div>
 
