@@ -4,7 +4,6 @@
 }
 
 .task {
-    background-color: #F4F3FB;
     width: 18vw;
     height: 500px;
     margin-top: 10px;
@@ -25,4 +24,5 @@
     font-weight: 600;
     font-size: 18px;
     text-transform: uppercase;
+    color: #012744;
 }
