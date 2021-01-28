@@ -41,7 +41,7 @@ body {
 
 .sidebar-logo {
     width: 30px;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
     padding-left: 38px;
 }
 
@@ -62,6 +62,18 @@ body {
 
 .navigation-row {
     margin-bottom: 1.5rem;
+}
+
+.navigation-row a{
+    margin-left: 5px;
+}
+
+.navigation-row:hover{
+    border-left: 8px solid white;
+} 
+
+.navigation-row.is-active {
+    border-left: 8px solid white;
 }
 
 .sidebar-profile {
