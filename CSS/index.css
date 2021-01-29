@@ -16,7 +16,6 @@
     background-color: #f9f6f4;
     box-shadow:15px 15px 80px black;
     border-radius: 12px;
-    box-shadow:
 }
 
 .signinhead {
@@ -27,11 +26,24 @@
     text-shadow:10px 10px 20px #012744;
 }
 
+.logincardlogo {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:100px;
+    height:100px;
+    background-color: #012744 ;
+    border-radius:12px;
+    box-shadow:10px 10px 20px #012744;
+    
+}
+
+
 .signincard input {
     width:200px;
     height:40px;
     font-size:1.6rem;
-    padding-left:2rem;
+    text-align:center;
     margin:0.5rem;
     outline:none;
     border:1px solid grey;
@@ -41,16 +53,22 @@
 .signinbtn {
     padding: 1rem 3rem;
     color: white;
-    background-color: #1b2d91;
+    background-color: #012744;
     border-radius: 12px;
     cursor: pointer;
     margin-top:2rem;
+    box-shadow:10px 10px 20px #012744;
 }
 
 .signinbtn:hover {
-    background-image: radial-gradient(darkblue, lightblue);
+    background-image: radial-gradient(#012744, lightblue);
 }
 
 .signup {
     margin-top:2rem;
+}
+
+.signup a {
+    text-decoration:none;
+    color: #af1616;
 }
