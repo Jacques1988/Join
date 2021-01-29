@@ -3,7 +3,6 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-top:3rem;
 }
 
 .signincard {
@@ -35,7 +34,6 @@
     background-color: #012744 ;
     border-radius:12px;
     box-shadow:10px 10px 20px #012744;
-    
 }
 
 
