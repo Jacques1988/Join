@@ -13,7 +13,8 @@ body {
 }
 
 .sidebar {
-    background-color: #012744; /* #1b2d91; */
+    background-color: #012744;
+    /* #1b2d91; */
     height: 100vh;
     width: 100px;
     position: fixed;
@@ -64,13 +65,13 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.navigation-row a{
+.navigation-row a {
     margin-left: 5px;
 }
 
-.navigation-row:hover{
+.navigation-row:hover {
     border-left: 8px solid white;
-} 
+}
 
 .navigation-row.is-active {
     border-left: 8px solid white;
@@ -99,3 +100,67 @@ body {
     height: 100vh;
     margin-left: 180px;
 } */
+
+/*Responsive Design*/
+
+@media(max-width: 850px) {
+    .sidebar {
+        height: 60px;
+        width: 100vw;
+        position: fixed;
+        padding-top: 24px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row !important;
+    }
+    .d-flex-responsive {
+        display: flex;
+    }
+    .hamburger-menu {
+        padding-right: 30px;
+        cursor: pointer;
+    }
+    .hamburger-menu img {
+        width: 50px;
+    }
+    .box-transparent {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        z-index: 1;
+        justify-content: flex-end;
+    }
+    .total-size {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+    }
+    .responsive-menu {
+        width: 25%;
+        background-color: #012744;
+        justify-content: end;
+        padding-top: 130px;
+        color: white;
+    }
+    .responsive-menu a {
+        color: white;
+        text-decoration: none;
+    }
+    .navigation-row {
+        margin-left: 20px;
+    }
+
+    .sidebar-profile {
+        margin-left: 20px;
+        padding-left: 0; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
