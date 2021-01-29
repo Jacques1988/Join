@@ -6,6 +6,7 @@
     height: 90%;
     text-transform: uppercase;
     background-color: #f9f6f4;
+    box-shadow:15px 15px 80px black;
     border-radius: 12px;
     padding-left: 20px;
 }
