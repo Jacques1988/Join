@@ -1,0 +1,25 @@
+
+.always {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:3rem;
+}
+
+
+.signincard {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items:flex-start;
+    width:400px;
+    height:500px;
+    background-color: #f9f6f4;
+    box-shadow:15px 15px 80px black;
+    border-radius: 12px;
+    box-shadow:
+}
+
+.signinhead {
+    
+}
