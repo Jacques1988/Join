@@ -148,6 +148,5 @@
 }
 .createtaskbtn:hover {
     background-image: radial-gradient(darkblue, lightblue);
-    transition: 2s ease-in-out;
 }
 
