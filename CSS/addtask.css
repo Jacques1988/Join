@@ -17,7 +17,7 @@
 .inputfield1 {
     width: 486px;
     height: 40px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     outline:none;
     border:1px solid grey;
     border-radius:8px;
@@ -26,7 +26,7 @@
 .inputfield2 {
     width: 500px;
     height: 40px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 .fieldcontainer {
     position: relative;
@@ -37,31 +37,26 @@
     width: 93%;
     border-radius:8px;
 }
-.optionfield {
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    right:0;
-    cursor: pointer;
-    border-left:1px solid grey;
-}
-.optionfield img{
-    width:25px;
-    height:15px;
-}
+
 .fieldcontainer select {
     width: 100%;
     height: 47px;
     font-size: 1.2rem;
     -webkit-appearance: none;
+    background: url(/Join/img/chevron\ .png) 98.5% 50% no-repeat ;
+    background-size:30px 20px;
     padding-left:1rem;
     border:1px solid grey;
     border-radius:8px;
     outline:none;
 }
+
+.fieldcontainer select option {
+    font-size:1.6rem;
+}
+
+
+/*here begins style of calendar */
 .calendar {
     width: 100%;
     height: 43px;
@@ -72,40 +67,33 @@
     border-radius:8px;
     -webkit-appearance: none;
 }
-.optionfield-calendar {
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    right:0;
-    cursor: pointer;
-    border-left:1px solid grey;
-    pointer-events:inherit;
-}
-.optionfield-calendar img{
-    width:25px;
-    height:25px;
-    pointer-events:auto;
-}
-input[type="date"]::-webkit-calendar-picker-indicator {
-    color: rgba(0, 0, 0, 0);
-    opacity: 1;
-    background: url('icons8-calendar-150.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    border-width: thin;
-}
-textarea {
+
+[type="date"] {
+    background:#fff url(/Join/img/icons8-calendar-150.png)  98.5% 50% no-repeat ;
+    background-size: 30px 30px;
+    z-index:2;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+
+  /* style of description area*/
+  textarea {
     font-size:20px;
     margin-bottom: 2rem;
+    height:150px;
+    width:478px;
     border: 1 px solid grey;
     outline:none;
     border:1px solid grey;
     border-radius:8px;
     padding:1rem;
 }
+
 .assigned-to-container {
     width: 490px;
     height: 152px;
@@ -161,3 +149,4 @@ textarea {
     background-image: radial-gradient(darkblue, lightblue);
     transition: 2s ease-in-out;
 }
+
