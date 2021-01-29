@@ -1,7 +1,7 @@
 /*
 *sets URL for Server connection
 */
-setURL('/Modul10_Server/DATA/');
+setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 
 /*
 *temporary id and array storage 
