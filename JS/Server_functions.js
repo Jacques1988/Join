@@ -5,15 +5,16 @@ function addUser() {
   let namecheck = newusername.value;
   let mailcheck = newusermail.value;
   let passwordcheck = newuserpassword.value;
+  let passwordrepeatcheck = passwordrepeat.value;
 
-  if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0) {
+  if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
     BuildUser();
     UploadUserToServer();
     updatedropdown();
     newid = newid + 1;
   }
   else {
-    alert('Please add all necessary information.')
+    alert('Please add all necessary information and match passwords.')
   }
 }
 
@@ -28,6 +29,7 @@ function BuildUser() {
     "username": document.getElementById('newusername').value,
     "usermail": document.getElementById('newusermail').value,
     "userpassword": document.getElementById('newuserpassword').value,
+    "userdescription": document.getElementById('newuserdescription').value,
     "userimage": newimage,
     "usercategory": 'default',
     "usertasks": []
@@ -44,17 +46,19 @@ function addUserImage() {
 
 }
 
-
 /*
 *addTask: Add new task and store it in array alltasks
 */
 function addTask() {
   let namecheck = newtaskname.value;
-  let datecheck = newtaskdate.value;
-  let passwordcheck = newuserpassword.value;
+  //let datecheck = getTime(newtaskdate);
   let descriptioncheck = newtaskdescription.value;
 
-  if (namecheck.length > 0 && datecheck.length > 0 && passwordcheck.length > 0 && descriptioncheck.length > 0) {
+  //if (datecheck == 'NaN') {   /*checks if information is in valid date format*/
+  //  alert('Please add all necessary information.')
+  //}
+  //else {
+  if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     BuildTask();
     UploadTaskToServer();
     newtaskid = newtaskid + 1;
@@ -62,11 +66,12 @@ function addTask() {
   else {
     alert('Please add all necessary information.')
   }
+  //}
 }
 
 function BuildTask() {
 
-  //array currenttaskusers MUST be filled before push!
+  //array currenttaskusers MUST be filled before finishing this section!
 
   alltasks.push({
     "taskid": newtaskid,

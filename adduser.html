@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Register</title>
+    <link rel="stylesheet" href="./CSS/sidebar.css">
+    <link rel="stylesheet" href="./CSS/mainstyle.css">
+    <link rel="stylesheet" href="./CSS/addtask.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./materials_lite/material.min.css">
+    <script src="./materials_lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="./JS/sidebar.js"></script>
+    <script src="./JS/mini_backend.js"></script>
+    <script src="./JS/Server_database.js"></script>
+    <script src="./JS/Server_functions.js"></script>
+</head>
+
+<body onload="loadSideBar()">
+    <div class="total-size" id="total-size">
+    </div>
+
+
+    <div class="always">
+        <div id="sidebar" class="sidebar-container sidebar-import"></div>
+
+
+        <div class="headline-backlog">
+            <h1 class="headline1">Registration</h1>
+            <p class="blue">Learning Management System Project</p>
+        </div>
+
+        <div class="assignment">
+
+            <div class="entries">
+                <h2 class="headline2 blue">Name</h2>
+                <input id="newusername" required class="inputfield1" type="text" placeholder="Name">
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Mail Adress</h2>
+                <input id="newusermail" required class="inputfield1" type="email" placeholder="E-Mail">
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Password</h2>
+                <input id="newuserpassword" required class="inputfield1" type="password" placeholder="...">
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Repeat Password</h2>
+                <input id="passwordrepeat" required class="inputfield1" type="password" placeholder="...">
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue">Profile</h2>
+                <form>
+                    <textarea id="newuserdescription" placeholder="Tell your colleagues something about yourself."
+                        cols="50" rows="5"></textarea>
+                </form>
+            </div>
+
+            <div class="entries">
+                <h2 class="headline2 blue mt0 mobile-assigned">Assigned to</h2>
+                <div class="assigned-to-container">
+                    <div class="cancel headline2">cancel</div>
+                    <div class="createtaskbtn headline2" onclick="addUser()">
+                        <div class="btnanimatediv"><span>Create User</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

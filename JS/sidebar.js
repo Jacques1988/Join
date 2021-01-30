@@ -25,7 +25,7 @@ function loadSideBar() {
 
     <div class="sidebar-profile d-none-responsive">
         <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg">
-       <button> Ausloggen </button> 
+        <a href="index.html"><button onclick="logout()"> Ausloggen </button></a> 
     </div>
 
     <div class="hamburger-menu"> <img onclick="menuOpen()" src="img/hamburger-menu.png"></div>
@@ -104,3 +104,14 @@ function saveBorder() {
         <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="help.html" onclick="addSquare()">   Help</a> </div>
         <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="myprofile.html" onclick="addSquare()">   My Profile</a> </div>
         </div> */
+
+
+/**
+ *Logout: logs user out and resets to login page
+ */
+
+ function logout() {
+ alert('You´ve been logged out sucessfully.');
+ //activeuser reset
+ //picture reset
+ }
