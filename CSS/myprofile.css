@@ -47,3 +47,20 @@
 .td {
 width: 250px;
 }
+
+
+@media(max-width: 400px) {
+
+    .whole-profile {
+        flex-direction: column;
+    }
+
+    .rest-infos {
+        margin-top: 30px; 
+    }
+
+    .profile-main-infos {
+        margin-right: 0px; 
+    }
+
+}

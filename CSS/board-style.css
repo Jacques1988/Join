@@ -26,3 +26,14 @@
     text-transform: uppercase;
     color: #012744;
 }
+
+@media(max-width: 850px) {
+    .task-container {
+        margin-right: 0px; 
+    }
+
+    .task {
+        width: 21.5vw;
+    }
+
+}

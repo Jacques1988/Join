@@ -77,8 +77,6 @@ function menuOpen() {
 
 
 
-
-
 function saveBorder() {
     let whiteborder = document.querySelector(".navigation-row");
 
