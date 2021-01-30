@@ -6,7 +6,7 @@
     height: 90%;
     text-transform: uppercase;
     background-color: #f9f6f4;
-    box-shadow:15px 15px 80px black;
+    box-shadow: 15px 15px 80px black;
     border-radius: 12px;
     padding-left: 20px;
 }
@@ -16,14 +16,17 @@
     flex-direction: column;
     width: 50%;
 }
+
 .inputfield1 {
     width: 486px;
     height: 40px;
     font-size: 1.6rem;
-    outline:none;
-    border:1px solid grey;
-    border-radius:8px;
-    padding-left:1rem;   
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding-left: 1rem;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .inputfield2 {
@@ -31,6 +34,7 @@
     height: 40px;
     font-size: 1.6rem;
 }
+
 .fieldcontainer {
     position: relative;
     display: flex;
@@ -38,7 +42,7 @@
     align-items: center;
     background-color: white;
     width: 93%;
-    border-radius:8px;
+    border-radius: 8px;
 }
 
 .fieldcontainer select {
@@ -46,55 +50,63 @@
     height: 47px;
     font-size: 1.2rem;
     -webkit-appearance: none;
-    background: url(/Join/img/chevron\ .png) 98.5% 50% no-repeat ;
-    background-size:30px 20px;
-    padding-left:1rem;
-    border:1px solid grey;
-    border-radius:8px;
-    outline:none;
+    background: url(/Join/img/chevron\ .png) 98.5% 50% no-repeat;
+    background-size: 30px 20px;
+    padding-left: 1rem;
+    border: 1px solid grey;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    color: grey;
 }
 
 .fieldcontainer select option {
-    font-size:1.6rem;
+    font-size: 1.6rem;
 }
 
-
 /*here begins style of calendar */
+
 .calendar {
     width: 100%;
     height: 43px;
     font-size: 1.2rem;
-    outline:none;
-    padding-left:1rem;
-    border:1px solid grey;
-    border-radius:8px;
+    outline: none;
+    padding-left: 1rem;
+    border: 1px solid grey;
+    border-radius: 8px;
     -webkit-appearance: none;
 }
 
 [type="date"] {
-    background:#fff url(/Join/img/icons8-calendar-150.png)  98.5% 50% no-repeat ;
+    background: #fff url(/Join/img/icons8-calendar-150.png) 98.5% 50% no-repeat;
     background-size: 30px 30px;
-    z-index:2;
-  }
-  [type="date"]::-webkit-inner-spin-button {
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    color: gray;
+}
+
+[type="date"]::-webkit-inner-spin-button {
     display: none;
-  }
-  [type="date"]::-webkit-calendar-picker-indicator {
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0;
-  }
+}
 
+/* style of description area*/
 
-  /* style of description area*/
-  textarea {
-    font-size:20px;
+textarea {
+    font-size: 20px;
     margin-bottom: 2rem;
-    height:150px;
-    width:478px;
+    height: 150px;
+    width: 478px;
     border: 1 px solid grey;
-    outline:none;
-    border:1px solid grey;
-    border-radius:8px;
-    padding:1rem;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
 }
 
 .assigned-to-container {
@@ -102,6 +114,7 @@
     height: 152px;
     position: relative;
 }
+
 .assigned-to-profile {
     position: absolute;
     background-color: blue;
@@ -112,6 +125,7 @@
     bottom: 25px;
     border-radius: 50%;
 }
+
 .assigned-to-profile img {
     width: 60px;
     height: 60px;
@@ -119,7 +133,7 @@
     border-radius: 50%;
     transform: scale(1);
     transition: 1s ease-in-out;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .assigned-to-profile img:hover {
@@ -140,6 +154,7 @@
     top: 55px;
     cursor: pointer;
 }
+
 .cancel {
     position: absolute;
     right: 150px;
@@ -149,6 +164,7 @@
 }
 
 /*create Task Button design */
+
 .createtaskbtn {
     position: absolute;
     right: 0;
@@ -156,14 +172,14 @@
     padding: 1.5rem;
     background-color: #012744;
     border-radius: 12px;
-    box-shadow:10px 10px 20px #012744;
+    box-shadow: 10px 10px 20px #012744;
     cursor: pointer;
     transform-style: preserve-3d;
     transition: ease-in-out 1.5s;
 }
 
-
 /*Create Taskbutton Hover*/
+
 .createtaskbtn:hover {
     transform: rotateX(360deg);
 }
@@ -175,30 +191,70 @@
     transform: perspective(100px) translateZ(20px);
 }
 
-.btnanimatediv:before{
-    content:'';
-    position:absolute;
-    top:4px;
-    left:6px;
-    right:6px;
-    bottom:4px; 
-    border:2px solid rgba(185, 185, 185);
-    border-radius:12px;
-    padding:1rem;
-    transform-style:preserve-3d;
-    transform:perspective(500px) translateZ(15px);
+.btnanimatediv:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    right: 6px;
+    bottom: 4px;
+    border: 2px solid rgba(185, 185, 185);
+    border-radius: 12px;
+    padding: 1rem;
+    transform-style: preserve-3d;
+    transform: perspective(500px) translateZ(15px);
 }
 
-.btnanimatediv:after{
-    content:'';
-    position:absolute;
-    top:4px;
-    left:6px;
-    right:6px;
-    bottom:4px; 
-    border:2px solid rgba(185, 185, 185);
-    border-radius:12px;
-    padding:1rem;
-    transform-style:preserve-3d;
-    transform:perspective(500px) translateZ(-15px);
+.btnanimatediv:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    right: 6px;
+    bottom: 4px;
+    border: 2px solid rgba(185, 185, 185);
+    border-radius: 12px;
+    padding: 1rem;
+    transform-style: preserve-3d;
+    transform: perspective(500px) translateZ(-15px);
+}
+
+/* Responsive Design */
+
+@media(max-width: 850px) {
+    .assignment {
+        flex-direction: column;
+        padding: 20px;
+        width: 94%;
+    }
+    .fieldcontainer {
+        position: initial;
+    }
+    .entries {
+        width: 100%;
+    }
+    .inputfield1 {
+        width: 91%;
+    }
+    textarea {
+        width: 89%; 
+        font-family: 'Poppins', sans-serif;
+    }
+    [type="date"] {
+        background: #fff url(/Join/img/icons8-calendar-150.png) 98.5% 50% no-repeat;
+        background-size: 30px 30px;
+        z-index: 0;
+    }
+    .assigned-to-container {
+        width: 93%;
+        height: 80px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .assigned-to-profile {
+        top: 18px;
+    }
+    .assigned-to-plus {
+        top: 35px;
+    }
 }

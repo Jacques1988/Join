@@ -25,7 +25,7 @@ function loadSideBar() {
 
     <div class="sidebar-profile d-none-responsive">
         <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg">
-        <button>Ausloggen</button> 
+       <button> Ausloggen </button> 
     </div>
 
     <div class="hamburger-menu"> <img onclick="menuOpen()" src="img/hamburger-menu.png"></div>
@@ -51,7 +51,7 @@ function openMobileMenu() {
 
     <div class="sidebar-profile">
     <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg">
-    <button>Ausloggen</button> 
+    <button class="btn-logout-menu" >Ausloggen</button> 
 </div>
     </div>
 
