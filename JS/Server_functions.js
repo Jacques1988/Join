@@ -10,7 +10,7 @@ function addUser() {
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
     BuildUser();
     UploadUserToServer();
-    updatedropdown();
+    //updatedropdown(); //not necessary yet
     newid = newid + 1;
   }
   else {
