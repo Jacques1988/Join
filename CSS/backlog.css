@@ -1,15 +1,17 @@
 .assignment-headline {
     text-transform: uppercase;
     justify-content: space-between;
+    padding-right: 25px;
 }
 
 .backlog-field {
-    width: 100%;
     height: 90px;
     border-radius: 12px;
     align-items: center;
     justify-content: space-between;
     padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .profile-img {
@@ -27,4 +29,33 @@
 
 .profil-container {
     align-items: center;
+}
+
+@media(max-width: 600px) {
+    .profile-container-mobile {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .profil-container-mobile-width {
+        width: 30% !important;
+    }
+    .category-container-mobile-width {
+        width: 35% !important;
+    }
+    .details-container-mobile-width {
+        width: 35% !important;
+    }
+}
+
+@media(max-width: 400px) {
+    .profil-container-mobile-width {
+        width: 40% !important;
+    }
+    .category-container-mobile-width {
+        width: 30% !important;
+    }
+    .details-container-mobile-width {
+        width: 30% !important;
+    }
 }
