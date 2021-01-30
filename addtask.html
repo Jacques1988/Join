@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <script src="./JS/sidebar.js"></script>
+    <script src="./JS/mini_backend.js"></script>
+    <script src="./JS/Server_database.js"></script>
+    <script src="./JS/Server_functions.js"></script>
 </head>
 
 <body onload="loadSideBar()">
@@ -72,10 +75,10 @@
             <div class="entries">
                 <h2 class="headline2 blue mt0">Assigned to</h2>
                 <div class="assigned-to-container">
-                    <div class="assigned-to-profile"><img src="./img/Jacques.JPG"> </div>
+                    <div class="assigned-to-profile"><a href="#"><img src="./img/Jacques.JPG"></a> </div>
                     <div class="assigned-to-plus"><img src="./img/icon plus.png" width="30px" height="30px"> </div>
                     <div class="cancel headline2">cancel</div>
-                    <div class="createtaskbtn headline2">Create Task</div>
+                    <div class="createtaskbtn headline2" onclick="addTask()"><div class="btnanimatediv"><span>Create Task</span></div></div>
                 </div>
             </div>
         </div>
@@ -83,32 +86,3 @@
 </body>
 
 </html>
-
-
-
-
-
-<!--
-
-            <div class="entries">
-                <h2 class="headline2 blue">Category</h2>
-                <div class="fieldcontainer"><input required class="inputfield2" type="text" placeholder="Choose category">
-                <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
-                </div>
-            </div>
-
-            <div class="entries">
-                <h2 class="headline2 blue">Urgency</h2>
-                <div class="fieldcontainer"><input required class="inputfield2" type="text"
-                        placeholder="Choose urgency">
-                    <div class="optionfield"><img src="./img/chevron .png" width="25" height="15"></div>
-                </div>
-            </div>
-
-             <div class="entries">
-                <h2 class="headline2 blue">Due Date</h2>
-                <div class="fieldcontainer"><input required class="inputfield2" type="text" placeholder="Date">
-                    <div class="optionfield"><img src="./img/icons8-calendar-150.png" width="25" height="25"></div>
-                </div>
-            </div>
-        -->
