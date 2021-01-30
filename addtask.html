@@ -39,18 +39,18 @@
 
             <div class="entries">
                 <h2 class="headline2 blue">Title</h2>
-                <input required class="inputfield1" type="text" placeholder="Name title">
+                <input id="newtaskname" required class="inputfield1" type="text" placeholder="Name title">
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Due Date</h2>
-                <div class="fieldcontainer"><input class="calendar" type="date">
+                <div id="newtaskdate" class="fieldcontainer"><input class="calendar" type="date">
                 </div>
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Category</h2>
-                <div class="fieldcontainer"><select>
+                <div class="fieldcontainer"><select id="newtaskcategory">
                         <option>Management</option>
                         <option>Sales</option>
                         <option>Product</option>
@@ -60,7 +60,7 @@
 
             <div class="entries">
                 <h2 class="headline2 blue">Urgency</h2>
-                <div class="fieldcontainer"><select>
+                <div class="fieldcontainer"><select id="newtaskurgency">
                         <option>Low</option>
                         <option>Middle</option>
                         <option>High</option>
@@ -71,12 +71,12 @@
             <div class="entries">
                 <h2 class="headline2 blue">Description</h2>
                 <form>
-                   <textarea placeholder="your notice" cols="50" rows="5"></textarea>
+                   <textarea id="newtaskdescription" placeholder="your notice" cols="50" rows="5"></textarea>
                 </form>
             </div>
 
             <div class="entries">
-                <h2 class="headline2 blue mt0">Assigned to</h2>
+                <h2 class="headline2 blue mt0 mobile-assigned">Assigned to</h2>
                 <div class="assigned-to-container">
                     <div class="assigned-to-profile"><a href="#"><img src="./img/Jacques.JPG"></a> </div>
                     <div class="assigned-to-plus"><img src="./img/icon plus.png" width="30px" height="30px"> </div>

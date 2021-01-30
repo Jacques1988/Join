@@ -225,7 +225,7 @@ textarea {
     .assignment {
         flex-direction: column;
         padding: 20px;
-        width: 94%;
+        width: 95%;
     }
     .fieldcontainer {
         position: initial;
@@ -237,7 +237,7 @@ textarea {
         width: 91%;
     }
     textarea {
-        width: 89%; 
+        width: 89%;
         font-family: 'Poppins', sans-serif;
     }
     [type="date"] {
@@ -253,8 +253,58 @@ textarea {
     }
     .assigned-to-profile {
         top: 18px;
+        left: 0px;
     }
     .assigned-to-plus {
         top: 35px;
+        left: 70px;
+    }
+}
+
+@media(max-width: 650px) {
+    .assignment {
+        width: 93%;
+    }
+    .inputfield1 {
+        width: 96%;
+    }
+    textarea {
+        width: 93%;
+    }
+    .fieldcontainer {
+        width: 98.5%;
+    }
+}
+
+@media(max-width: 450px) {
+    .fieldcontainer {
+        width: 100% !important;
+    }
+    .assignment {
+        width: 89%;
+    }
+    .inputfield1 {
+        width: 94%;
+    }
+    textarea {
+        width: 90%;
+    }
+    .assigned-to-profile {
+        top: 8px;
+    }
+    .cancel {
+        position: absolute;
+        /* right: 150px; */
+        /* bottom: 0.5rem; */
+        cursor: pointer;
+        /* padding: 1rem; */
+        top: 77px;
+        left: -11px;
+    }
+    .assigned-to-plus {
+        left: 71px;
+    }
+    .mobile-assigned {
+        margin-top: -26px;
     }
 }
