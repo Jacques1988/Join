@@ -221,6 +221,15 @@ textarea {
 
 /* Responsive Design */
 
+@media(min-width: 1415px) {
+    textarea {
+        width: 88%;
+    }
+    .inputfield1 {
+        width: 90%;
+    }
+}
+
 @media(max-width: 1300px) {
     .inputfield1 {
         width: 85%;
@@ -248,7 +257,7 @@ textarea {
     }
 }
 
-@media(max-width: 1040px) {
+@media(max-width: 1100px) {
     .createtaskbtn {
         right: 140px;
     }

@@ -1,5 +1,3 @@
-let currentNavigation = ['Board', 'Backlog', 'Add Task', 'Help', 'My Profile', 'Impressum', 'Datenschutz'];
-
 /**Menu is loaded on every HTML file
  * 
  */
@@ -7,18 +5,18 @@ function loadSideBar() {
     document.getElementById('sidebar').innerHTML += `<div class="sidebar d-flex-responsive">
 
     <div class="sidebar-menu">
-        <div class="sidebar-logo">
+        <div class="sidebar-logo" onclick="initBoard()">
          <a href="board.html">   <img src="./img/joinlogo.PNG"> <a>
         </div>
 
         <div id="sidebar-navigation" class="sidebar-navigation d-flex d-none-responsive">
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="board.html" onclick="addSquare()">  Board </a>  </div>
-        <div class="d-flex navigation-row"> <a href="backlog.html">Backlog</a> </div>
-        <div class="d-flex navigation-row"> <a href="addtask.html">Add Task</a> </div>
-        <div class="d-flex navigation-row"> <a href="help.html">  Help</a> </div>
-        <div class="d-flex navigation-row"> <a href="myprofile.html">   My Profile</a> </div>
-        <div class="d-flex navigation-row"> <a href="Impressum.html">   Impressum</a> </div>
-        <div class="d-flex navigation-row"> <a href="datenschutz.html">   Datenschutz</a> </div>
+        <div class="d-flex navigation-row" id="board" onclick="initBoard()"> <a href="board.html" style="margin-left: 0px"> Board</a> </div>
+        <div class="d-flex navigation-row" id="backlog" onclick="initBacklog()"> <a href="backlog.html">Backlog</a> </div>
+        <div class="d-flex navigation-row" id="addtask" onclick="initAddTask()"> <a href="addtask.html">Add Task</a> </div>
+        <div class="d-flex navigation-row" id="help" onclick="initHelp()"> <a href="help.html">  Help</a> </div>
+        <div class="d-flex navigation-row" id="myprofile" onclick="initMyProfile()"> <a href="myprofile.html">   My Profile</a> </div>
+        <div class="d-flex navigation-row" id="impressum" onclick="initImpressum()"> <a href="Impressum.html">   Impressum</a> </div>
+        <div class="d-flex navigation-row" id="datenschutz" onclick="initDatenschutz()"> <a href="datenschutz.html">   Datenschutz</a> </div>
         </div>
 
     </div>
@@ -28,19 +26,79 @@ function loadSideBar() {
         <a class="logoutlink" href="index.html"><div class="headline2 logoutbtn" onclick="logout()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
     </div>
 
-    <div class="hamburger-menu"> <img class="d-none-big" onclick="menuOpen()" src="img/hamburger-menu.png"></div>
+    <div class="hamburger-menu"> <img class="d-none-big" id="hamburger" onclick="menuOpen(), transform()" src="img/hamburger-menu.png"></div>
 
   </div>
   `
 }
+
+function transform() {
+    document.getElementById('hamburger').classList.toggle('change');
+}
+
+
+/* /**Used do add the white Square in front of the current navigation
+ *
+ */
+function initBoard() {
+    if (window.location.href.endsWith('board.html')) {
+        document.getElementById('board').classList.add('square');
+    }
+}
+function initBacklog() {
+    if (window.location.href.endsWith('backlog.html')) {
+        document.getElementById('backlog').classList.add('square')
+    };
+}
+function initAddTask() {
+    if (window.location.href.endsWith('addtask.html')) {
+        document.getElementById('addtask').classList.add('square')
+    };
+}
+function initHelp() {
+    if (window.location.href.endsWith('help.html')) {
+        document.getElementById('help').classList.add('square')
+    };
+}
+function initMyProfile() {
+    if (window.location.href.endsWith('myprofile.html')) {
+        document.getElementById('myprofile').classList.add('square')
+    };
+}
+function initImpressum() {
+    if (window.location.href.endsWith('Impressum.html')) {
+        document.getElementById('impressum').classList.add('square')
+    };
+}
+function initDatenschutz() {
+    if (window.location.href.endsWith('datenschutz.html')) {
+        document.getElementById('datenschutz').classList.add('square')
+    };
+}
+
+
+/**
+ *Logout: logs user out and resets to login page
+ */
+
+function logout() {
+    alert('You´ve been logged out sucessfully.');
+    //activeuser reset
+    //picture reset
+}
+
+
+
+
+/*Responsive Design*/
 
 /**
  * When click on the 3 stripes the mobile menu is opening
  */
 function openMobileMenu() {
     document.getElementById('total-size').innerHTML = `
-    <div class="box-transparent" onclick="menuClose()">
-    <div class="responsive-menu transform">
+    <div id="transformation" class="box-transparent" onclick="menuClose()">
+    <div class="responsive-menu">
     <div class="d-flex navigation-row"> <a href="board.html">  Board</a>  </div>
     <div class="d-flex navigation-row"> <a href="backlog.html">Backlog</a> </div>
     <div class="d-flex navigation-row"> <a href="addtask.html">Add Task</a> </div>
@@ -54,12 +112,11 @@ function openMobileMenu() {
     <button class="btn-logout-menu">Ausloggen</button> 
 </div>
     </div>
-
-
-
     </div>
     `
+    transform(); 
 }
+
 /**
  * mobile menu close
  */
@@ -73,45 +130,4 @@ function menuClose() {
 function menuOpen() {
     document.getElementById('total-size').classList.remove("d-none-responsive");
     openMobileMenu();
-}
-
-
-/* 
-function saveBorder() {
-    let whiteborder = document.getElementById(".navigation-row");
-
-    whiteborder.addEventListener("click", function (_whiteBorder) {
-        this.classList.toggle("is-active");
-    });
-}
- */
-
-
-/**Used do add the white Square in front of the current navigation
- *
- */
-function addSquare() {
-    for (let i = 0; i < currentNavigation; i++) {
-        document.getElementById('opacity').classList.remove('opacity');
-    }
-}
-
-
-/* <div id="sidebar-navigation" class="sidebar-navigation d-flex">
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="board.html" onclick="addSquare()">  ${currentNavigation}</a>  </div>
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="backlog.html" onclick="addSquare()">Backlog</a> </div>
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="addtask.html" onclick="addSquare()">Add Task</a> </div>
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="help.html" onclick="addSquare()">   Help</a> </div>
-        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="myprofile.html" onclick="addSquare()">   My Profile</a> </div>
-        </div> */
-
-
-/**
- *Logout: logs user out and resets to login page
- */
-
-function logout() {
-    alert('You´ve been logged out sucessfully.');
-    //activeuser reset
-    //picture reset
 }

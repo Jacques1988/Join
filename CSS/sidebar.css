@@ -34,11 +34,6 @@ body {
     font-size: 15px;
 }
 
-.sidebar-navigation a {
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
 
 .sidebar-logo {
     width: 30px;
@@ -51,11 +46,6 @@ body {
     height: 50px;
 }
 
-.hover-square {
-    width: 8px;
-    background-color: white;
-    margin-right: 15px;
-}
 
 .opacity {
     opacity: 0;
@@ -63,17 +53,21 @@ body {
 
 .navigation-row {
     margin-bottom: 1.5rem;
+    z-index: 2; 
 }
 
 .navigation-row a {
     margin-left: 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .navigation-row:hover {
     border-left: 8px solid white;
 }
 
-.navigation-row.is-active {
+.square {
     border-left: 8px solid white;
 }
 
@@ -151,9 +145,8 @@ body {
 }
 
 .transform {
-    transition: all 2s ease;  
+    transition: all 2s ease;
 }
-
 
 /*Responsive Design*/
 
