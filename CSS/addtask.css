@@ -317,6 +317,12 @@ textarea {
     }
 }
 
+@media(max-width: 740px) {
+    .assignment {
+        width: 94%;
+    }
+}
+
 @media(max-width: 650px) {
     .assignment {
         width: 93%;

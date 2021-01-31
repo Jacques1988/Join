@@ -10,8 +10,8 @@ function loadSideBar() {
         </div>
 
         <div id="sidebar-navigation" class="sidebar-navigation d-flex d-none-responsive">
-        <div class="d-flex navigation-row" id="board" onclick="initBoard()"> <a href="board.html" style="margin-left: 0px"> Board</a> </div>
-        <div class="d-flex navigation-row" id="backlog" onclick="initBacklog()"> <a href="backlog.html">Backlog</a> </div>
+        <div class="d-flex navigation-row" id="board"> <a href="board.html" style="margin-left: 0px"> Board</a> </div>
+        <div class="d-flex navigation-row" id="backlog"> <a href="backlog.html">Backlog</a> </div>
         <div class="d-flex navigation-row" id="addtask" onclick="initAddTask()"> <a href="addtask.html">Add Task</a> </div>
         <div class="d-flex navigation-row" id="help" onclick="initHelp()"> <a href="help.html">  Help</a> </div>
         <div class="d-flex navigation-row" id="myprofile" onclick="initMyProfile()"> <a href="myprofile.html">   My Profile</a> </div>
@@ -22,7 +22,7 @@ function loadSideBar() {
     </div>
 
     <div class="sidebar-profile d-none-responsive">
-        <a href="myprofile.html"> <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg"></a>
+        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg"></a>
         <a class="logoutlink" href="index.html"><div class="headline2 logoutbtn" onclick="logout()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
     </div>
 
@@ -37,40 +37,76 @@ function transform() {
 }
 
 
+
+
 /* /**Used do add the white Square in front of the current navigation
  *
  */
 function initBoard() {
+    loadSideBar();
+    BoardSquare(); 
+}
+function BoardSquare() {
     if (window.location.href.endsWith('board.html')) {
         document.getElementById('board').classList.add('square');
-    }
+    };
 }
+
 function initBacklog() {
+    loadSideBar();
+    BacklogSquare(); 
+}
+function BacklogSquare() {
     if (window.location.href.endsWith('backlog.html')) {
         document.getElementById('backlog').classList.add('square')
     };
 }
+
 function initAddTask() {
+    loadSideBar();
+    AddTaskSquare(); 
+}
+function AddTaskSquare() {
     if (window.location.href.endsWith('addtask.html')) {
         document.getElementById('addtask').classList.add('square')
     };
 }
+
 function initHelp() {
+    loadSideBar();
+    HelpSquare(); 
+}
+function HelpSquare() {
     if (window.location.href.endsWith('help.html')) {
         document.getElementById('help').classList.add('square')
     };
 }
+
 function initMyProfile() {
+    loadSideBar();
+    myProfileSquare(); 
+}
+function myProfileSquare() {
     if (window.location.href.endsWith('myprofile.html')) {
         document.getElementById('myprofile').classList.add('square')
     };
 }
+
 function initImpressum() {
+    loadSideBar();
+    ImpressumSquare(); 
+}
+function ImpressumSquare() {
     if (window.location.href.endsWith('Impressum.html')) {
         document.getElementById('impressum').classList.add('square')
     };
 }
+
 function initDatenschutz() {
+    loadSideBar();
+    DatenschutzSquare(); 
+}
+function DatenschutzSquare() {
     if (window.location.href.endsWith('datenschutz.html')) {
         document.getElementById('datenschutz').classList.add('square')
     };

@@ -34,11 +34,10 @@ body {
     font-size: 15px;
 }
 
-
 .sidebar-logo {
     width: 30px;
     margin-bottom: 5rem;
-    padding-left: 38px;
+    margin-left: 20px;
 }
 
 .sidebar-logo img {
@@ -46,18 +45,17 @@ body {
     height: 50px;
 }
 
-
 .opacity {
     opacity: 0;
 }
 
 .navigation-row {
     margin-bottom: 1.5rem;
-    z-index: 2; 
+    z-index: 2;
 }
 
 .navigation-row a {
-    margin-left: 5px;
+    margin-left: 10px;
     color: white;
     cursor: pointer;
     text-decoration: none;

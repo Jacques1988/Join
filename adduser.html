@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join - Register</title>
     <link rel="stylesheet" href="./CSS/sidebar.css">
+    <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="./CSS/mainstyle.css">
     <link rel="stylesheet" href="./CSS/addtask.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -26,8 +27,7 @@
     </div>
 
 
-    <div class="always">
-        <div id="sidebar" class="sidebar-container sidebar-import"></div>
+    <div class="always-adduser">
 
 
         <div class="headline-backlog">
@@ -35,40 +35,39 @@
             <p class="blue">Learning Management System Project</p>
         </div>
 
-        <div class="assignment">
+        <div class="assignment-adduser">
 
             <div class="entries">
                 <h2 class="headline2 blue">Name</h2>
-                <input id="newusername" required class="inputfield1" type="text" placeholder="Name">
+                <input id="newusername" required class="inputfield1-adduser" type="text" placeholder="Name">
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Mail Adress</h2>
-                <input id="newusermail" required class="inputfield1" type="email" placeholder="E-Mail">
+                <input id="newusermail" required class="inputfield1-adduser" type="email" placeholder="E-Mail">
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Password</h2>
-                <input id="newuserpassword" required class="inputfield1" type="password" placeholder="...">
+                <input id="newuserpassword" required class="inputfield1-adduser" type="password" placeholder="...">
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Repeat Password</h2>
-                <input id="passwordrepeat" required class="inputfield1" type="password" placeholder="...">
+                <input id="passwordrepeat" required class="inputfield1-adduser" type="password" placeholder="...">
             </div>
 
             <div class="entries">
                 <h2 class="headline2 blue">Profile</h2>
                 <form>
-                    <textarea id="newuserdescription" placeholder="Tell your colleagues something about yourself."
+                    <textarea class="textarea-adduser" id="newuserdescription" placeholder="Tell your colleagues something about yourself."
                         cols="50" rows="5"></textarea>
                 </form>
             </div>
 
             <div class="entries">
-                <h2 class="headline2 blue mt0 mobile-assigned">Assigned to</h2>
                 <div class="assigned-to-container">
-                    <div class="cancel headline2"><a class="headline2" href="index.html">cancel</a></div>
+                    <div class="cancel-adduser blue headline2"><a class="headline2" href="index.html">cancel</a></div>
                     <div class="createtaskbtn headline2" onclick="addUser()">
                         <div class="btnanimatediv"><span>Create User</span></div>
                     </div>
