@@ -50,12 +50,23 @@
 
 @media(max-width: 400px) {
     .profil-container-mobile-width {
-        width: 40% !important;
+        width: 36% !important;
     }
     .category-container-mobile-width {
-        width: 30% !important;
+        width: 32% !important;
     }
     .details-container-mobile-width {
-        width: 30% !important;
+        width: 32% !important;
     }
+    .headline2 {
+        font-size: 14px;
+    }
+    .backlog-field {
+        padding-right: 10px;
+    }
+
+    .backlog-field {
+        padding-right: 10px;
+    }
+
 }

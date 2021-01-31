@@ -101,8 +101,8 @@ body {
     background-color: #f9f6f4;
     border-radius: 12px;
     cursor: pointer;
-    margin-top:2rem;
-    box-shadow:10px 10px 20px #000;
+    margin-top: 2rem;
+    box-shadow: 10px 10px 20px #000;
     transform-style: preserve-3d;
     transition: 1.5s ease-in-out;
 }
@@ -147,16 +147,13 @@ body {
 }
 
 .logoutlink {
-    text-decoration:none;
+    text-decoration: none;
 }
 
+.transform {
+    transition: all 2s ease;  
+}
 
-/* .current-input {
-    background-color: green;
-    width: 100vw;
-    height: 100vh;
-    margin-left: 180px;
-} */
 
 /*Responsive Design*/
 
@@ -204,6 +201,8 @@ body {
         justify-content: end;
         padding-top: 130px;
         color: white;
+        transform: transition(-50%) translateY(-50%);
+        transition: 0.6s;
     }
     .responsive-menu a {
         color: white;
@@ -213,34 +212,30 @@ body {
         margin-left: 20px;
     }
     .sidebar-profile {
-        margin-left: 20px;
         margin-top: 30px;
         padding-left: 0;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
+}
 
-    .sidebar-logo {
-        padding-left: 22px; 
-    }
+.sidebar-logo {
+    padding-left: 22px;
 }
 
 @media(max-width: 650px) {
     .hamburger-menu {
         padding-right: 20px;
     }
-
     .board-menu {
-        flex-direction: column; 
+        flex-direction: column;
     }
-
     .task {
         width: 100%;
         height: 180px;
         margin-bottom: 25px;
     }
-
     .responsive-menu {
         width: 50%;
     }
@@ -250,27 +245,27 @@ body {
     .responsive-menu {
         width: 50%;
     }
-
     .hamburger-menu {
         padding-right: 20px;
     }
-
     .navigation-row {
         font-size: 18px;
     }
-
     .btn-logout-menu {
         font-size: 18px;
     }
-
     .board-menu {
-        flex-direction: column; 
+        flex-direction: column;
     }
-
     .task {
         width: 100%;
         height: 180px;
         margin-bottom: 25px;
     }
+}
 
+@media(min-width: 850px) {
+    .d-none-big {
+        display: none;
+    }
 }

@@ -8,11 +8,11 @@ function loadSideBar() {
 
     <div class="sidebar-menu">
         <div class="sidebar-logo">
-            <img src="./img/joinlogo.PNG">
+         <a href="board.html">   <img src="./img/joinlogo.PNG"> <a>
         </div>
 
         <div id="sidebar-navigation" class="sidebar-navigation d-flex d-none-responsive">
-        <div class="d-flex navigation-row"> <a href="board.html">  Board</a>  </div>
+        <div class="d-flex navigation-row"> <div id="opacity" class="hover-square opacity"></div> <a href="board.html" onclick="addSquare()">  Board </a>  </div>
         <div class="d-flex navigation-row"> <a href="backlog.html">Backlog</a> </div>
         <div class="d-flex navigation-row"> <a href="addtask.html">Add Task</a> </div>
         <div class="d-flex navigation-row"> <a href="help.html">  Help</a> </div>
@@ -24,11 +24,11 @@ function loadSideBar() {
     </div>
 
     <div class="sidebar-profile d-none-responsive">
-        <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg">
+        <a href="myprofile.html"> <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg"></a>
         <a class="logoutlink" href="index.html"><div class="headline2 logoutbtn" onclick="logout()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
     </div>
 
-    <div class="hamburger-menu"> <img onclick="menuOpen()" src="img/hamburger-menu.png"></div>
+    <div class="hamburger-menu"> <img class="d-none-big" onclick="menuOpen()" src="img/hamburger-menu.png"></div>
 
   </div>
   `
@@ -40,7 +40,7 @@ function loadSideBar() {
 function openMobileMenu() {
     document.getElementById('total-size').innerHTML = `
     <div class="box-transparent" onclick="menuClose()">
-    <div class="responsive-menu">
+    <div class="responsive-menu transform">
     <div class="d-flex navigation-row"> <a href="board.html">  Board</a>  </div>
     <div class="d-flex navigation-row"> <a href="backlog.html">Backlog</a> </div>
     <div class="d-flex navigation-row"> <a href="addtask.html">Add Task</a> </div>
@@ -76,25 +76,25 @@ function menuOpen() {
 }
 
 
-
+/* 
 function saveBorder() {
-    let whiteborder = document.querySelector(".navigation-row");
+    let whiteborder = document.getElementById(".navigation-row");
 
     whiteborder.addEventListener("click", function (_whiteBorder) {
         this.classList.toggle("is-active");
     });
 }
-
+ */
 
 
 /**Used do add the white Square in front of the current navigation
  *
  */
-/*  function addSquare() {
-    for (let i = 1; i < currentNavigation; i++) {
+function addSquare() {
+    for (let i = 0; i < currentNavigation; i++) {
         document.getElementById('opacity').classList.remove('opacity');
     }
-}   */
+}
 
 
 /* <div id="sidebar-navigation" class="sidebar-navigation d-flex">
@@ -110,8 +110,8 @@ function saveBorder() {
  *Logout: logs user out and resets to login page
  */
 
- function logout() {
- alert('You´ve been logged out sucessfully.');
- //activeuser reset
- //picture reset
- }
+function logout() {
+    alert('You´ve been logged out sucessfully.');
+    //activeuser reset
+    //picture reset
+}

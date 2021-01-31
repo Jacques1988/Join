@@ -221,6 +221,52 @@ textarea {
 
 /* Responsive Design */
 
+@media(max-width: 1300px) {
+    .inputfield1 {
+        width: 85%;
+    }
+    .fieldcontainer {
+        width: 89%;
+    }
+    textarea {
+        width: 83%;
+    }
+    .createtaskbtn {
+        right: 46px;
+    }
+    .cancel {
+        right: 194px;
+    }
+}
+
+@media(max-width: 1170px) {
+    .createtaskbtn {
+        right: 90px;
+    }
+    .cancel {
+        right: 234px;
+    }
+}
+
+@media(max-width: 1040px) {
+    .createtaskbtn {
+        right: 140px;
+    }
+    .cancel {
+        right: 293px;
+    }
+}
+
+.cancel {
+    right: 325px;
+}
+
+@media(max-width: 970px) {
+    .createtaskbtn {
+        right: 176px;
+    }
+}
+
 @media(max-width: 850px) {
     .assignment {
         flex-direction: column;
@@ -229,6 +275,7 @@ textarea {
     }
     .fieldcontainer {
         position: initial;
+        width: 93%;
     }
     .entries {
         width: 100%;
@@ -276,6 +323,21 @@ textarea {
     }
 }
 
+@media(max-width: 628px) {
+    .createtaskbtn {
+        right: -28px;
+    }
+    .cancel {
+        position: absolute;
+        /* right: 150px; */
+        /* bottom: 0.5rem; */
+        cursor: pointer;
+        /* padding: 1rem; */
+        top: 77px;
+        left: -11px;
+    }
+}
+
 @media(max-width: 450px) {
     .fieldcontainer {
         width: 100% !important;
@@ -291,15 +353,6 @@ textarea {
     }
     .assigned-to-profile {
         top: 8px;
-    }
-    .cancel {
-        position: absolute;
-        /* right: 150px; */
-        /* bottom: 0.5rem; */
-        cursor: pointer;
-        /* padding: 1rem; */
-        top: 77px;
-        left: -11px;
     }
     .assigned-to-plus {
         left: 71px;
