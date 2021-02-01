@@ -1,0 +1,54 @@
+
+.always-logout {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.cardflipper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+}
+
+.logoutcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    background-color: #f9f6f4;
+    box-shadow: 15px 15px 80px black;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.logoutcardlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: #012744;
+    border-radius: 12px;
+    box-shadow: 10px 10px 20px #012744;
+}
+
+.logouthead {
+    text-align:center;
+    line-height: 3rem;
+    font-size:1.6rem;
+    color:#012744;
+    text-shadow: 10px 10px 20px #012744;
+}
+
+.signin a {
+    text-decoration: none;
+    color: #af1616;
+}
