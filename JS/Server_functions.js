@@ -78,6 +78,7 @@ function BuildTask() {
     "taskname": document.getElementById('newtaskname').value,
     "taskdate": document.getElementById('newtaskdate').value,
     "taskcategory": document.getElementById('newtaskcategory').value,
+    "taskstatus" : 'todo',
     "taskurgency": document.getElementById('newtaskurgency').value,
     "taskdescription": document.getElementById('newtaskdescription').value,
     "taskusers": currenttaskusers
@@ -97,7 +98,7 @@ async function initserver() {
   alltasks = JSON.parse(backend.getItem('alltasks')) || [];
   updatedropdown();
   updatenewid();
-  updatetaskid()
+  updatetaskid();
 }
 
 function updatenewid() {
