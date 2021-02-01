@@ -12,7 +12,7 @@
     width: 400px;
     height: 500px;
     background-color: #f9f6f4;
-    box-shadow: 15px 15px 80px black;
+    box-shadow: 15px 15px 70px grey;
     border-radius: 12px;
     padding: 20px;
 }
@@ -33,7 +33,7 @@
     height: 100px;
     background-color: #012744;
     border-radius: 12px;
-    box-shadow: 10px 10px 20px #012744;
+    box-shadow: 15px 15px 70px #012744;
 }
 
 .signincard input {
@@ -54,7 +54,7 @@
     border-radius: 12px;
     cursor: pointer;
     margin-top: 2rem;
-    box-shadow: 10px 10px 20px #012744;
+    box-shadow: 15px 15px 70px #012744;
     transform-style: preserve-3d;
     transition: 1.5s ease-in-out;
 }

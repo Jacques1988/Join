@@ -89,12 +89,13 @@ body {
 
 .logoutbtn {
     padding: 1rem 2rem;
-    color: white;
+    font-size: 0.75rem;
+    color: grey;
     background-color: #f9f6f4;
     border-radius: 12px;
     cursor: pointer;
-    margin-top: 2rem;
-    box-shadow: 10px 10px 20px #000;
+    margin-top: 1rem;
+    box-shadow: 5px 5px 50px #000;
     transform-style: preserve-3d;
     transition: 1.5s ease-in-out;
 }
