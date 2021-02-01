@@ -22,7 +22,7 @@
     padding: 2rem;
     margin-left: 1rem;
     color: #012744;
-    text-shadow: 10px 10px 20px #012744;
+    text-shadow: 15px 15px 30px grey;
 }
 
 .logincardlogo {
@@ -33,7 +33,7 @@
     height: 100px;
     background-color: #012744;
     border-radius: 12px;
-    box-shadow: 15px 15px 70px #012744;
+    box-shadow: 15px 15px 70px grey;
 }
 
 .signincard input {
@@ -54,7 +54,7 @@
     border-radius: 12px;
     cursor: pointer;
     margin-top: 2rem;
-    box-shadow: 15px 15px 70px #012744;
+    box-shadow: 15px 15px 70px grey;
     transform-style: preserve-3d;
     transition: 1.5s ease-in-out;
 }
@@ -160,7 +160,7 @@
     height: 90%;
     text-transform: uppercase;
     background-color: #f9f6f4;
-    box-shadow: 15px 15px 80px black;
+    box-shadow: 15px 15px 70px grey;
     border-radius: 12px;
     padding-left: 20px;
 }

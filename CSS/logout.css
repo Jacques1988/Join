@@ -37,7 +37,7 @@
     height: 100px;
     background-color: #012744;
     border-radius: 12px;
-    box-shadow: 10px 10px 20px #012744;
+    box-shadow: 10px 10px 20px grey;
 }
 
 .logouthead {
@@ -45,7 +45,7 @@
     line-height: 3rem;
     font-size:1.6rem;
     color:#012744;
-    text-shadow: 10px 10px 20px #012744;
+    text-shadow: 10px 10px 20px grey;
 }
 
 .signin a {

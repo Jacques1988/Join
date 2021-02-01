@@ -172,7 +172,7 @@ textarea {
     padding: 1.5rem;
     background-color: #012744;
     border-radius: 12px;
-    box-shadow: 15px 15px 70px #012744;
+    box-shadow: 15px 15px 70px grey;
     cursor: pointer;
     transform-style: preserve-3d;
     transition: ease-in-out 1.5s;
