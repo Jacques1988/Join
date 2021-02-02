@@ -5,13 +5,22 @@ let loginsuccess = false;
  */
 
 function login() {
-
+    loginsuccess = false;
     searchuser();
+       
+}
 
-    if (loginsuccess = true) {
-        window.open('board.html', '_self');
+/*
+*checks if loginsuccess condition is true and proceeds to main page. 
+*/
+function checksuccess() {
+if (loginsuccess = true) {
+    window.open('board.html', '_self');
+        loginsuccess = false;
     }
-
+    else{
+        loginsuccess = false;
+       }
 }
 
 /**
@@ -26,6 +35,7 @@ function searchuser() {
     }
     else {
         alert('User doesn´t exist.');
+        loginsuccess = false;
     }
 }
 
@@ -34,15 +44,19 @@ function searchuser() {
  * @param {} a : selected user that exists.
  *  @param {} a : selected user's id'
  */
+
 function checkpassword(a, b) {
     let nameexists = a;
     let idpassword = b;
     let passwordtry = document.getElementById('passwordinput').value;
 
-    if (passwordtry == users[idpassword].userpassword) {
+    if (passwordtry === users[idpassword].userpassword) {
+        console.log('correct PW') //TEST. PLZ REMOVE LATER
         loginsuccess = true;
+        checksuccess();
     }
     else {
-        alert('Incorrect password.')
+        alert('Incorrect password.');
+        loginsuccess = false;
     }
 }
