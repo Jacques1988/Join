@@ -90,7 +90,6 @@ body {
 .logoutbtn {
     padding: 1rem 2rem;
     font-size: 0.75rem;
-    color: grey;
     background-color: #f9f6f4;
     border-radius: 12px;
     cursor: pointer;
@@ -102,7 +101,7 @@ body {
 
 .logoutbtnanimatediv span {
     display: flex;
-    color: rgba(185, 185, 185);
+    color: red;
     transform-style: preserve-3d;
     transform: perspective(100px) translateZ(20px);
 }
