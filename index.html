@@ -15,11 +15,16 @@
     <script src="./materials_lite/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <script src="./JS/mini_backend.js"></script>
+    <script src="./JS/Server_database.js"></script>
+    <script src="./JS/Server_functions.js"></script>
     <script src="./JS/sidebar.js"></script>
     <script src="./JS/logincardflip.js"></script>
+    <script src="./JS/login.js"></script>
+
 </head>
 
-<body onload="loadSideBar(), openAddUser()">
+<body onload=" openAddUser()">
 
     <div class="always-index">
 
@@ -30,11 +35,13 @@
                 <div class="headline1 signinhead">Sign In</div>
 
                 <div class="inputfields">
-                    <div><input required type="text" placeholder="Acountname"></div>
-                    <div><input required type="password" placeholder="Enter password"></div>
+                    <div><input required type="text" placeholder="Acountname" id="nameinput"></div>
+                    <div><input required type="password" placeholder="Enter password" id="passwordinput"></div>
                 </div>
+                <button onclick="login()">LOGIN TEST</button>
                 <div class="headline2 signinbtn">
-                    <div class="btnanimatediv"><span>Login</span></div>
+                    <div class="btnanimatediv" onclick="login()"><span>Login</span></div>
+                    
                 </div>
                 <div class="signup">Dont have an account? <a href="javascript:;" onclick="openAddUser()"
                         id="signuplink">Sign Up</a></div>
