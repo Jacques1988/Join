@@ -50,7 +50,7 @@
     height: 47px;
     font-size: 1.2rem;
     -webkit-appearance: none;
-    background: url(Join/img/chevron.png) 98.5% 50% no-repeat;
+    background: url(chevron\ .png) 98.5% 50% no-repeat;
     background-size: 30px 20px;
     padding-left: 1rem;
     border: 1px solid grey;
@@ -78,7 +78,7 @@
 }
 
 [type="date"] {
-    background: #fff url(/Join/img/icons8-calendar-150.png) 98.5% 50% no-repeat;
+    background: #fff url(icons8-calendar-150.png) 98.5% 50% no-repeat;
     background-size: 30px 30px;
     z-index: 2;
     font-family: 'Poppins', sans-serif;
