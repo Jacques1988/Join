@@ -61,7 +61,8 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     BuildTask();
     UploadTaskToServer();
-    newtaskid = newtaskid + 1;
+    newtaskid = newtaskid + 1; 
+    currenttaskusers = [];
   }
   else {
     alert('Please add all necessary information.')
@@ -126,6 +127,14 @@ function deleteUser(name) {
   backend.deleteItem('users');
 
   updatedropdown();
+}
+
+/**
+ * ClearServer: Deletes all saved data from server. 
+ */
+function deleteAll(name) {
+  backend.deleteItem('users');
+  backend.deleteItem('alltasks');
 }
 
 /*

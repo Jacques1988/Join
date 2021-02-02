@@ -15,6 +15,29 @@ let activeuser;
 *users: array stored on server and here
 *structure elements: userid, username, usermail, userpassword, userimage, usercategory, usertasks
 */
-let users = [];
+//let users = [];
+
+//Example users (testing):
+let users = [
+    {
+        "userid": 0,
+        "username": 'Name0',
+        "usermail": 'Mailadresse0',
+        "userpassword": 'password0',
+        "userdescription": 'Heidiho 0',
+        "userimage": 'user_default.jpg',
+        "usercategory": 'default',
+        "usertasks": []
+    },
+    {
+        "userid": 1,
+        "username": 'Name1',
+        "usermail": 'Mailadresse1',
+        "userpassword": 'password1',
+        "userdescription": 'Heidiho 1',
+        "userimage": 'user_default.jpg',
+        "usercategory": 'default',
+        "usertasks": []
+    }];
 
 let alltasks = [];
