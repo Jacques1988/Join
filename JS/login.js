@@ -1,5 +1,8 @@
 let loginsuccess = false;
 
+/**
+ * login(): General login function. 
+ */
 function login() {
 
     searchuser();
@@ -10,6 +13,9 @@ function login() {
 
 }
 
+/**
+ * searchuser(): checks if input user exists
+ */
 function searchuser() {
     let usernametry = document.getElementById('nameinput').value;
     let condition = users.findIndex(std => std.username === usernametry); //https://medium.com/tinytute/how-to-get-index-from-a-json-object-with-value-javascript-a556f93c0194
@@ -22,6 +28,10 @@ function searchuser() {
     }
 }
 
+/**
+ * checkpassword: checks, if password matches selected user
+ * @param {} j : selected user that exists.
+ */
 function checkpassword(j) {
     console.log('PW enabled'); //checks if function is activated. Please remove later!
     let nameexists = j;
