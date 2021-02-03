@@ -1,19 +1,87 @@
 .input-img {
-    width: 94%; 
+    width: 94%;
+    margin-top: 10px;
 }
 
 .input-btn {
-    width: 20%; 
-    margin-top: 10px; 
+    width: 114px;
+    margin-top: 10px;
+}
+
+.upload-btn {
+    background-color: #012744;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px; 
 }
 
 .uploaded-img-preview {
-    width: 50px;
-    height: 50px; 
-    background-color: red; 
-    border-radius: 50%; 
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50%;
+    margin-top: 28px;
 }
 
 .container-upload {
-    width: 50%; 
+    width: 50%;
+    margin-left: 0px; 
+    margin-top: 20px; 
+    margin-bottom: 25px; 
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.registrate-container {
+    height: 106px;
+    position: relative;
+    margin-bottom: 20px;
+    width: 93%;
+}
+
+@media(max-width: 1680px) {
+    .container-upload {
+        width: 45%;
+        margin-left: -22px;
+    }
+
+    .registrate-container {
+    margin-left: 24px;
+    }
+}
+
+@media(max-width: 950px) {
+    .container-upload {
+    width: 40%; 
+    }
+
+}
+
+@media(max-width: 850px) {
+    .container-upload {
+        width: 100%; 
+        justify-content: space-between;
+        margin-right: 25px;
+        margin-left: 0px;
+    }
+
+    .registrate-container {
+        margin-left: 0px; 
+    }
+
+    .createtaskbtn {
+        right: 160px; 
+    }
+}
+
+@media(max-width: 560px) {
+    .createtaskbtn {
+        margin-right: 20px;
+    }
+    .inputfield1-adduser {
+        width: 90%;
+    }
 }
