@@ -42,6 +42,7 @@ let users = [
 
 //let alltasks = [];
 
+//alltasks Beispiel
 let alltasks = [
     {
         "taskid": 0,
@@ -53,6 +54,5 @@ let alltasks = [
         "taskdescription": 'Taskdescription',
         "taskusers": [0]
       }
-
 
 ];
