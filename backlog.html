@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="./materials_lite/material.min.css">
     <script src="./materials_lite/material.min.js"></script>
     <script src="./JS/sidebar.js"></script>
+    <script src="./JS/backlog.js"></script>
+    <script src="./JS/mini_backend.js"></script>
+    <script src="./JS/Server_database.js"></script>
+    <script src="./JS/Server_functions.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body onload="initBacklog()">
+<body onload="initBacklog(); addBacklog()">
     <div class="total-size" id="total-size">
     </div>
 
@@ -46,7 +50,7 @@
             </div>
 
             <div class="backlog-input" id="backlog-input">
-                <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid teal;">
+          <!--       <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid teal;">
                     <div class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
                         <div class=" d-flex profile-container-mobile" style="align-items: center">
                             <div class="profile-img"></div>
@@ -58,7 +62,7 @@
                     </div>
                     <div class="category category-container-mobile-width" style="width: 30%">Marketing</div>
                     <div class="details details-container-mobile-width" style="width: 30%">BlaBlaBla</div>
-                </div>
+                </div> -->
             </div>
 
         </div>
