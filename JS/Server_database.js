@@ -27,7 +27,7 @@ let users = [
         "userdescription": 'Heidiho 0',
         "userimage": 'user_default.jpg',
         "usercategory": 'default',
-        "usertasks": []
+        "usertasks": [0]
     },
     {
         "userid": 1,
@@ -40,4 +40,19 @@ let users = [
         "usertasks": []
     }];
 
-let alltasks = [];
+//let alltasks = [];
+
+let alltasks = [
+    {
+        "taskid": 0,
+        "taskname": 'yvonnes task',
+        "taskdate": 'undefined',
+        "taskcategory": 'Sales',
+        "taskstatus" : 'todo',
+        "taskurgency": 'low',
+        "taskdescription": 'Taskdescription',
+        "taskusers": [0]
+      }
+
+
+];
