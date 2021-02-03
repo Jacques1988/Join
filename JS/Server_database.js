@@ -23,8 +23,12 @@ let users = [
         "userid": 0,
         "username": 'Name0',
         "usermail": 'Mailadresse0',
+        "userphone": 'phonenumber0',
+        "userdepartment": 'department0',
+        "userposition": 'position0',
+        "useroffice": 'office0',
         "userpassword": 'password0',
-        "userdescription": 'Heidiho 0',
+       // "userdescription": 'Heidiho 0',
         "userimage": 'user_default.jpg',
         "usercategory": 'default',
         "usertasks": [0]
@@ -33,8 +37,12 @@ let users = [
         "userid": 1,
         "username": 'Name1',
         "usermail": 'Mailadresse1',
+        "userphone": 'phonenumber1',
+        "userdepartment": 'department1',
+        "userposition": 'position1',
+        "useroffice": 'office1',
         "userpassword": 'password1',
-        "userdescription": 'Heidiho 1',
+      //  "userdescription": 'Heidiho 1',
         "userimage": 'user_default.jpg',
         "usercategory": 'default',
         "usertasks": []
@@ -53,6 +61,4 @@ let alltasks = [
         "taskdescription": 'Taskdescription',
         "taskusers": [0]
       }
-
-
 ];

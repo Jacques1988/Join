@@ -28,13 +28,18 @@ function BuildUser() {
     "userid": newid,
     "username": document.getElementById('newusername').value,
     "usermail": document.getElementById('newusermail').value,
+    "userphone": document.getElementById('phonenumber').value,
+    "userdepartment": document.getElementById('department').value,
+    "userposition": document.getElementById('position').value,
+    "useroffice": document.getElementById('office').value,
     "userpassword": document.getElementById('newuserpassword').value,
-    "userdescription": document.getElementById('newuserdescription').value,
+   // "userdescription": document.getElementById('newuserdescription').value,
     "userimage": newimage,
     "usercategory": 'default',
     "usertasks": []
   });
 }
+console.log(users);
 
 function UploadUserToServer() {
   backend.setItem('users', JSON.stringify(users));
