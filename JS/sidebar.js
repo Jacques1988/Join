@@ -119,7 +119,7 @@ function DatenschutzSquare() {
  */
 
 function logout() {
-    alert('You´ve been logged out sucessfully.');
+    console.log('logged out.');
     //activeuser reset
     //picture reset
 }
