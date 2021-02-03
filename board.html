@@ -14,37 +14,51 @@
     <script src="./materials_lite/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="./JS/sidebar.js"></script>
+    <script src="./JS/board.js"></script>
 </head>
 
-<body onload="initBoard()">
+<body onload="initBoard(); addBoardToDo()">
 
     <div class="total-size" id="total-size">
     </div>
 
     <div class="always">
-            <div id="sidebar" class="sidebar-container sidebar-import"></div>
+        <div id="sidebar" class="sidebar-container sidebar-import"></div>
 
-            <div class="board-menu">
-                <div class="task-container">
-                    <div class="text-center board-bold">To Do</div>
-                    <div class="task background-color-primary"></div>
+        <div class="board-menu">
+            <div class="task-container">
+                <div class="text-center board-bold">To Do</div>
+                <div id="todo" class="task background-color-primary d-flex">
+                    <div class="container-board">
+                        <div class="d-flex date-img-container">
+                        <div class="blue board-bold"> Title </div>
+                        <div style="font-size: 10px">Delete</div>
+                    </div>
+                        <div>Category</div>
+                        <div>Urgency</div>
+                        <div class="date-img-container d-flex">
+                            <div class="date-board">3.02.2021</div>
+                            <div><img class="img-board" src="img/user_default.jpg"></div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="task-container">
-                    <div class="text-center board-bold">In Progress</div>
-                    <div class="task background-color-primary"></div>
-                </div>
-                <div class="task-container">
-                    <div class="text-center board-bold">Testing</div>
-                    <div class="task background-color-primary"></div>
-                </div>
-                <div class="task-container">
-                    <div class="text-center board-bold">Done</div>
-                    <div class="task background-color-primary"></div>
-                </div>
-
-
             </div>
+
+            <div class="task-container">
+                <div class="text-center board-bold">In Progress</div>
+                <div id="inprogress" class="task background-color-primary d-flex"></div>
+            </div>
+            <div class="task-container">
+                <div class="text-center board-bold">Testing</div>
+                <div id="testing" class="task background-color-primary d-flex"></div>
+            </div>
+            <div class="task-container">
+                <div class="text-center board-bold">Done</div>
+                <div id="done" class="task background-color-primary d-flex"></div>
+            </div>
+
+
+        </div>
     </div>
 
 </body>
