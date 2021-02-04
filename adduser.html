@@ -21,6 +21,7 @@
     <script src="./JS/mini_backend.js"></script>
     <script src="./JS/Server_database.js"></script>
     <script src="./JS/Server_functions.js"></script>
+    <script src="./JS/encrypt&decryptPW.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 </head>
 
@@ -99,7 +100,7 @@
             <div class="entries">
                 <div class="registrate-container">
                     <div class="cancel-adduser blue headline2"><a class="headline2" href="index.html">cancel</a></div>
-                    <div class="createtaskbtn headline2"  onclick="addUser()">
+                    <div class="createtaskbtn headline2"  onclick="cryptpassword()">
                         <div class="btnanimatediv"><span>Create User</span></div>
                     </div>
                 </div>
