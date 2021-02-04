@@ -20,6 +20,7 @@ function updatetaskusers() {
 function assignuser() {
 
     document.getElementById('addtaskuserlist').classList.remove('d-none');
+    document.getElementById('assign-to-plus').classList.add('d-none');
     document.getElementById('addtaskuserlist').classList.add('z-2');
     document.getElementById('addtaskuserlist').innerHTML = 'Available Users:';
 
@@ -42,8 +43,8 @@ function selectuserassign(id) {
         alert('User is already assigned to task!')
     }
     else {
+        document.getElementById('assign-to-plus').classList.remove('d-none');
         document.getElementById('addtaskuserlist').classList.add('d-none');
-        document.getElementById('addtaskuserlist').classList.remove('z-2');
         let selecteduser = users[id].userid;
         currenttaskusers.push(selecteduser); //pushes userid into currenttaskusers array 
         let PushTaskToUser = users[id].usertasks;
