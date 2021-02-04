@@ -33,7 +33,7 @@ function login() {
 function checkpassword(a, b) {
     let nameexists = a;
     let idpassword = b;
-    let passwordtry = document.getElementById('passwordinput').value;
+    let passwordtry = CryptoJS.AES.encrypt(document.getElementById('passwordinput').value);
 
     if (passwordtry === users[idpassword].userpassword) {
         console.log('correct PW') //TEST. PLZ REMOVE LATER

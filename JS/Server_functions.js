@@ -32,7 +32,7 @@ function BuildUser() {
     "userdepartment": document.getElementById('department').value,
     "userposition": document.getElementById('position').value,
     "useroffice": document.getElementById('office').value,
-    "userpassword": document.getElementById('newuserpassword').value,
+    "userpassword": CryptoJS.AES.encrypt(document.getElementById('newuserpassword').value),
    // "userdescription": document.getElementById('newuserdescription').value,
     "userimage": newimage,
     "usercategory": 'default',
