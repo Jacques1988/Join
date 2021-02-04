@@ -8,7 +8,7 @@ setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 */
 let newid = 0;
 let newtaskid = 0;
-let currenttaskusers = []
+let currenttaskusers = [];
 let activeuser;
 
 /*

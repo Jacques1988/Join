@@ -1,12 +1,14 @@
 /**
  * updateusers: displays those users who are assigned to task.
  */
-function updateusers() {
+/*function updateusers() {
+    for (i=0; i< currenttaskusers.length; i++) {
 
+    }
 
 
 }
-
+*/
 
 /**
  * assignuser: shows available users to assign task to
