@@ -23,7 +23,7 @@
     <script src="./JS/Server_functions.js"></script>
 </head>
 
-<body onload="initAddTask()">
+<body onload="initAddTask(), updatetaskusers()">
     <div class="total-size d-none-responsive" id="total-size">
     </div>
 
@@ -77,17 +77,19 @@
             </div>
 
             <div class="entries">
+                
                 <h2 class="headline2 blue mt0 mobile-assigned">Assigned to</h2>
                 <div class="assigned-to-container">
-                    <!--all available users will be listed in this div-->
-                    <div class="addtask-userlist d-none" id='addtaskuserlist'>TEST</div>
                     
-                    	<!--all assigned users will be listed in this div-->
-                    <div class="assigned-to-profile" id="assignedtoprofile"><a href="#"><img
-                                src="./img/Jacques.JPG"></a> </div>
-                                <!--this button displays available users-->
+
+                    <!--all assigned users will be listed in this div-->
+                    <div class="addtask-assigned-userlist" id="usersassignedtotask">
+                        <a href="#"><img src="./img/Jacques.JPG"></a> </div>
+                    <!--this button displays available users-->
                     <div class="assigned-to-plus" onclick="assignuser()"><img src="./img/icon plus.PNG" width="30px"
                             height="30px"> </div>
+                            <!--all available users will be listed in this div-->
+                    <div class="addtask-userlist d-none" id='addtaskuserlist'></div>
                     <div class="cancel headline2">cancel</div>
                     <div class="createtaskbtn headline2" onclick="addTask()">
                         <div class="btnanimatediv"><span>Create Task</span></div>

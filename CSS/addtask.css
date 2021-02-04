@@ -163,6 +163,28 @@ textarea {
     padding: 1rem;
 }
 
+.addtask-userlist {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+
+.addtask-userlist img {
+    width: 30px;
+    height: 30px;
+}
+
+.addtask-assigned-userlist {
+    display: flex;
+    height: 50px;
+}
+
+.addtask-assigned-userlist img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
 /*create Task Button design */
 
 .createtaskbtn {

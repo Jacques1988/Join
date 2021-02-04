@@ -40,7 +40,11 @@ body {
 /* brauchen wir öfter -Y- */
 
 .d-none {
-    display: none;
+    display: none !important;
+}
+
+.z-2{
+    z-index: 2 !important;
 }
 
 /* Textstyle */
