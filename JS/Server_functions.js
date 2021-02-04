@@ -21,8 +21,13 @@ function addUser() {
 function BuildUser() {
 
   let newimage = 'user_default.jpg';
+  let password = document.getElementById('newuserpassword').value;
 
   //addUserImage();
+  let passwordHash = CryptoJS.SHA256(password);
+  let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
+
+  //console.log("Password: ", password, "Password HASH: ", passwordHash,"Password HASH String:", passwordHashString );
 
   users.push({
     "userid": newid,
@@ -32,14 +37,14 @@ function BuildUser() {
     "userdepartment": document.getElementById('department').value,
     "userposition": document.getElementById('position').value,
     "useroffice": document.getElementById('office').value,
-    "userpassword": CryptoJS.AES.encrypt(document.getElementById('newuserpassword').value),
-   // "userdescription": document.getElementById('newuserdescription').value,
+    "userpassword": passwordHashString,
+    // "userdescription": document.getElementById('newuserdescription').value,
     "userimage": newimage,
     "usercategory": 'default',
     "usertasks": []
   });
+  console.log(users);
 }
-console.log(users);
 
 function UploadUserToServer() {
   backend.setItem('users', JSON.stringify(users));
@@ -66,7 +71,7 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     BuildTask();
     UploadTaskToServer();
-    newtaskid = newtaskid + 1; 
+    newtaskid = newtaskid + 1;
     currenttaskusers = [];
   }
   else {
@@ -84,7 +89,7 @@ function BuildTask() {
     "taskname": document.getElementById('newtaskname').value,
     "taskdate": document.getElementById('newtaskdate').value,
     "taskcategory": document.getElementById('newtaskcategory').value,
-    "taskstatus" : 'todo',
+    "taskstatus": 'todo',
     "taskurgency": document.getElementById('newtaskurgency').value,
     "taskdescription": document.getElementById('newtaskdescription').value,
     "taskusers": currenttaskusers

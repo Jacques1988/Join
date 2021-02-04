@@ -18,6 +18,10 @@ let activeuser;
 //let users = [];
 
 //Example users (testing):
+let password = "password0"
+let passwordHash = CryptoJS.SHA256(password);
+let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
+
 let users = [
     {
         "userid": 0,
@@ -27,7 +31,7 @@ let users = [
         "userdepartment": 'department0',
         "userposition": 'position0',
         "useroffice": 'office0',
-        "userpassword": 'password0',
+        "userpassword": passwordHashString,
        // "userdescription": 'Heidiho 0',
         "userimage": 'user_default.jpg',
         "usercategory": 'default',
