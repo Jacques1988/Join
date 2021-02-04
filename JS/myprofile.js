@@ -38,6 +38,6 @@ function addCurrentUserProfile() {
 <img
     src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg">
 </div>
-<div class="blue">${currentuser['username']}</div> `
+<div style="font-size: 16px" class="blue">${currentuser['username']}</div> `
     }
 }

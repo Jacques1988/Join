@@ -19,10 +19,9 @@
     padding-bottom: 8px; 
 }
 
-.uploaded-img-preview {
+.uploaded-img-preview img{
     width: 80px;
     height: 80px;
-    background-color: red;
     border-radius: 50%;
     margin-top: 28px;
 }
