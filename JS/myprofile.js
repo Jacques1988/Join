@@ -2,8 +2,7 @@
  * This function adds information about the current User to the myprofile.html
  */
 function addMyProfileBox() {
-    for (let i = 0; i < users.length; i++) {
-        let currentuser = users[i];
+        let currentuser = users[activeuser];
         document.getElementById('myprofile-information').innerHTML = '';
         document.getElementById('myprofile-information').innerHTML = `
     <table>
@@ -25,14 +24,12 @@ function addMyProfileBox() {
 </table>
 `
     }
-}
 
 /**
  * This function adds name and profile pic from the current user to the myprofile.html
  */
 function addCurrentUserProfile() {
-    for (let i = 0; i < users.length; i++) {
-        let currentuser = users[i];
+        let currentuser = users[activeuser];
         document.getElementById('profile-main-infos').innerHTML = `
 <div class="portrait-big">
 <img
@@ -40,4 +37,3 @@ function addCurrentUserProfile() {
 </div>
 <div style="font-size: 16px" class="blue">${currentuser['username']}</div> `
     }
-}

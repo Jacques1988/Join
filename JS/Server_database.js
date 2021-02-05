@@ -1,3 +1,5 @@
+
+
 /*
 *sets URL for Server connection
 */
@@ -9,7 +11,7 @@ setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 let newid = 0;
 let newtaskid = 0;
 let currenttaskusers = [];
-let activeuser;
+let activeuser = 0; 
 
 /*
 *users: array stored on server and here
