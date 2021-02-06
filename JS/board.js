@@ -12,20 +12,15 @@ function updateBoard() {
         let currentid = alltasks[i].taskid;
         let currenttask = alltasks[currentid];
         if (currenttask.taskstatus == 'todo') {  //status todo
-
             UpdateTodo(currenttask, currentid);
         }
         else if (currenttask.taskstatus == 'inprogress') { //status inprogress
-
             UpdateInprogress(currenttask, currentid);
         }
-
         else if (currenttask.taskstatus == 'testing') { //status testing
             UpdateTesting(currenttask, currentid);
         }
-
         else if (currenttask.taskstatus == 'done') { //status done
-
             UpdateDone(currenttask, currentid);
         }
     }
@@ -39,7 +34,6 @@ function updateBoard() {
 function UpdateTodo(currenttask, currentid) {
     document.getElementById('todo').innerHTML = '';
     pickcolor(currenttask);
-
     document.getElementById('todo').innerHTML += `
 <div class="container-board" style="border-left: 12px solid ${color}">
                 <div class="d-flex date-img-container">
@@ -59,7 +53,6 @@ function UpdateTodo(currenttask, currentid) {
 function UpdateInprogress(currenttask, currentid) {
     document.getElementById('inprogress').innerHTML = '';
     pickcolor(currenttask);
-
     document.getElementById('inprogress').innerHTML += `
     <div class="container-board" style="border-left: 12px solid ${color}">
                 <div class="d-flex date-img-container">
@@ -80,7 +73,6 @@ function UpdateInprogress(currenttask, currentid) {
 function UpdateTesting(currenttask, currentid) {
     document.getElementById('testing').innerHTML = '';
     pickcolor(currenttask);
-
     document.getElementById('testing').innerHTML += `
     <div class="container-board" style="border-left: 12px solid ${color}">
                 <div class="d-flex date-img-container">
@@ -101,7 +93,6 @@ function UpdateTesting(currenttask, currentid) {
 function UpdateDone(currenttask, currentid) {
     document.getElementById('done').innerHTML = '';
     pickcolor(currenttask);
-
     document.getElementById('done').innerHTML += `
     <div class="container-board" style="border-left: 12px solid ${color}">
                 <div class="d-flex date-img-container">
@@ -118,7 +109,6 @@ function UpdateDone(currenttask, currentid) {
             </div>`
 }
 
-
 /**
  * Color for each Category is choosen
  * @param {*} currenttask 
@@ -130,7 +120,6 @@ function pickcolor(currenttask) {
     else if (currenttask.taskcategory == 'Sales') {
         color = 'salmon';
     }
-
 }
 
 /**
@@ -183,7 +172,6 @@ function PushTask(id, tasktarget) {
     alltasks[id].taskstatus = tasktarget;
     //ServerDeleteAndUpload()
 }
-
 
 /**
  * deleteTask: deletes selected task (via trashbin symbol) from alltasks 
