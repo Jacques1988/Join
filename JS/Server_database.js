@@ -10,8 +10,8 @@ setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 */
 let latesttuserid;
 let latesttaskid;
-let newid;
-let newtaskid;
+let newid;  //might be redundant if functions are updated, caused by latesttuserid
+let newtaskid; //might be redundant if functions are updated, caused by latesttaskid
 let currenttaskusers = [];
 let activeuser = []; 
 

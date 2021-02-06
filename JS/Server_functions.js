@@ -126,7 +126,7 @@ async function initserver() {
 }
 
 /**
- * ID Update functions
+ * ID counters
  */
 
 function checklatesttaskid() {
@@ -138,6 +138,9 @@ function checklatestuserid() {
   latesttuserid = users[users.length - 1].userid;
 }
 
+/**
+ * Update ID functions (might be redundant if functions above are updated!)
+ */
 function updatenewid() {
   if (users.length > 0) {
     newid = latesttuserid + 1;
