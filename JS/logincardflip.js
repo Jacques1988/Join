@@ -7,8 +7,16 @@ function openAddUser() {
 
     function cardflip() {
         document.getElementById('cardflipper').classList.add('cardflip');
-        setTimeout(function() {window.open('adduser.html', '_self')}, 350);
+        setTimeout(function () { window.open('adduser.html', '_self') }, 350);
     }
 }
 
-
+function pressKeyLogin() {
+    document.getElementById('passwordinput').addEventListener('keydown', pressToLogin);
+    
+    function pressToLogin(key) {
+        if (key.keyCode == '13') {
+            login();
+        }
+    }
+}
