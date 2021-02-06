@@ -37,7 +37,7 @@ let users = [
        // "userdescription": 'Heidiho 0',
         "userimage": 'user_default.jpg',
         "usercategory": 'default',
-        "usertasks": [0]
+        "usertasks": [0,1]
     },
     {
         "userid": 1,
@@ -51,7 +51,7 @@ let users = [
       //  "userdescription": 'Heidiho 1',
         "userimage": 'user_default.jpg',
         "usercategory": 'default',
-        "usertasks": []
+        "usertasks": [1]
     }];
 
 //let alltasks = [];
@@ -67,6 +67,16 @@ let alltasks = [
         "taskurgency": 'low',
         "taskdescription": 'Taskdescription',
         "taskusers": [0]
+      },
+      {
+        "taskid": 1,
+        "taskname": 'task2',
+        "taskdate": 'undefined',
+        "taskcategory": 'Marketing',
+        "taskstatus" : 'testing',
+        "taskurgency": 'middle',
+        "taskdescription": 'testing,middle,marketing',
+        "taskusers": [0,1]
       }
 
 ];
