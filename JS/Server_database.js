@@ -8,8 +8,10 @@ setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 /*
 *temporary id and array storage 
 */
-let newid = 0;
-let newtaskid = 0;
+let latesttuserid;
+let latesttaskid;
+let newid;
+let newtaskid;
 let currenttaskusers = [];
 let activeuser = []; 
 

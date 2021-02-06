@@ -8,6 +8,7 @@ function addUser() {
   let passwordrepeatcheck = passwordrepeat.value;
 
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
+
     BuildUser();
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
@@ -19,7 +20,7 @@ function addUser() {
 }
 
 function BuildUser() {
-
+  checklatestuserid();
   let newimage = 'user_default.jpg';
   let password = document.getElementById('newuserpassword').value;
 
@@ -30,7 +31,7 @@ function BuildUser() {
   //console.log("Password: ", password, "Password HASH: ", passwordHash,"Password HASH String:", passwordHashString );
 
   users.push({
-    "userid": newid,
+    "userid": latesttuserid + 1,
     "username": document.getElementById('newusername').value,
     "usermail": document.getElementById('newusermail').value,
     "userphone": document.getElementById('phonenumber').value,
@@ -57,13 +58,13 @@ function addUserImage() {
 }
 
 function activeUser() {
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (navigator.onLine) {
-        console.log('We\'re online!');
+      console.log('We\'re online!');
     } else {
-        console.log('We\'re offline...');
+      console.log('We\'re offline...');
     }
-}, false);
+  }, false);
 }
 
 /*
@@ -79,6 +80,7 @@ function addTask() {
   //}
   //else {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
+    checklatesttaskid();
     BuildTask();
     UploadTaskToServer();
     let last_element = alltasks[alltasks.length - 1];
@@ -96,7 +98,7 @@ function BuildTask() {
   //array currenttaskusers MUST be filled before finishing this section!
 
   alltasks.push({
-    "taskid": newtaskid,
+    "taskid": latesttaskid + 1, //newtaskid,
     "taskname": document.getElementById('newtaskname').value,
     "taskdate": document.getElementById('newtaskdate').value,
     "taskcategory": document.getElementById('newtaskcategory').value,
@@ -123,9 +125,22 @@ async function initserver() {
   updatetaskid();
 }
 
+/**
+ * ID Update functions
+ */
+
+function checklatesttaskid() {
+
+  latesttaskid = alltasks[alltasks.length - 1].taskid;
+}
+
+function checklatestuserid() {
+  latesttuserid = users[users.length - 1].userid;
+}
+
 function updatenewid() {
   if (users.length > 0) {
-    newid = users.length;
+    newid = latesttuserid + 1;
   }
   else {
     newid = 0;
@@ -134,10 +149,8 @@ function updatenewid() {
 
 function updatetaskid() {
   if (alltasks.length > 0) {
-    let last_element = alltasks[alltasks.length - 1];
-    console.log(last_element);
-    //newtaskid = alltasks.length;
-    newtaskid = last_element.taskid + 1;
+
+    newtaskid = latesttaskid + 1;
   }
   else {
     console.log('ZERO');
