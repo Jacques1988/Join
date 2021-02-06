@@ -31,13 +31,13 @@ function login() {
  */
 
 function checkpassword(a, b) {
-    let nameexists = a;
+    // let nameexists = a;
     let idpassword = b;
     // let passwordtry = CryptoJS.AES.decrypt(document.getElementById('passwordinput').value);
     let password = document.getElementById('passwordinput').value;
     let passwordHash = CryptoJS.SHA256(password);
     let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
-
+console.log(passwordHash)
     if (passwordHashString === users[idpassword].userpassword) {
         console.log('correct PW') //TEST. PLZ REMOVE LATER
 
