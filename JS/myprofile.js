@@ -7,8 +7,7 @@ function addMyProfileBox() {
         document.getElementById('myprofile-information').innerHTML = `
     <table>
     <tr><td style="width: 150px;"> <b>Department:</b></td>
-        <td>${currentuser['userdepartment']}</td>
-    </tr>
+        
     <tr><td> <b>Position:</b></td>
         <td>${currentuser['userposition']}</td>
     </tr>

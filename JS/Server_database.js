@@ -11,7 +11,7 @@ setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 let newid = 0;
 let newtaskid = 0;
 let currenttaskusers = [];
-let activeuser = 0; 
+let activeuser = []; 
 
 /*
 *users: array stored on server and here
