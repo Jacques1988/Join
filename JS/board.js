@@ -44,7 +44,7 @@ function UpdateTodo(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.png"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -63,8 +63,8 @@ function UpdateInprogress(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.PNG"></div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.png"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.png"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -83,8 +83,8 @@ function UpdateTesting(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.PNG"></div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.png"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.png"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -103,7 +103,7 @@ function UpdateDone(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.png"></div>
                      <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`

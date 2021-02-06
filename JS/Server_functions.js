@@ -12,7 +12,7 @@ function addUser() {
     BuildUser();
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
-    newid = newid + 1;
+    //newid = newid + 1;
   }
   else {
     alert('Please add all necessary information and match passwords.')
@@ -83,8 +83,8 @@ function addTask() {
     checklatesttaskid();
     BuildTask();
     UploadTaskToServer();
-    let last_element = alltasks[alltasks.length - 1];
-    newtaskid = last_element.taskid + 1;
+    //let last_element = alltasks[alltasks.length - 1];
+    //newtaskid = last_element.taskid + 1;
     currenttaskusers = [];
   }
   else {

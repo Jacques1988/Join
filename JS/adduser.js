@@ -31,3 +31,10 @@ fetch('upload.php', { method: "POST", body: formData });
 
 images.push('http://yvonne-gamboeck.developerakademie.com/Instagram/uploads/' + fileToUpload.value.split('\\')[2]);
 alert('Datei wurde erfolgreich hochgeladen'); */
+
+/**
+ * function ContinueToMain: waits and sends user to mainpage
+ */
+ function ContinueToMain() {
+    setTimeout(function(){ window.open('board.html', '_self'); }, 500);
+ }
