@@ -18,3 +18,16 @@ async function uploadImage() {
     console.log(await toBase64(file));
     document.getElementById('myimage').src = await toBase64(file);
 }
+
+function uploadImage() {
+images.push('http://yvonne-gamboeck.developerakademie.com/Join/uploads/' + fileToUpload.value.split('\\')[2]);
+alert('Datei wurde erfolgreich hochgeladen'); 
+}
+
+/* let images = document.getElementById("fileToUpload").files[0];
+let formData = new FormData();
+formData.append("fileToUpload", images);
+fetch('upload.php', { method: "POST", body: formData });
+
+images.push('http://yvonne-gamboeck.developerakademie.com/Instagram/uploads/' + fileToUpload.value.split('\\')[2]);
+alert('Datei wurde erfolgreich hochgeladen'); */
