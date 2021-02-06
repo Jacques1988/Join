@@ -8,9 +8,9 @@ let color = 'gold';
  */
 function updateBoard() {
     for (let i = 0; i < alltasks.length; i++) {
-        let currenttask = alltasks[i];
-        let currentid = alltasks[i].taskid;
 
+        let currentid = alltasks[i].taskid;
+        let currenttask = alltasks[currentid];
         if (currenttask.taskstatus == 'todo') {  //status todo
 
             UpdateTodo(currenttask, currentid);
@@ -50,6 +50,7 @@ function UpdateTodo(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.PNG"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -69,6 +70,8 @@ function UpdateInprogress(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.PNG"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -88,6 +91,8 @@ function UpdateTesting(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.PNG"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -107,7 +112,8 @@ function UpdateDone(currenttask, currentid) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board" src="img/user_default.jpg"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.PNG"></div>
+                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
 }
@@ -128,12 +134,68 @@ function pickcolor(currenttask) {
 }
 
 /**
- * deleteTask: deletes selected task (via trashbin symbol) from alltasks and uploads new alltasks to server
+ * onclick="TaskMoveRight('taskid')" : task progresses in board to next panel to the right, initiates pushfunction to alltasks
+ * @param {*} id task id
+ */
+
+function TaskMoveRight(id) {
+    let tasktarget;
+    if (alltasks[id].taskstatus == 'todo') {
+        tasktarget = 'inprogress';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'inprogress') {
+        tasktarget = 'testing';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'testing') {
+        tasktarget = 'done';
+        PushTask(id, tasktarget);
+    }
+}
+
+/**
+ * onclick="TaskMoveLeft('taskid')" : task is backrolled in board to next panel to the left, initiates pushfunction to alltasks
+ * @param {*} id task id
+ */
+function TaskMoveLeft(id) {
+let tasktarget;
+    if (alltasks[id].taskstatus == 'done') {
+        tasktarget = 'testing';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'inprogress') {
+        tasktarget = 'todo';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'testing') {
+        tasktarget = 'inprogress';
+        PushTask(id, tasktarget);
+    }
+}
+
+/**
+ * PushTask: initiated by TaskMoveLeft / TaskMoveRight; changes taskstatus to newly assigned status.
+ * @param {*} id : task id
+ * @param {*} tasktarget: new task status
+ */
+function PushTask(id, tasktarget) {
+    alltasks[id].taskstatus = tasktarget;
+    //ServerDeleteAndUpload()
+}
+
+
+/**
+ * deleteTask: deletes selected task (via trashbin symbol) from alltasks 
  * @param {*} i : task id
  */
 function deleteTask(i) {
     alltasks.splice(i, 1);
-    updateBoard(); //updates complete view
-    //backend.deleteItem('alltasks'); //deletes old array from server
-    //UploadTaskToServer(); //sends new array to server
+    updateBoard(); 
+    //ServerDeleteAndUpload()
+}
+
+function ServerDeleteAndUpload() {
+    backend.deleteItem('alltasks'); //deletes old array from server
+    backend.setItem('alltasks', JSON.stringify(alltasks)); //sends new array to server
 }

@@ -14,6 +14,10 @@ body {
     color: #012744;
 }
 
+.cursorpointer {
+    cursor: pointer;
+}
+
 .sidebar-container {
     background-color: #012744;
     height: 100vh;
