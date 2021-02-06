@@ -23,13 +23,15 @@
     <script src="./JS/mini_backend.js"></script>
     <script src="./JS/Server_database.js"></script>
     <script src="./JS/Server_functions.js"></script>
+    <script src="./JS/adduser.js"></script>
+
 
 </head>
 
 <body>
     <div class="always-adduser">
         <?php 
-        include 'uploads/.php'; 
+        include 'upload/.php'; 
         ?>
 
         <div class="headline-backlog">
@@ -80,34 +82,26 @@
                 <input id="passwordrepeat" required class="inputfield1-adduser" type="password" placeholder="...">
             </div>
 
-            <!--             <div class="entries">
-                <h2 class="headline2 blue">Profile</h2>
-                <form>
-                    <textarea class="textarea-adduser" id="newuserdescription" placeholder="Tell your colleagues something about yourself."
-                        cols="50" rows="5"></textarea>
-                </form>
-            </div> -->
-   
-            <div class="d-flex container-upload">
+            <div class="d-flex container-upload"> 
                 <div style="margin-right: 20px;">
-                <form action="uploads.php" method="post" enctype="multipart/form-data"
-                    class="form-entries headline2 blue">
-                    Select profile-image to upload:
-                    <input class="input-img upload-btn" type="file" name="fileToUpload" id="fileToUpload">
-                    <input class="input-btn upload-btn" type="submit" value="Upload Image" name="submit">
-                </form>
-            </div>
+                    <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="uploadImage()" ;
+                        class="form-entries headline2 blue">
+                        Select profile-image to upload:
+                        <input class="input-img upload-btn" type="file" name="fileToUpload" id="fileToUpload">
+                        <input class="input-btn upload-btn" type="submit" value="Upload Image" name="submit">
+                    </form>
+                </div> 
 
-                <div id="thumbnail" class="uploaded-img-preview"> 
-                <img src="img/user_default.jpg">
-            </div>
+                <div id="thumbnail" class="uploaded-img-preview">
+                    <img id="myimage" src="img/user_default.jpg">
+                </div>
 
             </div>
 
             <div class="entries">
                 <div class="registrate-container">
                     <div class="cancel-adduser blue headline2"><a class="headline2" href="index.html">cancel</a></div>
-                    <div class="createtaskbtn headline2"  onclick="addUser()">
+                    <div class="createtaskbtn headline2" onclick="addUser()">
                         <div class="btnanimatediv"><span>Create User</span></div>
                     </div>
                 </div>
