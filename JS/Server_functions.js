@@ -81,7 +81,8 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     BuildTask();
     UploadTaskToServer();
-    newtaskid = newtaskid + 1;
+    let last_element = alltasks[alltasks.length - 1];
+    newtaskid = last_element.taskid + 1;
     currenttaskusers = [];
   }
   else {
@@ -133,9 +134,13 @@ function updatenewid() {
 
 function updatetaskid() {
   if (alltasks.length > 0) {
-    newtaskid = alltasks.length;
+    let last_element = alltasks[alltasks.length - 1];
+    console.log(last_element);
+    //newtaskid = alltasks.length;
+    newtaskid = last_element.taskid + 1;
   }
   else {
+    console.log('ZERO');
     newtaskid = 0;
   }
 }
