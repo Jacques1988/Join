@@ -1,3 +1,7 @@
 .datenschutz {
     width: 400px; 
 }
+
+.datenschutz a {
+    color: #012744;
+}
