@@ -56,6 +56,16 @@ function addUserImage() {
 
 }
 
+function activeUser() {
+  window.addEventListener('load', function(e) {
+    if (navigator.onLine) {
+        console.log('We\'re online!');
+    } else {
+        console.log('We\'re offline...');
+    }
+}, false);
+}
+
 /*
 *addTask: Add new task and store it in array alltasks
 */
