@@ -4,9 +4,20 @@
 let color = 'gold';
 
 /**
- * udpateBoard: This function updates all panels 
+ *ClearBoard: sets all innerHTML to '' 
+ */
+function ClearBoard() {
+   document.getElementById('todo').innerHTML = '';
+    document.getElementById('inprogress').innerHTML = '';
+    document.getElementById('testing').innerHTML = '';
+    document.getElementById('done').innerHTML = '';
+}
+
+/**
+ * updateBoard: This function updates all panels 
  */
 function updateBoard() {
+    ClearBoard();
     for (let i = 0; i < alltasks.length; i++) {
 
         let currentid = alltasks[i].taskid;
@@ -32,7 +43,7 @@ function updateBoard() {
  * @param {*} currentid id of task (might be redundant)
  */
 function UpdateTodo(currenttask, currentid) {
-    document.getElementById('todo').innerHTML = '';
+    
     pickcolor(currenttask);
     document.getElementById('todo').innerHTML += `
 <div class="container-board" style="border-left: 12px solid ${color}">
@@ -51,7 +62,7 @@ function UpdateTodo(currenttask, currentid) {
 }
 
 function UpdateInprogress(currenttask, currentid) {
-    document.getElementById('inprogress').innerHTML = '';
+  
     pickcolor(currenttask);
     document.getElementById('inprogress').innerHTML += `
     <div class="container-board" style="border-left: 12px solid ${color}">
@@ -71,7 +82,7 @@ function UpdateInprogress(currenttask, currentid) {
 }
 
 function UpdateTesting(currenttask, currentid) {
-    document.getElementById('testing').innerHTML = '';
+    
     pickcolor(currenttask);
     document.getElementById('testing').innerHTML += `
     <div class="container-board" style="border-left: 12px solid ${color}">
@@ -91,7 +102,7 @@ function UpdateTesting(currenttask, currentid) {
 }
 
 function UpdateDone(currenttask, currentid) {
-    document.getElementById('done').innerHTML = '';
+    
     pickcolor(currenttask);
     document.getElementById('done').innerHTML += `
     <div class="container-board" style="border-left: 12px solid ${color}">
@@ -141,6 +152,7 @@ function TaskMoveRight(id) {
         tasktarget = 'done';
         PushTask(id, tasktarget);
     }
+    updateBoard();
 }
 
 /**
@@ -161,6 +173,7 @@ let tasktarget;
         tasktarget = 'inprogress';
         PushTask(id, tasktarget);
     }
+    updateBoard();
 }
 
 /**
