@@ -58,6 +58,7 @@ body {
     font-size: 34px !important;
     margin: 0 !important;
     color: #012744;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 p {
@@ -68,6 +69,7 @@ p {
     font-size: 16px;
     font-weight: 800;
     margin: 0;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 /*Responsive Design*/

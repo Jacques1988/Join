@@ -24,6 +24,7 @@
     height: 80px;
     border-radius: 50%;
     margin-top: 28px;
+    object-fit: cover; 
 }
 
 .container-upload {
