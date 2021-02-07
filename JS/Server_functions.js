@@ -22,7 +22,8 @@ function addUser() {
 
 function BuildUser() {
   checklatestuserid();
-  let newimage = document.getElementById('fileToUpload').files[0];
+  let newimage = [];
+  newimages.push('uploads/' + fileToUpload.value.split('\\')[2]);
   let password = document.getElementById('newuserpassword').value;
 
   //addUserImage();
