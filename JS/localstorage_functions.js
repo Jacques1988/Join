@@ -1,6 +1,7 @@
 /**
- * IMPORTANT: THOSE FUNCTIONS ARE BUILT ONLY FOR LOCAL TESTING. DO NOT USE THEM IN FINISHED VERSION!!!
- */
+ * IMPORTANT: THOSE FUNCTIONS ARE BUILT ONLY FOR LOCAL TESTING. DO NOT USE THEM IN FINISHED VERSION!
+ * REMOVE ANY TRACES OF THEM IN ALL HTML AND JS !
+ *  */
 
 
 /**
@@ -36,3 +37,28 @@ function LocalLoadTasks() {
 function LocalSaveTasks() {
     setArray('alltasks', alltasks);
 }
+
+
+/**
+ * InitLocal: creates localstorage items (only used at Login)
+ */
+function InitLocal() {
+    LocalSaveUsers();
+    LocalSaveTasks();
+}
+
+/**
+ * LoadLocal: updates localstorage items
+ */
+ function LoadLocal() {
+    LocalLoadUsers();
+    LocalLoadTasks();
+ }
+
+ /**
+  * SetLocal: overwrites old arrays with current arrays in local storage
+  */
+ function SetLocal() {
+    LocalSaveUsers();
+    LocalSaveTasks();
+ }

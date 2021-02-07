@@ -10,6 +10,7 @@ function addUser() {
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
 
     BuildUser();
+    SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
     //newid = newid + 1;
@@ -82,6 +83,7 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     checklatesttaskid();
     BuildTask();
+    SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadTaskToServer();
     //let last_element = alltasks[alltasks.length - 1];
     //newtaskid = last_element.taskid + 1;
@@ -120,6 +122,7 @@ async function initserver() {
   await downloadFromServer();
   users = JSON.parse(backend.getItem('users')) || [];
   alltasks = JSON.parse(backend.getItem('alltasks')) || [];
+
   updatedropdown();
   updatenewid();
   updatetaskid();
@@ -128,7 +131,6 @@ async function initserver() {
 /**
  * ID counters
  */
-
 function checklatesttaskid() {
 
   latesttaskid = alltasks[alltasks.length - 1].taskid;
