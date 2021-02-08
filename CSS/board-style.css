@@ -8,6 +8,7 @@
     height: 85vh;
     margin-top: 10px;
     border-radius: 12px;
+    box-shadow: 15px 15px 70px grey;
     flex-direction: column;
     align-items: center;
     padding-top: 25px;
@@ -30,6 +31,7 @@
     font-size: 18px;
     text-transform: uppercase;
     color: #012744;
+    text-shadow: 15px 15px 30px grey;
 }
 
 .container-board {
