@@ -20,6 +20,7 @@
     <script src="./JS/Server_database.js"></script>
     <script src="./JS/Server_functions.js"></script>
     <script src="./JS/localstorage_functions.js"></script>
+    <script src="./JS/drag_and_drop.js"></script>
 </head>
 
 <body onload="initBoard(); initserver(), LoadLocal(), updateBoard()"> 
@@ -31,7 +32,7 @@
         <div id="sidebar" class="sidebar-container sidebar-import"></div>
 
         <div class="board-menu">
-            <div class="task-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
                 <div class="text-center board-bold">To Do</div>
                 <div id="todo" class="task background-color-primary d-flex">
 
@@ -53,15 +54,15 @@
                 </div>
             </div>
 
-            <div class="task-container">
+            <div class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
                 <div class="text-center board-bold">In Progress</div>
                 <div id="inprogress" class="task background-color-primary d-flex"></div>
             </div>
-            <div class="task-container">
+            <div class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
                 <div class="text-center board-bold">Testing</div>
                 <div id="testing" class="task background-color-primary d-flex"></div>
             </div>
-            <div class="task-container">
+            <div class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
                 <div class="text-center board-bold">Done</div>
                 <div id="done" class="task background-color-primary d-flex"></div>
             </div>

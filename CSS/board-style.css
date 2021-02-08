@@ -74,6 +74,14 @@ width: 20px;
 cursor: pointer;
 }
 
+[draggable = true] {
+    cursor:move;
+}
+
+
+
+
+
 @media(max-width: 1150px) {
     .container-board {
         width: 62%; 
