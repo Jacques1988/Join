@@ -2,7 +2,6 @@
  * color defines the color assigned to the category of each task; default gold.
  */
 let color = 'gold';
-
 /**
  *ClearBoard: sets all innerHTML to '' 
  */
