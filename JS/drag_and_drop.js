@@ -1,8 +1,7 @@
 // Drag and Drop functions 
-
 let id;
 
-//if start dragging, id is of dragelement is declared by global variable id
+//if start dragging, id of dragelement is declared by global variable id
 function dragstart(ev) {
     id = ev.target.id;
 }
@@ -11,7 +10,7 @@ function dragstart(ev) {
 function allowDrop(ev) {
     ev.preventDefault();
 }
-// place event on dropdown area
+// place event on dropdown area and get id reference
 function drop(ev) {
     ev.target.append(document.getElementById(id));
 }
