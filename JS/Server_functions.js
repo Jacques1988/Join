@@ -20,10 +20,22 @@ function addUser() {
   }
 }
 
+/* 
+function pathImage() {
+let fullPath = document.getElementById('fileToUpload').value;
+if (fullPath) {
+    let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+    let filename = fullPath.substring(startIndex);
+    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+        filename = filename.substring(1);
+    }
+    alert(filename);
+}
+} */
+
 function BuildUser() {
   checklatestuserid();
-  let newimage = [];
-  newimages.push('uploads/' + fileToUpload.value.split('\\')[2]);
+  let newimage = fileInput.files[0].name;
   let password = document.getElementById('newuserpassword').value;
 
   //addUserImage();
