@@ -1,7 +1,10 @@
 /**
  * color defines the color assigned to the category of each task; default gold.
  */
-let color = 'gold';
+let color = 'black';
+let salescolor = 'gold';
+let marketingcolor = 'yellowgreen';
+let productcolor = 'salmon';
 
 /**
  *ClearBoard: sets all innerHTML to '' 
@@ -127,10 +130,13 @@ function UpdateDone(currenttask, currentid) {
  */
 function pickcolor(currenttask) {
     if (currenttask.taskcategory == 'Marketing') {
-        color = 'yellowgreen';
+        color = productcolor;
     }
     else if (currenttask.taskcategory == 'Sales') {
-        color = 'salmon';
+        color = marketingcolor;
+    }
+    else if (currenttask.taskcategory == 'Product') {
+        color = salescolor;
     }
 }
 

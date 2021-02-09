@@ -13,7 +13,6 @@ function updatetaskusers() {
     }
 }
 
-
 /**
  * assignuser: shows available users to assign task to
  */

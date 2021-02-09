@@ -224,7 +224,7 @@ body {
     }
     .task {
         width: 100%;
-        height: 180px;
+        min-height: 220px;
         margin-bottom: 25px;
     }
     .responsive-menu {
@@ -250,7 +250,6 @@ body {
     }
     .task {
         width: 100%;
-        height: 180px;
         margin-bottom: 25px;
     }
 }
