@@ -1,12 +1,12 @@
 
 
 /*
-*sets URL for Server connection
+*sets URL for Server connection (the php backend will refer to this url)
 */
 setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
 
 /*
-*temporary id and array storage 
+*temporary id and array storage (only needed for local functions, no permanent storage necessary)
 */
 let latesttuserid;
 let latesttaskid;
@@ -17,11 +17,11 @@ let activeuser = [];
 
 /*
 *users: array stored on server and here
-*structure elements: userid, username, usermail, userpassword, userimage, usercategory, usertasks
+*structure elements: userid, username, usermail, userphone, userdepartment, userposition, useroffice, userpassword, userimage, usercategory, usertasks
 */
 //let users = [];
 
-//Example users (testing):
+//Example users (testing): ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY
 let password = "password0"
 let passwordHash = CryptoJS.SHA256(password);
 let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
@@ -56,9 +56,13 @@ let users = [
         "usertasks": [1]
     }];
 
+    /*
+*alltasks: array stored on server and here
+*structure elements: taskid, taskname, taskdate, taskcategory, taskstatus, taskurgency, taskdescription, taskusers
+*/
 //let alltasks = [];
 
-//alltasks Beispiel
+//example alltasks (testing)) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY
 let alltasks = [
     {
         "taskid": 0,
