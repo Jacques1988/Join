@@ -32,7 +32,7 @@
         <div id="sidebar" class="sidebar-container sidebar-import"></div>
 
         <div class="board-menu">
-            <div id="dropcontainer-todo" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
+            <div id="dropcontainer-todo" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'Todo')" >
                 <div class="text-center board-bold">To Do</div>
                 <div id="todo" class="task background-color-primary d-flex">
 
@@ -54,15 +54,15 @@
                 </div>
             </div>
 
-            <div id="dropcontainer-inprogress" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
+            <div id="dropcontainer-inprogress" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'inprogress')" >
                 <div class="text-center board-bold">In Progress</div>
                 <div id="inprogress" class="task background-color-primary d-flex"></div>
             </div>
-            <div id="dropcontainer-testing" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
+            <div id="dropcontainer-testing" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'testing')" >
                 <div class="text-center board-bold">Testing</div>
                 <div id="testing" class="task background-color-primary d-flex"></div>
             </div>
-            <div id="dropcontainer-done" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event)" >
+            <div id="dropcontainer-done" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'done')" >
                 <div class="text-center board-bold">Done</div>
                 <div id="done" class="task background-color-primary d-flex"></div>
             </div>

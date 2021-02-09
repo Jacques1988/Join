@@ -11,26 +11,27 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 // place event on dropdown area and get id reference
-function drop(ev) {
+// drop(event, 'Todo')
+function drop(ev, taskstatus) {
     ev.target.append(document.getElementById(id));
     console.log(id);
-    checkId(id);
+    checkId(id, taskstatus);
 
 }
 
+function checkId(id, taskstatus) {
+    let number = +id.split('-')[1];
+    console.log(number);
 
-function checkId (id){
-let number = id.charAt(12); //geht nur bis 9; erweitern?
-console.log(number);
+    let targetobject = document.getElementById('dropcontainer-todo');
 
-let targetobject = document.getElementById('dropcontainer-todo');
+    //if(targetobject.contains(id)) {
+    alltasks[number].taskstatus = taskstatus;
 
-if(targetobject.contains(id)) {
-        alltasks[number].taskstatus = "Todo";
 
-        
-}
+    //}
 
-//3 restliche Varianten
-updateBoard();
+    //3 restliche Varianten
+    updateBoard();
 } 
+
