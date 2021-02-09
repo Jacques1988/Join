@@ -2,6 +2,7 @@
  * color defines the color assigned to the category of each task; default gold.
  */
 let color = 'gold';
+
 /**
  *ClearBoard: sets all innerHTML to '' 
  */
@@ -14,13 +15,14 @@ function ClearBoard() {
 
 /**
  * updateBoard: This function updates all panels 
- */
+ */ 
 function updateBoard() {
     ClearBoard();
     for (let i = 0; i < alltasks.length; i++) {
 
-        let currentid = alltasks[i].taskid;
-        let currenttask = alltasks[currentid];
+        let currentid = alltasks[i].taskid; //current id = id of element no. 'i' in array, changes each iteration
+        let currenttask = alltasks[currentid]; //currenttask = task-element with id 'currentid' in array, changes each iteration
+
         if (currenttask.taskstatus == 'todo') {  //status todo
             UpdateTodo(currenttask, currentid);
         }
@@ -37,9 +39,9 @@ function updateBoard() {
 }
 
 /**
- * Update"STATUS": the following 4 functions update the assigned divs in view and fill them with tasks from alltasks, if existing
- * @param {*} currenttask: task that is being processed
- * @param {*} currentid id of task (might be redundant)
+ * Update"STATUS": the following 4 functions update the assigned divs in view and fill their HTML with tasks from alltasks, if existing
+ * @param {*} currenttask: task-element that is being processed
+ * @param {*} currentid id of task that is being processed
  */
 function UpdateTodo(currenttask, currentid) {
     
@@ -189,11 +191,12 @@ function PushTask(id, tasktarget) {
 }
 
 /**
- * deleteTask: deletes selected task (via trashbin symbol) from alltasks 
+ * deleteTask: "Deletes" selected task (via trashbin symbol) from view. Done by assigning new status 'TaskDeleted'. Task is still stored in alltasks!
  * @param {*} i : task id
  */
 function deleteTask(i) {
-    alltasks.splice(i, 1);
+    alltasks[i].taskstatus = 'TaskDeleted';
+    //alltasks.splice(i, 1);
     updateBoard(); 
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     //ServerDeleteAndUpload()
