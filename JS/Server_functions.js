@@ -21,10 +21,9 @@ function addUser() {
   }
 }
 
-
 function BuildUser() {
   checklatestuserid();
-  let newimage = filename; 
+  let newimage = fileInput.files[0].name;
   let password = document.getElementById('newuserpassword').value;
 
   //addUserImage();
@@ -223,4 +222,3 @@ function updatedropdown() {
 
   request.send();
 }
-
