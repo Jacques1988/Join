@@ -1,21 +1,27 @@
 /**
- * This function add new Taks to the backlog.html"
+ * color defines the color of the outer border of each task div. It changes depending on task category.
  */
 let color = 'gold';
 
+/**
+ * addBacklog: Creates arranged HTML code based on alltasks array.
+ */
 function addBacklog() {
+    document.getElementById('backlog-input').innerHTML = ''; //clear backlog
+
     for (let i = 0; i < alltasks.length; i++) {
         let currenttask = alltasks[i];
         let currentperson = users[i];
-
-        document.getElementById('backlog-input').innerHTML = '';
+        let currenttaskid = currenttask.taskid; //task id from database
+        let currentuserid = currentperson.userid; //user id from database (not used yet)
+        
         pickcolor(currenttask);
 
         document.getElementById('backlog-input').innerHTML += `
         <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid ${color};">
-                    <div class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
+                    <div id="backlogtaskid${currenttaskid}" class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
                         <div class=" d-flex profile-container-mobile" style="align-items: center">
-                            <div class="profile-img"></div>
+                            <div class="profile-img"><img src="./img/${currentperson['userimage']}" class="profile-img" alt=""></div>
                             <div class="profile d-flex">
                                 <span class="blue" id="mail-adress">${currentperson['username']}</span>
                             </div>
@@ -27,6 +33,9 @@ function addBacklog() {
     }
 }
 
+/**
+ * pickcolor defines the color of the outer border of each task div, depending on task category.
+ */
 function pickcolor(currenttask) {
     if (currenttask.taskcategory == 'Sales') {
         color = 'yellowgreen';
