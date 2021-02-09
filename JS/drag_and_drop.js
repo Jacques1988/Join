@@ -28,10 +28,7 @@ function checkId(id, taskstatus) {
     //if(targetobject.contains(id)) {
     alltasks[number].taskstatus = taskstatus;
 
-
-    //}
-
-    //3 restliche Varianten
+    SetLocal();
     updateBoard();
 } 
 
