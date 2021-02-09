@@ -16,6 +16,9 @@ function uploadImage() {
     showMyImage()
 }
 
+/**
+ * The file is displayed, so the user can see if the upload was successfull
+ */
 const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -27,12 +30,9 @@ async function showMyImage() {
     /*     console.log(await toBase64(file)); */
     document.getElementById('myimage').src = await toBase64(file);
 }
-
-/**
- * function ContinueToMain: waits and sends user to mainpage
- */
-function ContinueToMain() {
-    setTimeout(function () { window.open('board.html', '_self'); }, 500);
+async function showCurrentImage() {
+    const file = document.getElementById('fileToUpload').files[0];
+    document.getElementById('myimage').src = await toBase64(file);
 }
 
 
@@ -41,3 +41,12 @@ function resetAddTask() {
     document.getElementById('newtaskcategory').innerHTML = '';
 }
 
+
+/**
+ * function ContinueToMain: waits and sends user to mainpage
+ */
+
+
+/* function ContinueToMain() {
+    setTimeout(function () { window.open('board.html', '_self'); }, 500);
+} */

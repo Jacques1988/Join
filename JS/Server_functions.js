@@ -9,6 +9,7 @@ function addUser() {
 
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
 
+    setTimeout(function () { window.open('board.html', '_self'); }, 500);
     BuildUser();
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadUserToServer();
