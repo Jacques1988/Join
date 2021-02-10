@@ -284,19 +284,46 @@ textarea {
         right: 140px;
     }
     .cancel {
-        right: 293px;
+        right: 325px;
     }
 }
 
-.cancel {
-    right: 325px;
+@media(max-width: 1020px) {
+    .createtaskbtn {
+        right: 160px;
+    }
+}
+@media(max-width: 970px) {
+    .createtaskbtn {
+        right: 190px;
+    }
 }
 
-@media(max-width: 970px) {
+@media(max-width: 940px) {
     .createtaskbtn {
         right: 176px;
     }
+    .cancel {
+        left: -15px; 
+    }
+    .assigned-to-plus {
+        left: 0px;
+    }
 }
+
+@media(max-width: 920px) {
+    .createtaskbtn {
+        right: 200px;
+    }
+    .cancel {
+        right: 410px; 
+    }
+}
+
+@media(max-width: 880px) {
+    .createtaskbtn {
+        right: 220px;
+    }
 
 @media(max-width: 850px) {
     .assignment {
@@ -343,8 +370,10 @@ textarea {
     .assignment {
         width: 94%;
     }
+    .assigned-to-plus {
+        left: 70px;
+    }
 }
-
 @media(max-width: 650px) {
     .assignment {
         width: 93%;
@@ -359,22 +388,20 @@ textarea {
         width: 98.5%;
     }
 }
-
 @media(max-width: 628px) {
     .createtaskbtn {
         right: -28px;
     }
     .cancel {
         position: absolute;
-        /* right: 150px; */
-        /* bottom: 0.5rem; */
         cursor: pointer;
-        /* padding: 1rem; */
         top: 77px;
         left: -11px;
     }
+    .assigned-to-plus {
+        left: 0px;
+    }
 }
-
 @media(max-width: 450px) {
     .fieldcontainer {
         width: 100% !important;
@@ -392,9 +419,10 @@ textarea {
         top: 8px;
     }
     .assigned-to-plus {
-        left: 71px;
+        left: 0px;
     }
     .mobile-assigned {
         margin-top: -26px;
     }
+}
 }

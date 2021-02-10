@@ -57,7 +57,9 @@
     .container-upload {
     width: 40%; 
     }
-
+    .createtaskbtn {
+        right: 100px; 
+    }
 }
 
 @media(max-width: 850px) {
