@@ -37,7 +37,7 @@ let users = [
         "useroffice": 'office0',
         "userpassword": passwordHashString,
        // "userdescription": 'Heidiho 0',
-        "userimage": 'user_default.jpg',
+        "userimage": 'user_default-forLinuxServer.JPG',
         "usercategory": 'default',
         "usertasks": [0,1]
     },
@@ -51,7 +51,7 @@ let users = [
         "useroffice": 'office1',
         "userpassword": 'password1',
       //  "userdescription": 'Heidiho 1',
-        "userimage": 'user_default.jpg',
+        "userimage": 'user_default-forLinuxServer.JPG',
         "usercategory": 'default',
         "usertasks": [1]
     }];
