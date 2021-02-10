@@ -36,7 +36,7 @@ function addUser() {
     setTimeout(function () { window.open('board.html', '_self'); }, 500);
   }
   else {
-    alert('Please add all necessary information and match passwords.')
+    alert('Please add all necessary information, enter an valid Email or match passwords.')
   }
 }
 
