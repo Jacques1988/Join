@@ -25,8 +25,9 @@ function addUser() {
   let mailcheck = newusermail.value;
   let passwordcheck = newuserpassword.value;
   let passwordrepeatcheck = passwordrepeat.value;
+  let emailstringatcheck = document.getElementById('newusermail').value;
 
-  if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
+  if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck && emailstringatcheck.includes('@')) {
     BuildUser();
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadUserToServer();
