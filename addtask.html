@@ -38,66 +38,67 @@
         </div>
 
         <div class="assignment">
-
-            <div class="entries">
-                <h2 class="headline2 blue">Title</h2>
-                <input id="newtaskname" required class="inputfield1" type="text" placeholder="Name title">
-            </div>
-
-            <div class="entries">
-                <h2 class="headline2 blue">Due Date</h2>
-                <div id="newtaskdate" class="fieldcontainer"><input class="calendar" type="date">
+            
+                <div class="entries">
+                    <h2 class="headline2 blue">Title</h2>
+                    <input id="newtaskname" required class="inputfield1" type="text" placeholder="Name title">
                 </div>
-            </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">Category</h2>
-                <div class="fieldcontainer"><select id="newtaskcategory">
-                        <option style="color: salmon">Marketing</option>
-                        <option style="color: yellowgreen">Sales</option>
-                        <option style="color: gold">Product</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="entries">
-                <h2 class="headline2 blue">Urgency</h2>
-                <div class="fieldcontainer"><select id="newtaskurgency">
-                        <option>Low</option>
-                        <option>Middle</option>
-                        <option>High</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="entries">
-                <h2 class="headline2 blue">Description</h2>
-                <form>
-                    <textarea id="newtaskdescription" placeholder="your notice" cols="50" rows="5"></textarea>
-                </form>
-            </div>
-
-            <div class="entries">
-                
-                <h2 class="headline2 blue mt0 mobile-assigned">Assigned to</h2>
-                <div class="assigned-to-container">
-                    
-
-                    <!--all assigned users will be listed in this div-->
-                    <div class="addtask-assigned-userlist" id="usersassignedtotask">
-                        <a href="#"><img src="./img/Jacques.JPG"></a> </div>
-                    <!--this button displays available users-->
-                    <div id="assign-to-plus" class="assigned-to-plus" onclick="assignuser()"><img src="./img/icon plus-forLinuxServer.PNG" width="30px"
-                            height="30px"> </div>
-                            <!--all available users will be listed in this div-->
-                    <div class="addtask-userlist d-none" id='addtaskuserlist'></div>
-                    <div class="cancel headline2"><a class="headline2" href="board.html">cancel</a></div>
-                    <div class="createtaskbtn headline2" onclick="addTask()">
-                        <div class="btnanimatediv"><span>Create Task</span></div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Due Date</h2>
+                    <div id="newtaskdate" class="fieldcontainer"><input class="calendar" type="date">
                     </div>
+                </div>
+
+                <div class="entries">
+                    <h2 class="headline2 blue">Category</h2>
+                    <div class="fieldcontainer"><select id="newtaskcategory">
+                            <option style="color: salmon">Marketing</option>
+                            <option style="color: yellowgreen">Sales</option>
+                            <option style="color: gold">Product</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="entries">
+                    <h2 class="headline2 blue">Urgency</h2>
+                    <div class="fieldcontainer"><select id="newtaskurgency">
+                            <option>Low</option>
+                            <option>Middle</option>
+                            <option>High</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="entries">
+                    <h2 class="headline2 blue">Description</h2>
+                    <form>
+                        <textarea id="newtaskdescription" placeholder="your notice" cols="50" rows="5"></textarea>
+                    </form>
+                </div>
+
+                <div class="entries">
+            
+            <h2 class="headline2 blue mt0 mobile-assigned">Assigned to</h2>
+            <div class="assigned-to-container">
+
+
+                <!--all assigned users will be listed in this div-->
+                <div class="addtask-assigned-userlist" id="usersassignedtotask">
+                    <a href="#"><img src="./img/Jacques.JPG"></a>
+                </div>
+                <!--this button displays available users-->
+                <div id="assign-to-plus" class="assigned-to-plus" onclick="assignuser()"><img
+                        src="./img/icon plus-forLinuxServer.PNG" width="30px" height="30px"> </div>
+                <!--all available users will be listed in this div-->
+                <div class="addtask-userlist d-none" id='addtaskuserlist'></div>
+                <div class="cancel headline2"><a class="headline2" href="board.html">cancel</a></div>
+                <div class="createtaskbtn headline2" onclick="addTask()">
+                    <div class="btnanimatediv"><span>Create Task</span></div>
                 </div>
             </div>
         </div>
+    </div>
 
 </body>
 
