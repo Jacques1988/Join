@@ -34,12 +34,6 @@ async function showMyImage() {
 }
 
 
-function resetAddTask() {
-    document.getElementById('newtaskname').innerHTML = '';
-    document.getElementById('newtaskcategory').innerHTML = '';
-}
-
-
 /**
  * function ContinueToMain: waits and sends user to mainpage
  */
