@@ -6,7 +6,7 @@ function loadSideBar() {
 
     <div class="sidebar-menu">
         <div class="sidebar-logo" onclick="initBoard()">
-         <a href="board.html">   <img src="./img/joinlogo.PNG"> <a>
+         <a href="board.html">   <img src="./img/joinlogo-forLinuxServer.PNG"> <a>
         </div>
 
         <div id="sidebar-navigation" class="sidebar-navigation d-flex d-none-responsive">
@@ -22,7 +22,7 @@ function loadSideBar() {
     </div>
 
     <div class="sidebar-profile d-none-responsive">
-        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg"></a>
+        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/testdummyimage-forLinuxServer.JPG"></a>
         <a class="logoutlink" href="logout.html"><div class="logoutbtn" onclick="logout()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
 
     </div>

@@ -52,13 +52,13 @@ function UpdateTodo(currenttask, currentid) {
 <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977.png"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.png"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -71,14 +71,14 @@ function UpdateInprogress(currenttask, currentid) {
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977.png"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.png"></div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.png"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -91,14 +91,14 @@ function UpdateTesting(currenttask, currentid) {
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977.png"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.png"></div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right.png"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
                     <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
@@ -111,13 +111,13 @@ function UpdateDone(currenttask, currentid) {
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977.png"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate']}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left.png"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
                      <div><img class="img-board" src="img/user_default.jpg"></div>
                 </div>
             </div>`
