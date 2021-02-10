@@ -42,6 +42,11 @@
     width: 93%;
 }
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @media(max-width: 1680px) {
     .container-upload {
         width: 45%;

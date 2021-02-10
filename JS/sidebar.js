@@ -145,7 +145,7 @@ function openMobileMenu() {
     <div class="d-flex navigation-row"> <a href="datenschutz.html">   Datenschutz</a> </div>
 
     <div class="sidebar-profile">
-    <a href="myprofile.html"><img src="img/pretty-smiling-joyfully-female-with-fair-hair-dressed-casually-looking-with-satisfaction.jpg"></a>
+    <a href="myprofile.html"><img src="img/user_default-forLinuxServer.JPG"></a>
     <a href="logout.html"><button onclick="logout()" class="btn-logout-menu">Ausloggen</button> </a>
 </div>
     </div>
