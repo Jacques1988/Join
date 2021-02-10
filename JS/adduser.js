@@ -9,9 +9,8 @@ function uploadImage() {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-        localStorage.setItem('users', JSON.stringify(users));
-        backend.setItem('users', JSON.stringify(users));
-        users[0]['userimage'] = filename;
+        users['userid']['userimage'] = filename;
+        backend.setItem('users', JSON.stringify(users)); 
         alert(filename + ' was uploaded successfully.');
     }
     showMyImage()
@@ -29,7 +28,6 @@ const toBase64 = file => new Promise((resolve, reject) => {
 
 async function showMyImage() {
     const file = document.getElementById('fileToUpload').files[0];
-    /*     console.log(await toBase64(file)); */
     document.getElementById('myimage').src = await toBase64(file);
 }
 
@@ -42,3 +40,13 @@ async function showMyImage() {
 /* function ContinueToMain() {
     setTimeout(function () { window.open('board.html', '_self'); }, 500);
 } */
+
+
+function checkUsersImage() {
+    let imagecheck = document.getElementById("fileToUpload");
+    if(imagecheck.value.length < 1) {
+        alert('Must Select any of your photo for upload!');
+        nme.focus();
+        return false;
+    }
+}

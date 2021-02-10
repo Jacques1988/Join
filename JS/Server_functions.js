@@ -110,13 +110,13 @@ function addTask() {
     //let last_element = alltasks[alltasks.length - 1];
     //newtaskid = last_element.taskid + 1;
     currenttaskusers = [];
+    alert('Task was created successfully')
   }
   else {
     alert('Please add all necessary information.')
   }
+  location.reload(); 
   //}
-  alert('Task was created successfully')
-  resetAddTask();
 }
 
 function BuildTask() {
@@ -242,10 +242,4 @@ function updatedropdown() {
   };
 
   request.send();
-}
-
-
-function resetAddTask() {
-  document.getElementById('newtaskname').innerHTML = '';
-  document.getElementById('newtaskdescription').innerHTML = '';
 }
