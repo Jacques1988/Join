@@ -1,7 +1,4 @@
-/**
- * color defines the color of the outer border of each task div. It changes depending on task category.
- */
-let color = 'gold';
+
 
 /**
  * addBacklog: Creates arranged HTML code based on alltasks array.
@@ -14,14 +11,14 @@ function addBacklog() {
         let currentperson = users[i];
         let currenttaskid = currenttask.taskid; //task id from database
         let currentuserid = currentperson.userid; //user id from database (not used yet)
-        
+
         pickcolor(currenttask);
 
         document.getElementById('backlog-input').innerHTML += `
         <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid ${color};">
                     <div id="backlogtaskid${currenttaskid}" class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
                         <div class=" d-flex profile-container-mobile" style="align-items: center">
-                            <div class="profile-img"><img src="./img/${currentperson['userimage']}" class="profile-img" alt=""></div>
+                            <img class="profile-img" src="./img/${currentperson['userimage']}" alt="">
                             <div class="profile d-flex">
                                 <span class="blue" id="mail-adress">${currentperson['username']}</span>
                             </div>

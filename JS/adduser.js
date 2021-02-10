@@ -1,5 +1,5 @@
 /**
- * This function converts the full path of the uploaded file
+ * This function converts the full path of the uploaded file and save it to the backend
  */
 function uploadImage() {
     let fullPath = document.getElementById('fileToUpload').value;
@@ -9,9 +9,10 @@ function uploadImage() {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
+        localStorage.setItem('users', JSON.stringify(users));
+        backend.setItem('users', JSON.stringify(users));
         users[0]['userimage'] = filename;
         alert(filename + ' was uploaded successfully.');
-        backend.setItem('users', JSON.stringify(users));
     }
     showMyImage()
 }
@@ -25,13 +26,10 @@ const toBase64 = file => new Promise((resolve, reject) => {
     reader.onload = () => resolve(reader.result);
     reader.onerror = error => reject(error);
 });
+
 async function showMyImage() {
     const file = document.getElementById('fileToUpload').files[0];
     /*     console.log(await toBase64(file)); */
-    document.getElementById('myimage').src = await toBase64(file);
-}
-async function showCurrentImage() {
-    const file = document.getElementById('fileToUpload').files[0];
     document.getElementById('myimage').src = await toBase64(file);
 }
 

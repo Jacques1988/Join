@@ -1,7 +1,7 @@
 /**
  * This function adds information about the current User to the myprofile.html
  */
-function addMyProfileBox() {
+ function addMyProfileBox() {
     let currentuser = users[activeuser];
     document.getElementById('myprofile-information').innerHTML = '';
     document.getElementById('myprofile-information').innerHTML = `
@@ -21,7 +21,7 @@ function addMyProfileBox() {
         <td>${currentuser['usermail']}</td>
     </tr>
 </table>
-`
+` 
 }
 
 /**

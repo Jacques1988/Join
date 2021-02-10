@@ -222,3 +222,9 @@ function updatedropdown() {
 
   request.send();
 }
+
+
+function resetAddTask() {
+  document.getElementById('newtaskname').innerHTML = '';
+  document.getElementById('newtaskdescription').innerHTML = '';
+}

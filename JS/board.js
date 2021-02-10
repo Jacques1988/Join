@@ -1,8 +1,7 @@
 /**
- * color defines the color assigned to the category of each task; default gold.
+ * color defines the color assigned to the category of each task; default black.
  */
-let color = 'black';
-let salescolor = 'gold';
+let color = 'gold';
 let marketingcolor = 'yellowgreen';
 let productcolor = 'salmon';
 
@@ -134,9 +133,6 @@ function pickcolor(currenttask) {
     }
     else if (currenttask.taskcategory == 'Sales') {
         color = marketingcolor;
-    }
-    else if (currenttask.taskcategory == 'Product') {
-        color = salescolor;
     }
 }
 
