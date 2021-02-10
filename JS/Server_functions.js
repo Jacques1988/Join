@@ -1,6 +1,25 @@
+/**
+ * function checks if username already exists in database and runs addUser() if not true
+ * @param {} name : name from input field
+ */
+function checkUseralreadyexists() {
+  let name = newusername.value;
+  let check = false;
+  for (i = 0; i < users.length; i++) {
+    if (users[i].username == name) {
+      alert('User already exists.');
+      return;
+    }
+    else {check = true;}
+  }
+  if (check=true) {
+  addUser();}
+}
+
 /*Save
-*Add a user with this function:
+*Add a user with this function (initiated by checkUseralreadyexists()):
 */
+
 function addUser() {
   let namecheck = newusername.value;
   let mailcheck = newusermail.value;
@@ -8,13 +27,12 @@ function addUser() {
   let passwordrepeatcheck = passwordrepeat.value;
 
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck) {
-
-    setTimeout(function () { window.open('board.html', '_self'); }, 500);
     BuildUser();
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
     //newid = newid + 1;
+    setTimeout(function () { window.open('board.html', '_self'); }, 500);
   }
   else {
     alert('Please add all necessary information and match passwords.')
@@ -22,8 +40,10 @@ function addUser() {
 }
 
 function BuildUser() {
+
   checklatestuserid();
-  let newimage = fileInput.files[0].name;
+  let newimage = 'user_default-forLinuxServer.JPG';
+  //let newimage = fileInput.files[0].name;
   let password = document.getElementById('newuserpassword').value;
 
   //addUserImage();
