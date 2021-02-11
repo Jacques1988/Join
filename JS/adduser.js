@@ -9,11 +9,11 @@ function uploadImage() {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-        users['userid']['userimage'] = filename;
+        users[0]['userimage'] = filename;
         backend.setItem('users', JSON.stringify(users)); 
         alert(filename + ' was uploaded successfully.');
     }
-    showMyImage()
+    showMyImage();
 }
 
 /**
@@ -45,8 +45,9 @@ async function showMyImage() {
 function checkUsersImage() {
     let imagecheck = document.getElementById("fileToUpload");
     if(imagecheck.value.length < 1) {
-        alert('Must Select any of your photo for upload!');
-        nme.focus();
+        alert('no upload');
+        imagecheck.focus();
         return false;
     }
-}
+  }
+  
