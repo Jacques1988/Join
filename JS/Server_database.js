@@ -13,7 +13,6 @@ let latesttaskid;
 let newid;  //might be redundant if functions are updated, caused by latesttuserid
 let newtaskid; //might be redundant if functions are updated, caused by latesttaskid
 let currenttaskusers = [];
-let activeuser = []; 
 
 /*
 *users: array stored on server and here
