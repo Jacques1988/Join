@@ -6,13 +6,11 @@
 function addBacklog() {
     document.getElementById('backlog-input').innerHTML = ''; //clear backlog
 
-    for (let i = 0; i < alltasks.length; i++) {
+    for (let i = 0; i < alltasks.length; i++) { //iterations to display alltasks
         let currenttask = alltasks[i];
-        let taskcreator = users.findIndex(std => std.userid === activeuser);
-        let currentperson = users[i];
+        let creatorid = currenttask.taskauthorid;
+        let taskcreator = users[creatorid];
         let currenttaskid = currenttask.taskid; //task id from database
-        //let currentuserid = currentperson.userid; 
-
 
         if (currenttask.taskstatus !== 'TaskDeleted') { //task will not be displayed if it was deleted
             pickcolor(currenttask);
@@ -20,14 +18,14 @@ function addBacklog() {
         <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid ${color};">
                     <div id="backlogtaskid${currenttaskid}" class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
                         <div class=" d-flex profile-container-mobile" style="align-items: center">
-                            <img class="profile-img" src="./img/${currenttask['taskauthorid']}" alt="">
+                            <img class="profile-img" src="./img/${taskcreator['userimage']}" alt="">
                             <div class="profile d-flex">
-                                <span class="blue" id="mail-adress">${currentperson['username']}</span>
+                                <span class="blue" id="mail-adress">${taskcreator['username']}</span>
                             </div>
                         </div>
                     </div>
                     <div class="category category-container-mobile-width" style="width: 30%">${currenttask['taskcategory']}</div>
-                    <div class="details details-container-mobile-width" style="width: 30%">${currenttask['taskdescription']}</div>
+                    <div class="details details-container-mobile-width" style="width: 30%">${currenttask['taskname']}</div>
                 </div>`
         }
     }
