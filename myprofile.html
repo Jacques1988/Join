@@ -25,7 +25,7 @@
     <script src="./JS/active_user.js"></script>
 </head>
 
-<body onload="initMyProfile(); addMyProfileBox(); addCurrentUserProfile(); activeUser(), initserver(), LoadLocal(), checkActiveUser()">
+<body onload="LoadLocal(), initMyProfile(); BuildMyProfile(); initserver()">
     <div class="total-size" id="total-size">
     </div>
 
@@ -34,7 +34,7 @@
 
         <div class="headline-backlog">
             <h1 class="headline1">My Profile</h1>
-            <p class="blue">More Information</p>
+            <p class="blue">Personal Information</p>
         </div>
 
         <div class="whole-profile">
@@ -44,7 +44,13 @@
             <div id="myprofile-information" class="rest-infos background-color-primary">
             </div>
         </div>
+        <div id="myprofile-createdtasks" class="rest-infos background-color-primary myprofile-createdtasks">
+            <div>You haven't created any tasks yet.</div>
+        </div>
 
+        <div id="myprofile-assignedtasks" class="rest-infos background-color-primary myprofile-createdtasks">
+            <div>UNDER CONSTRUCTIONYou are currently not assigned to any tasks.</div>
+        </div>
 
 
     </div>

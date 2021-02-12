@@ -43,6 +43,13 @@
 
 }
 
+.myprofile-createdtasks {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
 
 .td {
 width: 250px;
