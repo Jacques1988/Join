@@ -35,11 +35,11 @@ function addBacklog() {
 /**
  * pickcolor defines the color of the outer border of each task div, depending on task category.
  */
-function pickcolor(currenttask) {
+/* function pickcolor(currenttask) {
     if (currenttask.taskcategory == 'Sales') {
         color = 'yellowgreen';
     }
     else if (currenttask.taskcategory == 'Marketing') {
         color = 'salmon';
     }
-}
+} */
