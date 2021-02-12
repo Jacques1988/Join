@@ -40,7 +40,9 @@ console.log(passwordHash)
     if (passwordHashString === users[idpassword].userpassword) {
         console.log('correct PW') //TEST. PLZ REMOVE LATER
         document.getElementById('cardflipper').classList.add('cardflip');
+        getActiveUserId(b);
         loginsuccess();
+        
     }
     else {
         alert('Incorrect password.');
