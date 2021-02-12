@@ -13,12 +13,16 @@ function getActiveUserId(account){
 
 /**
  * 
- * @param {} activeuserid: //recieve the activeuser id 
+ * @param {} activeuser: //recieve the activeuser id 
  */
-function saveActiveUser(activeuserid) {
-    localStorage.setItem("user", activeuserid);
+function saveActiveUser(activeuser) {
+    localStorage.setItem("activeuser", activeuser);
 } 
 
-/* function deleteActiveUser(users, userid) {
-    localStorage.getItem()
-} */
+
+/**
+ * deletes activeuser id from localstorage after logout
+ */
+  function deleteActiveUser() {
+    localStorage.removeItem("activeuser");
+}  

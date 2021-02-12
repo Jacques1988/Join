@@ -23,7 +23,7 @@ function loadSideBar() {
 
     <div class="sidebar-profile d-none-responsive">
         <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/testdummyimage-forLinuxServer.JPG"></a>
-        <a class="logoutlink" href="logout.html"><div class="logoutbtn" onclick="logout()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
+        <a class="logoutlink" href="logout.html"><div class="logoutbtn" onclick="logout(), deleteActiveUser()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
 
     </div>
 
