@@ -10,10 +10,11 @@ function checkUseralreadyexists() {
       alert('User already exists.');
       return;
     }
-    else {check = true;}
+    else { check = true; }
   }
-  if (check=true) {
-  addUser();}
+  if (check = true) {
+    addUser();
+  }
 }
 
 /*Save
@@ -105,13 +106,14 @@ function addTask() {
   else {
     alert('Please add all necessary information.')
   }
-  location.reload(); 
+  location.reload();
   //}
 }
 
 function BuildTask() {
 
   //array currenttaskusers MUST be filled before finishing this section!
+  let activeuser = localStorage.getItem('activeuser');
 
   alltasks.push({
     "taskid": latesttaskid + 1, //newtaskid,
@@ -121,7 +123,8 @@ function BuildTask() {
     "taskstatus": 'todo',
     "taskurgency": document.getElementById('newtaskurgency').value,
     "taskdescription": document.getElementById('newtaskdescription').value,
-    "taskusers": currenttaskusers
+    "taskusers": currenttaskusers,
+    "taskauthorid": activeuser
   });
 }
 
