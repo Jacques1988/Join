@@ -1,5 +1,3 @@
-/*  let latestuser = [];
- */
 /**
  * This function converts the full path of the uploaded file and save it to the backend
  */
@@ -11,19 +9,14 @@ function uploadImage() {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-   /*      checklatestUser(); */
-        users[1]['userimage'] = filename;
+        /* users[1]['userimage'] = filename; */
+        users[+localStorage.getItem('activeuser')]['userimage'] = filename;
         backend.setItem('users', JSON.stringify(users));
         alert(filename + ' was uploaded successfully.');
     }
     checkUsersImage()
 }
 
- /* function checklatestUser() {
-    latesttuser = users[users.length - 1].userid;
-    localStorage.setItem('latestuser', JSON.stringify(latestuser));
-}
- */
 
 
 /**

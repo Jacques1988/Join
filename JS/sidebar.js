@@ -33,13 +33,6 @@ function loadSideBar() {
   `
 }
 
-function transform() {
-    document.getElementById('hamburger').classList.toggle('change');
-}
-
-
-
-
 /* /**Used do add the white Square in front of the current navigation
  *
  */
@@ -151,7 +144,6 @@ function openMobileMenu() {
     </div>
     </div>
     `
-    transform(); 
 }
 
 /**
