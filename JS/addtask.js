@@ -9,7 +9,8 @@ function updatetaskusers() {
         let currentuserid = currenttaskusers[i];
         console.log(currentuserid);
         let userimage = users[currentuserid].userimage; //hier base64 oder verbindung zum uploadnamen
-        document.getElementById('usersassignedtotask').innerHTML += `<img src="./img/${userimage}" alt="" class="" onclick="deleteuserfromtask(${i})"></img>`;
+        let assignedusername = users[currentuserid].username;
+        document.getElementById('usersassignedtotask').innerHTML += `<div><img src="./img/${userimage}" alt="" class="" onclick="deleteuserfromtask(${i})"></img><div>${assignedusername}</div></div>`;
     }
 }
 
@@ -26,8 +27,7 @@ function assignuser() {
     for (let i = 0; i < users.length; i++) {
         let user = users[i];
         document.getElementById('addtaskuserlist').innerHTML += `<div id="assignuserlist${user['userid']}" onclick="selectuserassign(${user['userid']})">
-        <img src="./img/${user['userimage']}" ></div>`;
-
+        <img src="./img/${user['userimage']}" ><div>${user['username']}</div></div>`;
     }
 
 }

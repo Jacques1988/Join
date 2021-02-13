@@ -5,7 +5,6 @@
  */
 function addBacklog() {
     document.getElementById('backlog-input').innerHTML = ''; //clear backlog
-
     for (let i = 0; i < alltasks.length; i++) { //iterations to display alltasks
         let currenttask = alltasks[i];
         let creatorid = currenttask.taskauthorid;
