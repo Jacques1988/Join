@@ -67,7 +67,7 @@ function BuildUser() {
     "usercategory": 'default',
     "usertasks": []
   });
-  console.log(users);
+  setActiveUser();
 }
 
 function UploadUserToServer() {
