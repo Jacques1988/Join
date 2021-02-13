@@ -30,7 +30,7 @@
 
 </head>
 
-<body onload=" openAddUser(), pressKeyLogin(), InitLocal()"> <!--InitLocal: BUILT ONLY FOR LOCAL TESTING AND NEEDS TO BE REMOVED BEFORE FINAL VERSION!!!-->
+<body onload=" openAddUser(), pressKeyLogin(), deleteActiveUser()"> 
 
     <div class="always-index">
 
@@ -45,9 +45,11 @@
                     <div><input required type="password" placeholder="Enter password" minlength="2" id="passwordinput"></div>
                 </div>
                 <div class="headline2 signinbtn">
-                    <div class="btnanimatediv" onclick="login()"><span>Login</span></div>
-                    
+                    <div class="btnanimatediv" onclick="login()"><span>Login</span></div>                  
                 </div>
+
+                <div><button onclick="InitLocal()">BUILD/RESET LOCAL STORAGE (TESTING ONLY!!!)</button></div><!--InitLocal: BUILT ONLY FOR LOCAL TESTING AND NEEDS TO BE REMOVED BEFORE FINAL VERSION!!!-->
+
                 <div class="signup">Dont have an account? <a href="javascript:;" onclick="openAddUser()"
                         id="signuplink">Sign Up</a></div>
             </div>
