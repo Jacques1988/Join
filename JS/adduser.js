@@ -1,3 +1,5 @@
+/*  let latestuser = [];
+ */
 /**
  * This function converts the full path of the uploaded file and save it to the backend
  */
@@ -9,15 +11,34 @@ function uploadImage() {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-        users[0]['userimage'] = filename;
-        backend.setItem('users', JSON.stringify(users)); 
+   /*      checklatestUser(); */
+        users[1]['userimage'] = filename;
+        backend.setItem('users', JSON.stringify(users));
         alert(filename + ' was uploaded successfully.');
     }
-    showMyImage();
+    checkUsersImage()
+}
+
+ /* function checklatestUser() {
+    latesttuser = users[users.length - 1].userid;
+    localStorage.setItem('latestuser', JSON.stringify(latestuser));
+}
+ */
+
+
+/**
+ * This function checks if the user uploaded a profile picture, else this user gets the default picture
+ */
+function checkUsersImage() {
+    let imagecheck = document.getElementById("fileToUpload");
+    if (imagecheck.value.length < 1) {
+        return 'img/user_default-forLinuxServer.JPG';
+    }
+    return imagecheck.filename; // Filename von der Datei zurückgeben
 }
 
 /**
- * The file is displayed, so the user can see if the upload was successfull
+ * The file is displayed, so the user can see which picture is uploaded
  */
 const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -31,7 +52,6 @@ async function showMyImage() {
     document.getElementById('myimage').src = await toBase64(file);
 }
 
-
 /**
  * function ContinueToMain: waits and sends user to mainpage
  */
@@ -42,12 +62,3 @@ async function showMyImage() {
 } */
 
 
-function checkUsersImage() {
-    let imagecheck = document.getElementById("fileToUpload");
-    if(imagecheck.value.length < 1) {
-        alert('no upload');
-        imagecheck.focus();
-        return false;
-    }
-  }
-  

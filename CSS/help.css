@@ -4,11 +4,16 @@
 
 .text-help {
     margin-top: 15px; 
-    margin-bottom: 15px; 
+    margin-bottom: 25px; 
 }
 
 .explain1 {
     margin-bottom: 25px; 
+}
+
+.video-size {
+    width: 700;
+    height: 400;
 }
 
 .top {
@@ -18,4 +23,102 @@
 .text-uppercase {
     text-transform: uppercase; 
     font-size: 1.4rem; 
+    line-height: 2rem; 
+}
+
+@media(max-width: 900px) {
+    .help {
+        width: 100%; 
+    }
+    .video-size {
+        width: 650;
+        height: 350;
+    }
+}
+
+@media(max-width: 780px) {
+    .help {
+        width: 100%; 
+    }
+    .video-size {
+        width: 650;
+        height: 350;
+    }
+}
+
+@media(max-width: 690px) {
+    .video-size {
+        width: 610;
+        height: 345;
+    }
+}
+
+@media(max-width: 650px) {
+    .video-size {
+        width: 560;
+        height: 325;
+    }
+}
+
+@media(max-width: 615px) {
+    .video-size {
+        width: 530;
+        height: 300;
+    }
+}
+
+@media(max-width: 570px) {
+.video-size {
+    width: 470;
+    height: 300;
+}
+}
+
+@media(max-width: 520px) {
+    .video-size {
+        width: 440;
+        height: 280;
+    }
+}
+
+@media(max-width: 520px) {
+    .video-size {
+        width: 440;
+        height: 250;
+    }
+}
+
+@media(max-width: 480px) {
+    .video-size {
+        width: 400;
+        height: 220;
+    }
+}
+
+@media(max-width: 445px) {
+    .video-size {
+        width: 365;
+        height: 200;
+    }
+}
+
+@media(max-width: 410px) {
+    .video-size {
+        width: 350;
+        height: 180;
+    }
+}
+
+@media(max-width: 390px) {
+    .video-size {
+        width: 320;
+        height: 160;
+    }
+}
+
+@media(max-width: 350px) {
+    .video-size {
+        width: 280;
+        height: 140;
+    }
 }

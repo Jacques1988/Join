@@ -44,11 +44,10 @@ function addUser() {
 function BuildUser() {
 
   checklatestuserid();
-  let newimage = 'user_default-forLinuxServer.JPG';
-  //let newimage = fileInput.files[0].name;
+  uploadImage(); 
+  let newimage = checkUsersImage();
   let password = document.getElementById('newuserpassword').value;
 
-  //addUserImage();
   let passwordHash = CryptoJS.SHA256(password);
   let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
 
@@ -64,7 +63,7 @@ function BuildUser() {
     "useroffice": document.getElementById('office').value,
     "userpassword": passwordHashString,
     // "userdescription": document.getElementById('newuserdescription').value,
-    "userimage": newimage,
+    "userimage": newimage, 
     "usercategory": 'default',
     "usertasks": []
   });
@@ -75,11 +74,6 @@ function UploadUserToServer() {
   backend.setItem('users', JSON.stringify(users));
 }
 
-function addUserImage() {
-  //check einbauen, ob bild vorhanden. Wenn nicht, default bild?
-  //let newimage = ; //TO DO: eingefügtes Bild referenzieren + Bild umwandeln in Text 
-
-}
 
 /*
 *addTask: Add new task and store it in array alltasks
