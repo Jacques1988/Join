@@ -69,6 +69,13 @@ const upload = (file) => {
       error => console.log(error) // Handle the error response object
     );
   };
+  // Event handler executed when a file is selected
+const onSelectFile = () => upload(input.files[0]);
+
+// Add a listener on your input
+// It will be triggered when a file will be selected
+input.addEventListener('change', onSelectFile, false);
+
 }
 
 /**
