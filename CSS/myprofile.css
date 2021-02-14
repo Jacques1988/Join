@@ -5,7 +5,7 @@
 }
 
 .portrait-big {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .portrait-big img {
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 40px; 
+    margin-right: 40px;
 }
 
 .rest-infos {
@@ -30,44 +30,55 @@
 .whole-profile {
     display: flex;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .assignment-profile {
     display: flex;
     justify-content: space-around;
-    width:100%;
+    width: 100%;
     height: 90%;
     background-color: #f9f6f4;
-    border-radius:12px;
-    padding-left:20px;
-
+    border-radius: 12px;
+    padding-left: 20px;
 }
 
 .myprofile-createdtasks {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-
 }
-
 
 .td {
-width: 250px;
+    width: 250px;
 }
 
+.profile-uppercase {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.bulletpoints {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color:  #012744;
+    margin-right: 8px; 
+}
+
+.center-profile {
+    align-items: center; 
+}
 
 @media(max-width: 400px) {
-
     .whole-profile {
         flex-direction: column;
     }
-
     .rest-infos {
-        margin-top: 30px; 
+        margin-top: 30px;
     }
-
     .profile-main-infos {
-        margin-right: 0px; 
+        margin-right: 0px;
     }
-
 }

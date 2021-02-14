@@ -57,14 +57,14 @@ function checkActiveUser() {
  * this function displays all active tasks the user has created
  */
 function TasksCreatedByUser() {
-    document.getElementById('myprofile-createdtasks').innerHTML = 'You created the following tasks:';
+    document.getElementById('myprofile-createdtasks').innerHTML = '<div class="blue profile-uppercase">You created the following tasks:</div>';
     let TasksExist = false;
     for (i = 0; i < alltasks.length; i++) {
         let id = parseInt(myprofileid);
         if (alltasks[i].taskauthorid == id) {
             TasksExist = true;
             let task = alltasks[i];
-            document.getElementById('myprofile-createdtasks').innerHTML += `<div> - ${task['taskname']}</div>`;
+            document.getElementById('myprofile-createdtasks').innerHTML += `<div class="d-flex center-profile"; > <div class="bulletpoints"></div> ${task['taskname']}</div>`;
         }
     }
     if (TasksExist == false) {
@@ -76,7 +76,7 @@ function TasksCreatedByUser() {
  * this function displays the tasks the user is assigned to at the moment
  */
 function TasksAssignedToUser() {
-    document.getElementById('myprofile-assignedtasks').innerHTML = 'You are currently assigned to the following tasks:';
+    document.getElementById('myprofile-assignedtasks').innerHTML = '<div class="blue profile-uppercase">You are currently assigned to the following tasks:</div>';
     let TasksExist = false;
     for (i = 0; i < alltasks.length; i++) {
         let currenttaskusers = alltasks[i].taskusers;
@@ -84,7 +84,7 @@ function TasksAssignedToUser() {
         if (currenttaskusers.indexOf(id) > -1) {
             TasksExist = true;
             let task = alltasks[i];
-            document.getElementById('myprofile-assignedtasks').innerHTML += `<div> - ${task['taskname']}</div>`;
+            document.getElementById('myprofile-assignedtasks').innerHTML += `<div class="d-flex center-profile"> <div class="bulletpoints"></div> ${task['taskname']}</div>`;
         }
     }
     if (TasksExist == false) {

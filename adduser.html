@@ -82,7 +82,7 @@
         </form>
           <div class="d-flex container-upload"> 
                 <div style="margin-right: 20px;">
-                    <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="showMyImage(); fetchAPI(); return false;"
+                    <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="showMyImage(); return false;"
                         class="form-entries headline2 blue">
                         Select profile-image to upload:
                         <input class="input-img upload-btn" type="file" name="fileToUpload" id="fileToUpload">
@@ -97,7 +97,7 @@
             <div class="entries">
                 <div class="registrate-container">
                     <div class="cancel-adduser blue headline2"><a class="headline2" href="index.html">cancel</a></div>
-                    <div class="createtaskbtn headline2" onclick="saveImage()">
+                    <div class="createtaskbtn headline2" onclick="checkUseralreadyexists(), uploadImage();">
                         <div class="btnanimatediv"><span>Create User</span></div>
                     </div>
                 </div>

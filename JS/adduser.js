@@ -2,6 +2,7 @@
  * This function converts the full path of the uploaded file and save it to the backend
  */
 function uploadImage() {
+    fetchAPI();
     let fullPath = document.getElementById('fileToUpload').value;
     if (fullPath) {
         let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
@@ -9,18 +10,12 @@ function uploadImage() {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-
-        fetchAPI(); 
-    }
-
-
-    function saveImage() {
         /* users[1]['userimage'] = filename; */
         users[+localStorage.getItem('activeuser')]['userimage'] = filename;
         backend.setItem('users', JSON.stringify(users));
         alert(filename + ' was uploaded successfully.');
     }
-    checkUsersImage()
+    checkUsersImage(); 
 }
 
 /**
@@ -54,26 +49,26 @@ async function showMyImage() {
  * https://stackoverflow.com/questions/36067767/how-do-i-upload-a-file-with-the-js-fetch-api
  */
 function fetchAPI() {
-    const input = document.getElementById('"fileToUpload');
+    const input = document.getElementById('fileToUpload');
 
     // This will upload the file after having read it
-    const upload = (file) => {
-        fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { // Your POST endpoint
-            method: 'POST',
-            headers: {
-                // Content-Type may need to be completely **omitted**
-                // or you may need something
-                "Content-Type": "You will perhaps need to define a content-type here"
-            },
-            body: file // This is your file object
-        }).then(
-            response => response.json() // if the response is a JSON object
-        ).then(
-            success => console.log(success) // Handle the success response object
-        ).catch(
-            error => console.log(error) // Handle the error response object
-        );
-    };
+const upload = (file) => {
+    fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { // Your POST endpoint
+      method: 'POST',
+      headers: {
+        // Content-Type may need to be completely **omitted**
+        // or you may need something
+        "Content-Type": "You will perhaps need to define a content-type here"
+      },
+      body: file // This is your file object
+    }).then(
+      response => response.json() // if the response is a JSON object
+    ).then(
+      success => console.log(success) // Handle the success response object
+    ).catch(
+      error => console.log(error) // Handle the error response object
+    );
+  };
 }
 
 /**

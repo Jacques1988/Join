@@ -36,75 +36,78 @@ function loadSideBar() {
 /* /**Used do add the white Square in front of the current navigation
  *
  */
-function initBoard() {
-    loadSideBar();
-    BoardSquare(); 
-}
+
 function BoardSquare() {
     if (window.location.href.endsWith('board.html')) {
         document.getElementById('board').classList.add('square');
     };
-}
-
-function initBacklog() {
-    loadSideBar();
-    BacklogSquare(); 
 }
 function BacklogSquare() {
     if (window.location.href.endsWith('backlog.html')) {
         document.getElementById('backlog').classList.add('square')
     };
 }
-
-function initAddTask() {
-    loadSideBar();
-    AddTaskSquare(); 
-}
 function AddTaskSquare() {
     if (window.location.href.endsWith('addtask.html')) {
         document.getElementById('addtask').classList.add('square')
     };
-}
-
-function initHelp() {
-    loadSideBar();
-    HelpSquare(); 
 }
 function HelpSquare() {
     if (window.location.href.endsWith('help.html')) {
         document.getElementById('help').classList.add('square')
     };
 }
-
-function initMyProfile() {
-    loadSideBar();
-    myProfileSquare(); 
-}
 function myProfileSquare() {
     if (window.location.href.endsWith('myprofile.html')) {
         document.getElementById('myprofile').classList.add('square')
     };
-}
-
-function initImpressum() {
-    loadSideBar();
-    ImpressumSquare(); 
 }
 function ImpressumSquare() {
     if (window.location.href.endsWith('Impressum.html')) {
         document.getElementById('impressum').classList.add('square')
     };
 }
-
-function initDatenschutz() {
-    loadSideBar();
-    DatenschutzSquare(); 
-}
 function DatenschutzSquare() {
     if (window.location.href.endsWith('datenschutz.html')) {
         document.getElementById('datenschutz').classList.add('square')
     };
 }
+
+
+/**
+ * These functions update the sidebar on the current html
+ */
+function initBoard() {
+    loadSideBar();
+    BoardSquare(); 
+}
+function initBacklog() {
+    loadSideBar();
+    BacklogSquare(); 
+}
+function initAddTask() {
+    loadSideBar();
+    AddTaskSquare(); 
+}
+
+function initHelp() {
+    loadSideBar();
+    HelpSquare(); 
+}
+function initMyProfile() {
+    loadSideBar();
+    myProfileSquare(); 
+}
+
+function initImpressum() {
+    loadSideBar();
+    ImpressumSquare(); 
+}
+function initDatenschutz() {
+    loadSideBar();
+    DatenschutzSquare(); 
+}
+
 
 
 /**
