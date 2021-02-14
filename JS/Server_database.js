@@ -53,6 +53,20 @@ let users = [
     "userimage": 'user_default-forLinuxServer.JPG',
     "usercategory": 'default',
     "usertasks": [1],
+  },
+  {
+    "userid": 2,
+    "username": 'Yvonne',
+    "usermail": 'yvonnegamboeck@web.de',
+    "userphone": '0173/9000000',
+    "userdepartment": 'Marketing',
+    "userposition": 'Media Designer',
+    "useroffice": '108',
+    "userpassword": 'yvonne123',
+    //  "userdescription": 'Heidiho 1',
+    "userimage": 'Yvonne.JPG',
+    "usercategory": 'default',
+    "usertasks": [0],
   }];
 
 /*
