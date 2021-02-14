@@ -2,7 +2,6 @@
  * This function converts the full path of the uploaded file and save it to the backend
  */
 function uploadImage() {
-    fetchAPI();
     let fullPath = document.getElementById('fileToUpload').value;
     if (fullPath) {
         let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
@@ -16,6 +15,7 @@ function uploadImage() {
         alert(filename + ' was uploaded successfully.');
     }
     checkUsersImage(); 
+    fetchAPI(); 
 }
 
 /**
@@ -71,11 +71,9 @@ const upload = (file) => {
   };
   // Event handler executed when a file is selected
 const onSelectFile = () => upload(input.files[0]);
-
 // Add a listener on your input
 // It will be triggered when a file will be selected
 input.addEventListener('change', onSelectFile, false);
-
 }
 
 /**
