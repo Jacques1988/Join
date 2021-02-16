@@ -12,8 +12,8 @@
 }
 
 .video-size {
-    width: 700;
-    height: 400;
+    width: 700px;
+    height: 400px;
 }
 
 .top {
@@ -41,84 +41,84 @@
         width: 100%; 
     }
     .video-size {
-        width: 650;
-        height: 350;
+        width: 650px;
+        height: 350px;
     }
 }
 
 @media(max-width: 690px) {
     .video-size {
-        width: 610;
-        height: 345;
+        width: 610px;
+        height: 345px;
     }
 }
 
 @media(max-width: 650px) {
     .video-size {
-        width: 560;
-        height: 325;
+        width: 560px;
+        height: 325px;
     }
 }
 
 @media(max-width: 615px) {
     .video-size {
-        width: 530;
-        height: 300;
+        width: 530px;
+        height: 300px;
     }
 }
 
 @media(max-width: 570px) {
 .video-size {
-    width: 470;
-    height: 300;
+    width: 470px;
+    height: 300px;
 }
 }
 
 @media(max-width: 520px) {
     .video-size {
-        width: 440;
-        height: 280;
+        width: 440px;
+        height: 280px;
     }
 }
 
 @media(max-width: 520px) {
     .video-size {
-        width: 440;
-        height: 250;
+        width: 440px;
+        height: 250px;
     }
 }
 
 @media(max-width: 480px) {
     .video-size {
-        width: 400;
-        height: 220;
+        width: 400px;
+        height: 220px;
     }
 }
 
 @media(max-width: 445px) {
     .video-size {
-        width: 365;
-        height: 200;
+        width: 365px;
+        height: 200px;
     }
 }
 
 @media(max-width: 410px) {
     .video-size {
-        width: 350;
-        height: 180;
+        width: 350px;
+        height: 180px;
     }
 }
 
 @media(max-width: 390px) {
     .video-size {
-        width: 320;
-        height: 160;
+        width: 320px;
+        height: 160px;
     }
 }
 
 @media(max-width: 350px) {
     .video-size {
-        width: 280;
-        height: 140;
+        width: 280px;
+        height: 140px;
     }
 }

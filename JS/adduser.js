@@ -1,22 +1,20 @@
+let myimage = localStorage.getItem('activeuser');
+
 /**
  * This function converts the full path of the uploaded file and save it to the backend
  */
-function uploadImage() {
-    let fullPath = document.getElementById('fileToUpload').value;
-    if (fullPath) {
-        let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-        let filename = fullPath.substring(startIndex);
-        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-            filename = filename.substring(1);
-        }
-        /* users[1]['userimage'] = filename; */
-        users[+localStorage.getItem('activeuser')]['userimage'] = filename;
-        backend.setItem('users', JSON.stringify(users));
-        alert(filename + ' was uploaded successfully.');
-    }
-    checkUsersImage(); 
-    fetchAPI(); 
+async function uploadImage() {
+  let photo = document.getElementById("fileToUpload").files[0];
+  let formData = new FormData();
+  formData.append("fileToUpload", photo);
+  await fetch('http://yvonne-gamboeck.developerakademie.com/upload.php', { method: "POST", body: formData });
+  user['userimage'] = 'img/' + document.getElementById("fileToUpload").files[0].name;
+  users[+localStorage.getItem('myimage')]['userimage'] = filename;
+  backend.setItem('users', JSON.stringify(users));
+  alert(filename + ' was uploaded successfully.');
+  // TODO: Weiterleitung
 }
+
 
 /**
  * This function checks if the user uploaded a profile picture, else this user gets the default picture

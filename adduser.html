@@ -82,11 +82,10 @@
         </form>
           <div class="d-flex container-upload"> 
                 <div style="margin-right: 20px;">
-                    <form action="upload.php" method="post" enctype="multipart/form-data" onsubmit="showMyImage(); return false;"
-                        class="form-entries headline2 blue">
-                        Select profile-image to upload:
+                    <form onsubmit="uploadImage(); showMyImage(); return false;" method="post" enctype="multipart/form-data">
+                        Select image to upload:
                         <input class="input-img upload-btn" type="file" name="fileToUpload" id="fileToUpload">
-                        <input class="input-btn upload-btn" type="submit" value="Upload Image" name="submit">
+                        <input class="input-img upload-btn" type="submit" value="Upload Image" name="submit">
                     </form>
                 </div>  
                 <div id="thumbnail" class="uploaded-img-preview">
@@ -97,7 +96,7 @@
             <div class="entries">
                 <div class="registrate-container">
                     <div class="cancel-adduser blue headline2"><a class="headline2" href="index.html">cancel</a></div>
-                    <div class="createtaskbtn headline2" onclick="checkUseralreadyexists(), uploadImage();">
+                    <div class="createtaskbtn headline2" onclick="checkUseralreadyexists()">
                         <div class="btnanimatediv"><span>Create User</span></div>
                     </div>
                 </div>
