@@ -3,8 +3,8 @@
 /*
 *sets URL for Server connection (the php backend will refer to this url)
 */
-setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
-
+//setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
+setURL('/Join/DATA/');
 /*
 *temporary id and array storage (only needed for local functions, no permanent storage necessary)
 */
@@ -21,62 +21,71 @@ let currenttaskusers = [];
 //let users = [];
 
 //Example users (testing): ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY
-let password = "password0"
+/*let password = "password0"
 let passwordHash = CryptoJS.SHA256(password);
-let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
+let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);*/
 
 let users = [
   {
     "userid": 0,
-    "username": 'Name0',
-    "usermail": 'Mailadresse0',
-    "userphone": 'phonenumber0',
-    "userdepartment": 'department0',
-    "userposition": 'position0',
-    "useroffice": 'office0',
-    "userpassword": passwordHashString,
-    // "userdescription": 'Heidiho 0',
+    "username": 'Johannes',
+    "usermail": 'nijo',
+    "userphone": 'phonenumberJo',
+    "userdepartment": 'Chefetage',
+    "userposition": 'Backend-Developer',
+    "useroffice": '42',
+    "userpassword": 'aTYXAi/7rcltDFysLGEmRouhxyJjcADOs6+VZXrrqyo=',
     "userimage": 'user_default-forLinuxServer.JPG',
     "usercategory": 'default',
-    "usertasks": [0, 1]
+    "usertasks": [] //[0, 1]
   },
   {
     "userid": 1,
-    "username": 'Name1',
+    "username": 'Jacques Van Luyck',
     "usermail": 'Mailadresse1',
     "userphone": 'phonenumber1',
-    "userdepartment": 'department1',
-    "userposition": 'position1',
+    "userdepartment": 'Chefetage',
+    "userposition": 'Frontend-Developer',
     "useroffice": 'office1',
-    "userpassword": 'password1',
-    //  "userdescription": 'Heidiho 1',
-    "userimage": 'user_default-forLinuxServer.JPG',
+    "userpassword": 'aIuTofPDZyZedv0/jm/IyHKauFYV911DI++//ScVFCI=',
+    "userimage": 'Jacques.JPG',
     "usercategory": 'default',
-    "usertasks": [1],
+    "usertasks": [] //[1]
   },
   {
     "userid": 2,
     "username": 'Yvonne',
     "usermail": 'yvonnegamboeck@web.de',
     "userphone": '0173/9000000',
-    "userdepartment": 'Marketing',
+    "userdepartment": 'Chefetage',
     "userposition": 'Media Designer',
     "useroffice": '108',
-    "userpassword": 'yvonne123',
-    //  "userdescription": 'Heidiho 1',
+    "userpassword": 'rEVQPkysK9XnNmb43VyBJWIjsfCz8SbDCr7yBS+bRdU=',
     "userimage": 'Yvonne.JPG',
     "usercategory": 'default',
-    "usertasks": [0],
+    "usertasks": []//[0]
   }];
 
 /*
 *alltasks: array stored on server and here
 *structure elements: taskid, taskname, taskdate, taskcategory, taskstatus, taskurgency, taskdescription, taskusers
 */
-//let alltasks = [];
+let alltasks = [{
+  "taskid": 0,
+  "taskname": 'Test',
+  "taskdate": 'undefined',
+  "taskcategory": 'Sales',
+  "taskstatus": 'TaskDeleted',
+  "taskurgency": 'low',
+  "taskdescription": 'Taskdescription',
+  "taskusers": [],
+  "taskauthorid": 0
+}
+
+];
 
 //example alltasks (testing)) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY
-let alltasks = [
+/*let alltasks = [
   {
     "taskid": 0,
     "taskname": 'yvonnes task',
@@ -100,4 +109,4 @@ let alltasks = [
     "taskauthorid": 1
   }
 
-];
+];*/

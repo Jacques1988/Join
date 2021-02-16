@@ -3,16 +3,18 @@ let myimages = localStorage.getItem('activeuser');
 /**
  * This function converts the full path of the uploaded file and save it to the backend
  */
-async function uploadImage() {
-  let photo = document.getElementById("fileToUpload").files[0];
-  let formData = new FormData();
-  formData.append("fileToUpload", photo);
-  await fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { method: "POST", body: formData });
-  user['userimage'] = 'img/' + document.getElementById("fileToUpload").files[0].name;
-  users[1]['userimage'] = filename;
-  backend.setItem('users', JSON.stringify(users));
-  alert(filename + ' was uploaded successfully.');
-  // TODO: Weiterleitung
+  async function uploadImage() {
+    let photo = document.getElementById("fileToUpload").files[0];
+    let formData = new FormData();
+    formData.append("fileToUpload", photo);
+    await fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { method: "POST", body: formData });
+    user['userimage'] = 'img/' + document.getElementById("fileToUpload").files[0].name;
+    users[1]['userimage'] = filename;
+    backend.setItem('users', JSON.stringify(users));
+    alert(filename + ' was uploaded successfully.');
+    // TODO: Weiterleitung
+  
+
 }
 
 
@@ -21,6 +23,7 @@ async function uploadImage() {
  */
 function checkUsersImage() {
     let imagecheck = document.getElementById("fileToUpload");
+    console.log(imagecheck);
     if (imagecheck.value.length < 1) {
         return '/user_default-forLinuxServer.JPG';
     }

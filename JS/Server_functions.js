@@ -34,6 +34,7 @@ function addUser() {
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
     //newid = newid + 1;
+
     setTimeout(function () { window.open('board.html', '_self'); }, 500);
   }
   else {

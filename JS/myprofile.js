@@ -88,6 +88,6 @@ function TasksAssignedToUser() {
         }
     }
     if (TasksExist == false) {
-        document.getElementById('myprofile-assignedtasks').innerHTML = 'You are currently not assigned to any tasks. NOT WORKING YET.';
+        document.getElementById('myprofile-assignedtasks').innerHTML = 'You are currently not assigned to any tasks.';
     }
 }

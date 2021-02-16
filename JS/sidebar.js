@@ -2,6 +2,9 @@
  * 
  */
 function loadSideBar() {
+    let myprofileid = localStorage.getItem('activeuser');
+    LoadLocal(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
+    let image = users[myprofileid].userimage;
     document.getElementById('sidebar').innerHTML += `<div class="sidebar d-flex-responsive">
 
     <div class="sidebar-menu">
@@ -22,7 +25,7 @@ function loadSideBar() {
     </div>
 
     <div class="sidebar-profile d-none-responsive">
-        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/testdummyimage-forLinuxServer.JPG"></a>
+        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/${image}"></a>
         <a class="logoutlink" href="logout.html"><div class="logoutbtn" onclick="logout(), deleteActiveUser()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
 
     </div>
