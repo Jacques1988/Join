@@ -13,6 +13,7 @@
     height: 160px;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: 15px 15px 70px grey;
 }
 
 .profile-main-infos {
@@ -25,6 +26,7 @@
 .rest-infos {
     border-radius: 12px;
     padding: 20px;
+    box-shadow: 15px 15px 70px grey;
 }
 
 .whole-profile {
