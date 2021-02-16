@@ -61,7 +61,7 @@ function TasksCreatedByUser() {
     let TasksExist = false;
     for (i = 0; i < alltasks.length; i++) {
         let id = parseInt(myprofileid);
-        if (alltasks[i].taskauthorid == id) {
+        if (alltasks[i].taskauthorid == id && alltasks[i].taskstatus != 'TaskDeleted') {
             TasksExist = true;
             let task = alltasks[i];
             document.getElementById('myprofile-createdtasks').innerHTML += `<div class="d-flex center-profile"; > <div class="bulletpoints"></div> ${task['taskname']}</div>`;
@@ -81,7 +81,7 @@ function TasksAssignedToUser() {
     for (i = 0; i < alltasks.length; i++) {
         let currenttaskusers = alltasks[i].taskusers;
         let id = parseInt(myprofileid); //converts string into Integer
-        if (currenttaskusers.indexOf(id) > -1) {
+        if (currenttaskusers.indexOf(id) > -1 && alltasks[i].taskstatus != 'TaskDeleted') {
             TasksExist = true;
             let task = alltasks[i];
             document.getElementById('myprofile-assignedtasks').innerHTML += `<div class="d-flex center-profile"> <div class="bulletpoints"></div> ${task['taskname']}</div>`;
