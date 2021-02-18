@@ -45,7 +45,6 @@ function addUser() {
 function BuildUser() {
 
   checklatestuserid();
-  uploadImage(); 
   let newimage = checkUsersImage();
   let password = document.getElementById('newuserpassword').value;
 
@@ -69,6 +68,7 @@ function BuildUser() {
     "usertasks": []
   });
   setActiveUser();
+  uploadImage();
 }
 
 function UploadUserToServer() {

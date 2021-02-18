@@ -39,68 +39,72 @@
 
         <div class="assignment-adduser">
             <form>
-            <div class="entries">
-                <h2 class="headline2 blue">Name</h2>
-                <input id="newusername" required class="inputfield1-adduser" type="text" placeholder="Name">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Name</h2>
+                    <input id="newusername" required class="inputfield1-adduser" type="text" placeholder="Name">
+                </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">Mail Adress</h2>
-                <input id="newusermail" required class="inputfield1-adduser" type="email" placeholder="E-Mail">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Mail Adress</h2>
+                    <input id="newusermail" required class="inputfield1-adduser" type="email" placeholder="E-Mail">
+                </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">Phone</h2>
-                <input id="phonenumber" required class="inputfield1-adduser" type="tel" placeholder="Phone number">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Phone</h2>
+                    <input id="phonenumber" required class="inputfield1-adduser" type="tel" placeholder="Phone number">
+                </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">Department</h2>
-                <input id="department" required class="inputfield1-adduser" type="text" placeholder="Department">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Department</h2>
+                    <input id="department" required class="inputfield1-adduser" type="text" placeholder="Department">
+                </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">Position</h2>
-                <input id="position" required class="inputfield1-adduser" type="text" placeholder="Position">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Position</h2>
+                    <input id="position" required class="inputfield1-adduser" type="text" placeholder="Position">
+                </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">office</h2>
-                <input id="office" required class="inputfield1-adduser" type="text" placeholder="Office">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">office</h2>
+                    <input id="office" required class="inputfield1-adduser" type="text" placeholder="Office">
+                </div>
 
 
-            <div class="entries">
-                <h2 class="headline2 blue">Password</h2>
-                <input id="newuserpassword" required class="inputfield1-adduser" type="password" placeholder="...">
-            </div>
+                <div class="entries">
+                    <h2 class="headline2 blue">Password</h2>
+                    <input id="newuserpassword" required class="inputfield1-adduser" type="password" placeholder="...">
+                </div>
 
-            <div class="entries">
-                <h2 class="headline2 blue">Repeat Password</h2>
-                <input id="passwordrepeat" required class="inputfield1-adduser" type="password" placeholder="...">
-            </div>
-        </form>
-          <div class="d-flex container-upload"> 
+                <div class="entries">
+                    <h2 class="headline2 blue">Repeat Password</h2>
+                    <input id="passwordrepeat" required class="inputfield1-adduser" type="password" placeholder="...">
+                </div>
+            </form>
+            <div class="d-flex container-upload">
                 <div style="margin-right: 20px;">
-                    <form onsubmit="uploadImage(); showMyImage(); return false;" method="post" enctype="multipart/form-data">
+                    <form onsubmit="showMyImage(); return false;" method="post"
+                        enctype="multipart/form-data">
                         Select image to upload:
                         <input class="input-img upload-btn" type="file" name="fileToUpload" id="fileToUpload">
                         <input class="input-img upload-btn" type="submit" value="Upload Image" name="submit">
-                    </form>
-                </div>  
+
+                </div>
                 <div id="thumbnail" class="uploaded-img-preview">
                     <img id="myimage" src="img/user_default-forLinuxServer.JPG">
                 </div>
-           </div> 
+            </div>
 
             <div class="entries">
                 <div class="registrate-container">
                     <div class="cancel-adduser blue headline2"><a class="headline2" href="index.html">cancel</a></div>
                     <div class="createtaskbtn headline2" onclick="checkUseralreadyexists()">
                         <div class="btnanimatediv"><span>Create User</span></div>
+
                     </div>
                 </div>
+
             </div>
+            </form>
         </div>
 
 </body>
