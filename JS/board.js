@@ -25,18 +25,19 @@ function updateBoard() {
 
         let currentid = alltasks[i].taskid; //current id = id of element no. 'i' in array, changes each iteration
         let currenttask = alltasks[currentid]; //currenttask = task-element with id 'currentid' in array, changes each iteration
-
+        let taskauthorposition = currenttask.taskauthorid;
+        let taskauthor = users[taskauthorposition];        
         if (currenttask.taskstatus == 'todo') {  //status todo
-            UpdateTodo(currenttask, currentid);
+            UpdateTodo(currenttask, currentid, taskauthor);
         }
         else if (currenttask.taskstatus == 'inprogress') { //status inprogress
-            UpdateInprogress(currenttask, currentid);
+            UpdateInprogress(currenttask, currentid, taskauthor);
         }
         else if (currenttask.taskstatus == 'testing') { //status testing
-            UpdateTesting(currenttask, currentid);
+            UpdateTesting(currenttask, currentid, taskauthor);
         }
         else if (currenttask.taskstatus == 'done') { //status done
-            UpdateDone(currenttask, currentid);
+            UpdateDone(currenttask, currentid, taskauthor);
         }
     }
 }
@@ -46,7 +47,7 @@ function updateBoard() {
  * @param {*} currenttask: task-element that is being processed
  * @param {*} currentid id of task that is being processed
  */
-function UpdateTodo(currenttask, currentid) {
+function UpdateTodo(currenttask, currentid, taskauthor) {
     
     pickcolor(currenttask);
     document.getElementById('todo').innerHTML += `
@@ -60,12 +61,12 @@ function UpdateTodo(currenttask, currentid) {
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
-                    <div><img class="img-board" src="img/user_default-forLinuxServer.JPG"></div>
+                    <div><img class="img-board" src="img/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
 }
 
-function UpdateInprogress(currenttask, currentid) {
+function UpdateInprogress(currenttask, currentid, taskauthor) {
   
     pickcolor(currenttask);
     document.getElementById('inprogress').innerHTML += `
@@ -77,15 +78,15 @@ function UpdateInprogress(currenttask, currentid) {
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
-                    <div class="date-board">${currenttask['taskdate']}</div>
+                    <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
-                    <div><img class="img-board" src="img/user_default-forLinuxServer.JPG"></div>
+                    <div><img class="img-board" src="img/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
 }
 
-function UpdateTesting(currenttask, currentid) {
+function UpdateTesting(currenttask, currentid, taskauthor) {
     
     pickcolor(currenttask);
     document.getElementById('testing').innerHTML += `
@@ -97,15 +98,15 @@ function UpdateTesting(currenttask, currentid) {
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
-                    <div class="date-board">${currenttask['taskdate']}</div>
+                    <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
-                    <div><img class="img-board" src="img/user_default-forLinuxServer.JPG"></div>
+                    <div><img class="img-board" src="img/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
 }
 
-function UpdateDone(currenttask, currentid) {
+function UpdateDone(currenttask, currentid, taskauthor) {
     
     pickcolor(currenttask);
     document.getElementById('done').innerHTML += `
@@ -117,9 +118,9 @@ function UpdateDone(currenttask, currentid) {
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
-                    <div class="date-board">${currenttask['taskdate']}</div>
+                    <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
-                     <div><img class="img-board" src="img/user_default-forLinuxServer.JPG"></div>
+                     <div><img class="img-board" src="img/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
 }
