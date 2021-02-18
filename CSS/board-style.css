@@ -67,6 +67,9 @@
 
 .date-board {
     font-size: 10px; 
+    flex-direction: reverse;
+    display: flex; 
+    flex-direction: row-reverse;
 }
 
 .dustbin img{

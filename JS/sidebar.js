@@ -40,22 +40,22 @@ function loadSideBar() {
  *
  */
 
-function BoardSquare() {
+function boardSquare() {
     if (window.location.href.endsWith('board.html')) {
         document.getElementById('board').classList.add('square');
     };
 }
-function BacklogSquare() {
+function backlogSquare() {
     if (window.location.href.endsWith('backlog.html')) {
         document.getElementById('backlog').classList.add('square')
     };
 }
-function AddTaskSquare() {
+function addTaskSquare() {
     if (window.location.href.endsWith('addtask.html')) {
         document.getElementById('addtask').classList.add('square')
     };
 }
-function HelpSquare() {
+function helpSquare() {
     if (window.location.href.endsWith('help.html')) {
         document.getElementById('help').classList.add('square')
     };
@@ -65,12 +65,12 @@ function myProfileSquare() {
         document.getElementById('myprofile').classList.add('square')
     };
 }
-function ImpressumSquare() {
+function impressumSquare() {
     if (window.location.href.endsWith('Impressum.html')) {
         document.getElementById('impressum').classList.add('square')
     };
 }
-function DatenschutzSquare() {
+function datenschutzSquare() {
     if (window.location.href.endsWith('datenschutz.html')) {
         document.getElementById('datenschutz').classList.add('square')
     };
@@ -82,20 +82,20 @@ function DatenschutzSquare() {
  */
 function initBoard() {
     loadSideBar();
-    BoardSquare(); 
+    boardSquare(); 
 }
 function initBacklog() {
     loadSideBar();
-    BacklogSquare(); 
+    backlogSquare(); 
 }
 function initAddTask() {
     loadSideBar();
-    AddTaskSquare(); 
+    addTaskSquare(); 
 }
 
 function initHelp() {
     loadSideBar();
-    HelpSquare(); 
+    helpSquare(); 
 }
 function initMyProfile() {
     loadSideBar();
@@ -104,11 +104,11 @@ function initMyProfile() {
 
 function initImpressum() {
     loadSideBar();
-    ImpressumSquare(); 
+    impressumSquare(); 
 }
 function initDatenschutz() {
     loadSideBar();
-    DatenschutzSquare(); 
+    datenschutzSquare(); 
 }
 
 

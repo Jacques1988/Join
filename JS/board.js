@@ -58,7 +58,7 @@ function UpdateTodo(currenttask, currentid) {
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
-                    <div class="date-board">${currenttask['taskdate']}</div>
+                    <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
                     <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
                     <div><img class="img-board" src="img/user_default-forLinuxServer.JPG"></div>
                 </div>
