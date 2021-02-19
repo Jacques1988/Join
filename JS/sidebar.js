@@ -132,6 +132,9 @@ function logout() {
  * When click on the 3 stripes the mobile menu is opening
  */
 function openMobileMenu() {
+    let myprofileid = localStorage.getItem('activeuser');
+    LoadLocal(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
+    let image = users[myprofileid].userimage;
     document.getElementById('total-size').innerHTML = `
     <div id="transformation" class="box-transparent" onclick="menuClose()">
     <div class="responsive-menu">
@@ -144,7 +147,7 @@ function openMobileMenu() {
     <div class="d-flex navigation-row"> <a href="datenschutz.html">   Datenschutz</a> </div>
 
     <div class="sidebar-profile">
-    <a href="myprofile.html"><img src="img/user_default-forLinuxServer.JPG"></a>
+    <a href="myprofile.html"><img src="img/${image}"></a>
     <a href="logout.html"><button onclick="logout()" class="btn-logout-menu">Ausloggen</button> </a>
 </div>
     </div>
