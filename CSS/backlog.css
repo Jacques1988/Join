@@ -39,6 +39,17 @@
     word-wrap: break-word;
 }
 
+.empty-backlog {
+    background-color: #f9f6f4;
+    padding: 15px;
+    height: 30px; 
+    border-radius: 12px; 
+    display: flex;
+    align-items: center; 
+    box-shadow: 15px 15px 70px grey;
+    margin-top: 40px; 
+}
+
 @media(max-width: 600px) {
     .profile-container-mobile {
         align-items: center;

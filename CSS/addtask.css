@@ -308,6 +308,9 @@ textarea {
     .cancel {
         right: 194px;
     }
+    .addtask-userlist {
+        width: 80%; 
+    }
 }
 
 @media(max-width: 1170px) {
@@ -316,6 +319,10 @@ textarea {
     }
     .cancel {
         right: 234px;
+    }
+
+    .addtask-userlist {
+        width: 75%; 
     }
 }
 
@@ -326,16 +333,25 @@ textarea {
     .cancel {
         right: 325px;
     }
+    .addtask-userlist {
+        width: 70%; 
+    }
 }
 
 @media(max-width: 1020px) {
     .createtaskbtn {
         right: 160px;
     }
+    .addtask-userlist {
+        width: 63%; 
+    }
 }
 @media(max-width: 970px) {
     .createtaskbtn {
         right: 190px;
+    }
+    .addtask-userlist {
+        width: 58%; 
     }
 }
 
@@ -348,6 +364,9 @@ textarea {
     }
     .assigned-to-plus {
         left: 0px;
+    }
+    .addtask-userlist {
+        width: 52%; 
     }
 }
 
@@ -403,6 +422,9 @@ textarea {
     .assigned-to-plus {
         top: 35px;
         left: 70px;
+    }
+    .addtask-userlist {
+        width: 95%; 
     }
 }
 

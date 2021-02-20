@@ -5,6 +5,7 @@
  */
 function addBacklog() {
     document.getElementById('backlog-input').innerHTML = ''; //clear backlog
+    let tasksExist = false;
     for (let i = 0; i < alltasks.length; i++) { //iterations to display alltasks
         let currenttask = alltasks[i];
         let creatorid = currenttask.taskauthorid;
@@ -12,6 +13,7 @@ function addBacklog() {
         let currenttaskid = currenttask.taskid; //task id from database
 
         if (currenttask.taskstatus !== 'TaskDeleted') { //task will not be displayed if it was deleted
+            tasksExist = true;
             pickcolor(currenttask);
             document.getElementById('backlog-input').innerHTML += `
         <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid ${color};">
@@ -28,17 +30,7 @@ function addBacklog() {
                 </div>`
         }
     }
+    if (tasksExist == false) {
+        document.getElementById('backlog-input').innerHTML = '<div class="empty-backlog">You haven`t created any tasks yet.</div>';
+    }
 }
-
-
-/**
- * pickcolor defines the color of the outer border of each task div, depending on task category.
- */
-/* function pickcolor(currenttask) {
-    if (currenttask.taskcategory == 'Sales') {
-        color = 'yellowgreen';
-    }
-    else if (currenttask.taskcategory == 'Marketing') {
-        color = 'salmon';
-    }
-} */
