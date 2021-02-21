@@ -50,4 +50,13 @@ console.log(passwordHash)
 
     }
 }
-
+/**
+ * first setup only. Not used in standard application.
+ */
+function SetServer() {
+    backend.setItem('users', JSON.stringify(users));
+    backend.setItem('alltasks', JSON.stringify(alltasks));
+    backend.setItem('latesttuserid', latesttuserid);
+    backend.setItem('latesttaskid', latesttaskid);
+    backend.setItem('currenttaskusers', JSON.stringify(currenttaskusers)); 
+}

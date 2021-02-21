@@ -4,29 +4,46 @@
 let color = 'gold';
 let salescolor = 'gold';
 let marketingcolor = 'yellowgreen';
-let productcolor = 'salmon'; 
+let productcolor = 'salmon';
 
 /**
  *ClearBoard: sets all innerHTML to '' 
  */
 function ClearBoard() {
-   document.getElementById('todo').innerHTML = '';
+    document.getElementById('todo').innerHTML = '';
     document.getElementById('inprogress').innerHTML = '';
     document.getElementById('testing').innerHTML = '';
     document.getElementById('done').innerHTML = '';
 }
 
 /**
+ * newboard: initializes the board after server download
+ */
+/*const newboard = async () => {  //https://stackoverflow.com/questions/21518381/proper-way-to-wait-for-one-function-to-finish-before-continuing
+    const result = await loadSideBar();
+    // do something else here after firstFunction completes
+    updateBoard();
+}*/
+
+async function newboard() {
+    await initserver();
+    await loadSideBar();
+    updateBoard();
+}
+
+
+/**
  * updateBoard: This function updates all panels 
- */ 
+ */
 function updateBoard() {
+
     ClearBoard();
     for (let i = 0; i < alltasks.length; i++) {
 
         let currentid = alltasks[i].taskid; //current id = id of element no. 'i' in array, changes each iteration
         let currenttask = alltasks[currentid]; //currenttask = task-element with id 'currentid' in array, changes each iteration
         let taskauthorposition = currenttask.taskauthorid;
-        let taskauthor = users[taskauthorposition];        
+        let taskauthor = users[taskauthorposition];
         if (currenttask.taskstatus == 'todo') {  //status todo
             UpdateTodo(currenttask, currentid, taskauthor);
         }
@@ -48,7 +65,7 @@ function updateBoard() {
  * @param {*} currentid id of task that is being processed
  */
 function UpdateTodo(currenttask, currentid, taskauthor) {
-    
+
     pickcolor(currenttask);
     document.getElementById('todo').innerHTML += `
 <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
@@ -67,7 +84,7 @@ function UpdateTodo(currenttask, currentid, taskauthor) {
 }
 
 function UpdateInprogress(currenttask, currentid, taskauthor) {
-  
+
     pickcolor(currenttask);
     document.getElementById('inprogress').innerHTML += `
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
@@ -87,7 +104,7 @@ function UpdateInprogress(currenttask, currentid, taskauthor) {
 }
 
 function UpdateTesting(currenttask, currentid, taskauthor) {
-    
+
     pickcolor(currenttask);
     document.getElementById('testing').innerHTML += `
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
@@ -107,7 +124,7 @@ function UpdateTesting(currenttask, currentid, taskauthor) {
 }
 
 function UpdateDone(currenttask, currentid, taskauthor) {
-    
+
     pickcolor(currenttask);
     document.getElementById('done').innerHTML += `
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
@@ -162,7 +179,7 @@ function TaskMoveRight(id) {
     }
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     updateBoard();
-    
+
 }
 
 /**
@@ -170,7 +187,7 @@ function TaskMoveRight(id) {
  * @param {*} id task id
  */
 function TaskMoveLeft(id) {
-let tasktarget;
+    let tasktarget;
     if (alltasks[id].taskstatus == 'done') {
         tasktarget = 'testing';
         PushTask(id, tasktarget);
@@ -205,10 +222,10 @@ function PushTask(id, tasktarget) {
 function deleteTask(i) {
     alltasks[i].taskstatus = 'TaskDeleted';
     //alltasks.splice(i, 1);
-    updateBoard(); 
+    updateBoard();
     UploadTaskToServer();
     //SetLocal(); ///////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY.
-   }
+}
 
 function ServerDeleteAndUpload() {
     backend.deleteItem('alltasks'); //deletes old array from server

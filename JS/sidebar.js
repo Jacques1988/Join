@@ -1,9 +1,10 @@
 /**Menu is loaded on every HTML file
  * 
  */
-function loadSideBar() {
+async function loadSideBar() {
+    await initserver(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
     let myprofileid = localStorage.getItem('activeuser');
-    //LoadLocal(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
+
     let image = users[myprofileid].userimage;
     document.getElementById('sidebar').innerHTML += `<div class="sidebar d-flex-responsive">
 
@@ -81,7 +82,7 @@ function datenschutzSquare() {
  * These functions update the sidebar on the current html
  */
 function initBoard() {
-    loadSideBar();
+     loadSideBar();
     boardSquare(); 
 }
 function initBacklog() {

@@ -25,7 +25,9 @@ let currenttaskusers = [];
 let passwordHash = CryptoJS.SHA256(password);
 let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);*/
 
-let users = [
+let users;
+let alltasks;
+/*let users = [
   {
     "userid": 0,
     "username": 'Johannes',
@@ -64,13 +66,13 @@ let users = [
     "userimage": 'Yvonne.JPG',
     "usercategory": 'default',
     "usertasks": []//[0]
-  }];
+  }];*/
 
 /*
 *alltasks: array stored on server and here
 *structure elements: taskid, taskname, taskdate, taskcategory, taskstatus, taskurgency, taskdescription, taskusers
 */
-let alltasks = [{
+/*let alltasks = [{
   "taskid": 0,
   "taskname": 'Test',
   "taskdate": 'undefined',
@@ -82,7 +84,7 @@ let alltasks = [{
   "taskauthorid": 0
 }
 
-];
+];*/
 
 //example alltasks (testing)) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY
 /*let alltasks = [
