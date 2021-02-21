@@ -12,7 +12,7 @@ function loginsuccess() {
  * searchuser(): checks if input user exists
  */
 function login() {
-    LoadLocal();
+    //LoadLocal();
     let usernametry = document.getElementById('nameinput').value;
     let condition = users.findIndex(std => std.username === usernametry); //https://medium.com/tinytute/how-to-get-index-from-a-json-object-with-value-javascript-a556f93c0194
 
