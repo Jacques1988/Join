@@ -68,7 +68,7 @@ function BuildUser() {
     "usertasks": []
   });
   setActiveUser();
-  uploadImage();
+  //uploadImage();//////////////////////////////////////////////////////////////////////////////////////////////////////CURRENTLY NOT WORKING. ENABLE FOR TESTING.//////////
 }
 
 function UploadUserToServer() {
@@ -91,7 +91,7 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     checklatesttaskid();
     BuildTask();
-    SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
+    //SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////LOCAL TESTING ONLY.
     UploadTaskToServer();
     //let last_element = alltasks[alltasks.length - 1];
     //newtaskid = last_element.taskid + 1;
@@ -134,10 +134,13 @@ async function initserver() {
   await downloadFromServer();
   users = JSON.parse(backend.getItem('users')) || [];
   alltasks = JSON.parse(backend.getItem('alltasks')) || [];
-
-  updatedropdown();
-  updatenewid();
-  updatetaskid();
+  latesttuserid = backend.getItem('latesttuserid');
+  latesttaskid = backend.getItem('latesttaskid');
+  currenttaskusers = JSON.parse(backend.getItem('currenttaskusers')) || [];
+   
+  //updatedropdown(); //NOT WORKING YET.
+  //updatenewid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //updatetaskid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
 /**
@@ -193,8 +196,8 @@ function deleteAll(name) {
 }
 
 /*
-*populate Dropdownmenu: adds values of username to dropdown options https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
-*/
+*NOT WORKING: populate Dropdownmenu: adds values of username to dropdown options https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
+*/ /*
 function updatedropdown() {
   let dropdown = document.getElementById('locality-dropdown');
   dropdown.length = 0;
@@ -230,4 +233,4 @@ function updatedropdown() {
   };
 
   request.send();
-}
+}*/

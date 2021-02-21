@@ -14,6 +14,7 @@
     <script src="./materials_lite/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="./JS/adduser.js"></script>
     <script src="./JS/sidebar.js"></script>
     <script src="./JS/board.js"></script>
     <script src="./JS/backlog.js"></script>
@@ -26,7 +27,7 @@
     <script src="./JS/myprofile.js"></script>
 </head>
 
-<body onload="initBoard(); initserver(), updateBoard()"> 
+<body onload="initserver(), initBoard(), updateBoard()"> 
 <!-- ; updateBoard()-->
     <div class="total-size d-none-responsive" id="total-size">
     </div>
@@ -40,7 +41,7 @@
                 <div id="todo" class="task background-color-primary d-flex">
 
                     <!--Example Task-->
-                    <div class="container-board">
+                    <!--<div class="container-board">
                         <div class="d-flex date-img-container">
                             <div class="blue board-bold"> Title </div>
                             <div style="font-size: 10px">Delete</div>
@@ -52,7 +53,7 @@
                             <div><img class="img-board" onclick="TaskMoveRight('taskid')" src="./img/arrow-34-128-right.PNG"></div>
                             <div><img class="img-board" src="img/user_default.JPG"></div>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
