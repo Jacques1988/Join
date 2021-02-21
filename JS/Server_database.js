@@ -3,8 +3,8 @@
 /*
 *sets URL for Server connection (the php backend will refer to this url)
 */
-//setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
-setURL('/Join/DATA/');
+setURL('/Modul10_JoinGruppenarbeit/Join/DATA/');
+//setURL('/Join/DATA/');
 /*
 *temporary id and array storage (only needed for local functions, no permanent storage necessary)
 */

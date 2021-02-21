@@ -24,18 +24,22 @@ function getArray(key) {
 
 function LocalLoadUsers() {
     users = getArray('users');
+    initserver();
 }
 
 function LocalSaveUsers() {
     setArray('users', users);
+    backend.setItem('users', JSON.stringify(users));
 }
 
 function LocalLoadTasks() {
     alltasks = getArray('alltasks');
+    initserver();
 }
 
 function LocalSaveTasks() {
     setArray('alltasks', alltasks);
+    backend.setItem('alltasks', JSON.stringify(alltasks));
 }
 
 
