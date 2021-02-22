@@ -3,7 +3,8 @@ let myprofileid = localStorage.getItem('activeuser');
 /**
  * this function initiates building the html and runs the other building functions
  */
-function BuildMyProfile() {
+async function BuildMyProfile() {
+    await initserver();
     addMyProfileBox();
     addCurrentUserProfile();
     TasksCreatedByUser();

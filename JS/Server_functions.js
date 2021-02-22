@@ -130,7 +130,7 @@ function UploadTaskToServer() {
 /*Load
 *Fill your empty array with users and tasks from the Server, preferably set to body onload
 */
-async function preinitserver() {
+async function initserver() {
   await downloadFromServer();
   users = JSON.parse(backend.getItem('users')) || [];
   alltasks = JSON.parse(backend.getItem('alltasks')) || [];
@@ -143,6 +143,7 @@ async function preinitserver() {
   //updatetaskid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
+/*
 async function waitTillServerInitiation() {
   await preinitserver();
 }
@@ -150,6 +151,7 @@ async function waitTillServerInitiation() {
 function initserver() {
   waitTillServerInitiation();
 }
+*/
 
 /**
  * ID counters

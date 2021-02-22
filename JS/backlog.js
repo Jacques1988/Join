@@ -1,9 +1,9 @@
 
-
 /**
  * addBacklog: Creates arranged HTML code based on alltasks array.
  */
-function addBacklog() {
+async function addBacklog() {
+    await initserver();
     document.getElementById('backlog-input').innerHTML = ''; //clear backlog
     let tasksExist = false;
     for (let i = 0; i < alltasks.length; i++) { //iterations to display alltasks

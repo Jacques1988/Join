@@ -25,8 +25,9 @@ function ClearBoard() {
     updateBoard();
 }*/
 
-function newboard() {
-    initserver();
+async function newboard() {
+    //await downloadFromServer();
+    await initserver();
     updateBoard();
 }
 
@@ -35,7 +36,7 @@ function newboard() {
  * updateBoard: This function updates all panels 
  */
 function updateBoard() {
-
+    
     ClearBoard();
     for (let i = 0; i < alltasks.length; i++) {
 
@@ -176,7 +177,7 @@ function TaskMoveRight(id) {
         tasktarget = 'done';
         PushTask(id, tasktarget);
     }
-    SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
+    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
     updateBoard();
 
 }
@@ -200,8 +201,8 @@ function TaskMoveLeft(id) {
         PushTask(id, tasktarget);
     }
     updateBoard();
-    UploadTaskToServer();
-    //SetLocal(); /////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. 
+    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    
 }
 
 /**
@@ -222,10 +223,13 @@ function deleteTask(i) {
     alltasks[i].taskstatus = 'TaskDeleted';
     //alltasks.splice(i, 1);
     updateBoard();
-    UploadTaskToServer();
-    //SetLocal(); ///////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY.
+    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    
 }
 
+/**
+ * NOT USED: replaces old alltasks with new one from temporary storage
+ */
 function ServerDeleteAndUpload() {
     backend.deleteItem('alltasks'); //deletes old array from server
     backend.setItem('alltasks', JSON.stringify(alltasks)); //sends new array to server

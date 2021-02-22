@@ -2,9 +2,8 @@
  * 
  */
 async function loadSideBar() {
-    await preinitserver();
-    //initserver(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
-    let myprofileid = localStorage.getItem('activeuser');
+    await initserver(); ///////////////////////////////////////////////DOWNLOAD FROM SERVER
+        let myprofileid = localStorage.getItem('activeuser');
 
     let image = users[myprofileid].userimage;
     document.getElementById('sidebar').innerHTML += `<div class="sidebar d-flex-responsive">
@@ -84,33 +83,33 @@ function datenschutzSquare() {
  */
 function initBoard() {
      loadSideBar();
-    boardSquare(); 
+    //boardSquare(); 
 }
 function initBacklog() {
     loadSideBar();
-    backlogSquare(); 
+    //backlogSquare(); 
 }
 function initAddTask() {
     loadSideBar();
-    addTaskSquare(); 
+    //addTaskSquare(); 
 }
 
 function initHelp() {
     loadSideBar();
-    helpSquare(); 
+    //helpSquare(); 
 }
 function initMyProfile() {
     loadSideBar();
-    myProfileSquare(); 
+    //myProfileSquare(); 
 }
 
 function initImpressum() {
     loadSideBar();
-    impressumSquare(); 
+    //impressumSquare(); 
 }
 function initDatenschutz() {
     loadSideBar();
-    datenschutzSquare(); 
+    //datenschutzSquare(); 
 }
 
 
