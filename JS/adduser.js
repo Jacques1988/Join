@@ -10,10 +10,9 @@ async function uploadImage() {
   formData.append("fileToUpload", photo);
   await fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { method: "POST", body: formData });
   users[user]['userimage'] = document.getElementById("fileToUpload").files[0].name;
-  users[user]['userimage'] = filename;
+  /* users[user]['userimage'] = filename; */
   backend.setItem('users', JSON.stringify(users));
-  alert(filename + ' was uploaded successfully.');
-  // TODO: Weiterleitung
+  /* alert(filename + ' was uploaded successfully.'); */
 }
 
 

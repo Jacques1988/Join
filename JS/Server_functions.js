@@ -21,7 +21,7 @@ function checkUseralreadyexists() {
 *Add a user with this function (initiated by checkUseralreadyexists()):
 */
 
-function addUser() {
+async function addUser() {
   let namecheck = newusername.value;
   let mailcheck = newusermail.value;
   let passwordcheck = newuserpassword.value;
@@ -29,7 +29,7 @@ function addUser() {
   let emailstringatcheck = document.getElementById('newusermail').value;
 
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck && emailstringatcheck.includes('@')) {
-    BuildUser();
+    await BuildUser();
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
@@ -42,7 +42,7 @@ function addUser() {
   }
 }
 
-function BuildUser() {
+async function BuildUser() {
 
   checklatestuserid();
   let newimage = checkUsersImage();
@@ -68,7 +68,7 @@ function BuildUser() {
     "usertasks": []
   });
   setActiveUser();
-  uploadImage();//////////////////////////////////////////////////////////////////////////////////////////////////////CURRENTLY NOT WORKING. ENABLE FOR TESTING.//////////
+  await uploadImage();
 }
 
 function UploadUserToServer() {

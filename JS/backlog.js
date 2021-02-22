@@ -19,7 +19,7 @@ async function addBacklog() {
         <div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid ${color};">
                     <div id="backlogtaskid${currenttaskid}" class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
                         <div class=" d-flex profile-container-mobile" style="align-items: center">
-                            <img class="profile-img" src="./img/${taskcreator['userimage']}" alt="">
+                            <img class="profile-img" src="uploads/${taskcreator['userimage']}" alt="">
                             <div class="profile d-flex">
                                 <span class="blue" id="mail-adress">${taskcreator['username']}</span>
                             </div>

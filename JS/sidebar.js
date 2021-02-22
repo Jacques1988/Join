@@ -26,7 +26,7 @@ async function loadSideBar() {
     </div>
 
     <div class="sidebar-profile d-none-responsive">
-        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="img/${image}"></a>
+        <a href="myprofile.html" style="margin-bottom: 8px"> <img src="./uploads/${image}"></a>
         <a class="logoutlink" href="logout.html"><div class="logoutbtn" onclick="logout(), deleteActiveUser()"><div class="logoutbtnanimatediv"><span>Logout</span></div></div></a> 
 
     </div>
@@ -148,7 +148,7 @@ function openMobileMenu() {
     <div class="d-flex navigation-row"> <a href="datenschutz.html">   Datenschutz</a> </div>
 
     <div class="sidebar-profile">
-    <a href="myprofile.html"><img src="img/${image}"></a>
+    <a href="myprofile.html"><img src="./uploads/${image}"></a>
     <a href="logout.html"><button onclick="logout()" class="btn-logout-menu">Ausloggen</button> </a>
 </div>
     </div>

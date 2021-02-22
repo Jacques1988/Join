@@ -44,7 +44,7 @@ function addCurrentUserProfile() {
     document.getElementById('profile-main-infos').innerHTML = `
 <div class="portrait-big">
 <img
-    src="./img/${currentuser['userimage']}">
+    src="./uploads/${currentuser['userimage']}">
 </div>
 <div style="font-size: 16px" class="blue">${currentuser['username']}</div> `
 }
