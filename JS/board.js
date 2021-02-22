@@ -25,9 +25,8 @@ function ClearBoard() {
     updateBoard();
 }*/
 
-async function newboard() {
-    await initserver();
-    await loadSideBar();
+function newboard() {
+    initserver();
     updateBoard();
 }
 

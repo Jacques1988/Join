@@ -130,7 +130,7 @@ function UploadTaskToServer() {
 /*Load
 *Fill your empty array with users and tasks from the Server, preferably set to body onload
 */
-async function initserver() {
+async function preinitserver() {
   await downloadFromServer();
   users = JSON.parse(backend.getItem('users')) || [];
   alltasks = JSON.parse(backend.getItem('alltasks')) || [];
@@ -141,6 +141,14 @@ async function initserver() {
   //updatedropdown(); //NOT WORKING YET.
   //updatenewid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //updatetaskid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
+
+async function waitTillServerInitiation() {
+  await preinitserver();
+}
+
+function initserver() {
+  waitTillServerInitiation();
 }
 
 /**
