@@ -19,7 +19,7 @@ async function uploadImage() {
 /**
  * This function checks if the user uploaded a profile picture, else this user gets the default picture
  */
-function checkUsersImage() {
+async function checkUsersImage() {
   let imagecheck = document.getElementById("fileToUpload");
   console.log(imagecheck);
   if (imagecheck.value.length < 1) {
