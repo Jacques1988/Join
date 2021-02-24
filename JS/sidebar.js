@@ -3,7 +3,7 @@
  */
 async function loadSideBar() {
     await initserver(); ///////////////////////////////////////////////DOWNLOAD FROM SERVER
-        let myprofileid = localStorage.getItem('activeuser');
+    let myprofileid = localStorage.getItem('activeuser');
 
     let image = users[myprofileid].userimage;
     document.getElementById('sidebar').innerHTML += `<div class="sidebar d-flex-responsive">
@@ -81,33 +81,33 @@ function datenschutzSquare() {
 /**
  * These functions update the sidebar on the current html
  */
-function initBoard() {
-     loadSideBar();
-    //boardSquare(); 
+async function initBoard() {
+    await loadSideBar();
+    /* boardSquare(); */
 }
-function initBacklog() {
+async function initBacklog() {
     loadSideBar();
     //backlogSquare(); 
 }
-function initAddTask() {
+async function initAddTask() {
     loadSideBar();
     //addTaskSquare(); 
 }
 
-function initHelp() {
+async function initHelp() {
     loadSideBar();
     //helpSquare(); 
 }
-function initMyProfile() {
+async function initMyProfile() {
     loadSideBar();
     //myProfileSquare(); 
 }
 
-function initImpressum() {
+async function initImpressum() {
     loadSideBar();
     //impressumSquare(); 
 }
-function initDatenschutz() {
+async function initDatenschutz() {
     loadSideBar();
     //datenschutzSquare(); 
 }

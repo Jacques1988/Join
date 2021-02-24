@@ -16,22 +16,22 @@
     padding-left: 6px;
     padding-right: 6px;
     padding-top: 8px;
-    padding-bottom: 8px; 
+    padding-bottom: 8px;
 }
 
-.uploaded-img-preview img{
+.uploaded-img-preview img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-top: 28px;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 .container-upload {
     width: 50%;
-    margin-left: 0px; 
-    margin-top: 20px; 
-    margin-bottom: 25px; 
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 25px;
     font-family: 'Poppins', sans-serif !important;
 }
 
@@ -47,40 +47,41 @@ form {
     flex-wrap: wrap;
 }
 
+.headline-backlog {
+    justify-content: space-between;
+}
+
 @media(max-width: 1680px) {
     .container-upload {
         width: 45%;
         margin-left: -22px;
     }
-
     .registrate-container {
-    margin-left: 24px;
+        margin-left: 24px;
     }
 }
 
 @media(max-width: 950px) {
     .container-upload {
-    width: 40%; 
+        width: 40%;
     }
     .createtaskbtn {
-        right: 100px; 
+        right: 100px;
     }
 }
 
 @media(max-width: 850px) {
     .container-upload {
-        width: 100%; 
+        width: 100%;
         justify-content: space-between;
         margin-right: 25px;
         margin-left: 0px;
     }
-
     .registrate-container {
-        margin-left: 0px; 
+        margin-left: 0px;
     }
-
     .createtaskbtn {
-        right: 160px; 
+        right: 160px;
     }
 }
 

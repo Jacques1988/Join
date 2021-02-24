@@ -29,7 +29,7 @@ async function addUser() {
   let emailstringatcheck = document.getElementById('newusermail').value;
 
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck && emailstringatcheck.includes('@')) {
-    await BuildUser();
+    await buildUser();
     SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
@@ -42,7 +42,7 @@ async function addUser() {
   }
 }
 
-async function BuildUser() {
+async function buildUser() {
 
   checklatestuserid();
   let newimage = checkUsersImage();
