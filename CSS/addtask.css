@@ -189,6 +189,9 @@ textarea {
 .addtask-assigned-userlist {
     display: flex;
     height: 50px;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    max-width: 45%; 
 }
 
 .addtask-assigned-userlist img {
@@ -289,6 +292,10 @@ textarea {
     }
     .inputfield1 {
         width: 90%;
+    }
+
+    .cancel {
+        top: 70px;
     }
 }
 
@@ -420,11 +427,16 @@ textarea {
         left: 0px;
     }
     .assigned-to-plus {
-        top: 35px;
+        top: 79px !important;
         left: 70px;
     }
     .addtask-userlist {
         width: 95%; 
+        transform: translateY(-255px);
+    }
+
+    .cancel {
+        top: 70px;
     }
 }
 
@@ -457,11 +469,10 @@ textarea {
     .cancel {
         position: absolute;
         cursor: pointer;
-        top: 77px;
         left: -11px;
     }
     .assigned-to-plus {
-        left: 0px;
+        left: 70px;
     }
 }
 @media(max-width: 450px) {
@@ -481,7 +492,7 @@ textarea {
         top: 8px;
     }
     .assigned-to-plus {
-        left: 0px;
+        left: 70px;
     }
     .mobile-assigned {
         margin-top: -26px;
