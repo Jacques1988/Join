@@ -12,7 +12,7 @@ function checkUseralreadyexists() {
     }
     else { check = true; }
   }
-  if (check = true) {
+  if (check) {
     addUser();
   }
 }
@@ -63,7 +63,7 @@ async function BuildUser() {
     "useroffice": document.getElementById('office').value,
     "userpassword": passwordHashString,
     // "userdescription": document.getElementById('newuserdescription').value,
-    "userimage": newimage, 
+    "userimage": newimage,
     "usercategory": 'default',
     "usertasks": []
   });
@@ -137,7 +137,7 @@ async function initserver() {
   latesttuserid = backend.getItem('latesttuserid');
   latesttaskid = backend.getItem('latesttaskid');
   currenttaskusers = JSON.parse(backend.getItem('currenttaskusers')) || [];
-  
+
   //updatedropdown(); //NOT WORKING YET.
   //updatenewid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //updatetaskid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////

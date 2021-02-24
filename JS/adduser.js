@@ -9,9 +9,10 @@ async function uploadImage() {
   let formData = new FormData();
   formData.append("fileToUpload", photo);
   await fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { method: "POST", body: formData });
+  user = localStorage.getItem('activeuser');
   users[user]['userimage'] = document.getElementById("fileToUpload").files[0].name;
   /* users[user]['userimage'] = filename; */
-  backend.setItem('users', JSON.stringify(users));
+  await backend.setItem('users', JSON.stringify(users));
   /* alert(filename + ' was uploaded successfully.'); */
 }
 
@@ -19,7 +20,7 @@ async function uploadImage() {
 /**
  * This function checks if the user uploaded a profile picture, else this user gets the default picture
  */
-async function checkUsersImage() {
+function checkUsersImage() {
   let imagecheck = document.getElementById("fileToUpload");
   console.log(imagecheck);
   if (imagecheck.value.length < 1) {
