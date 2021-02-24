@@ -31,7 +31,7 @@ async function loadSideBar() {
 
     </div>
 
-    <div class="hamburger-menu"> <img class="d-none-big" id="hamburger" onclick="menuOpen(), transform()" src="img/hamburger-menu.png"></div>
+    <div class="hamburger-menu"> <img class="d-none-big" id="hamburger" onclick="menuOpen()" src="img/hamburger-menu.png"></div>
 
   </div>
   `
