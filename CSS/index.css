@@ -124,6 +124,7 @@
 
 .always-index {
     padding: 20px;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,6 +180,23 @@
 
 .textarea-adduser {
     width: 88% !important;
+}
+
+/*
+*bottom card, impressum + compliance
+*/
+.loginbottomcontainer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+        width: 300px;
+        height: 25px;
+        background-color: #f9f6f4;
+        box-shadow: 15px 15px 70px grey;
+        border-radius: 12px;
+        padding: 20px;
+    
 }
 
 /*Responsive Design*/
