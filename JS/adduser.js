@@ -13,9 +13,7 @@ async function uploadImage() {
   if (photo) {
     users[user]['userimage'] = photo.name;
   }
-  /*   users[user]['userimage'] = filename;  */
   backend.setItem('users', JSON.stringify(users));
-  /* alert(filename + ' was uploaded successfully.'); */
 }
 
 
@@ -34,13 +32,14 @@ function checkUsersImage() {
 /**
  * The file is displayed, so the user can see which picture is uploaded
  */
-const toBase64 = file => new Promise((resolve, reject) => {
+function toBase64 (file) { 
+  return new Promise((resolve, reject) => {
   const reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onload = () => resolve(reader.result);
   reader.onerror = error => reject(error);
 });
-
+}
 async function showMyImage() {
   const file = document.getElementById('fileToUpload').files[0];
   document.getElementById('myimage').src = await toBase64(file);
