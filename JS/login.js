@@ -60,3 +60,12 @@ function SetServer() {
     backend.setItem('latesttaskid', latesttaskid);
     backend.setItem('currenttaskusers', JSON.stringify(currenttaskusers)); 
 }
+
+/*
+*guest login: sets parameters if you wanna login with guest account
+ */
+function guestlogin() {
+        let activeuserid = 3
+        localStorage.setItem("activeuser", activeuserid);    
+    loginsuccess();
+}

@@ -199,6 +199,23 @@
     
 }
 
+/*
+* guest login
+*/
+.loginguestcontainer {
+    z-index: 30;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    width: 120px;
+    height: 10px;
+    background-color: #f9f6f4;
+    box-shadow: 5px 5px 40px grey;
+    border-radius: 12px;
+    padding: 20px;
+}
+
 /*Responsive Design*/
 
 @media(min-width: 1210px) {
