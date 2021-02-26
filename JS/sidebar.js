@@ -2,7 +2,7 @@
  * 
  */
 async function loadSideBar() {
-    await initserver(); ///////////////////////////////////////////////DOWNLOAD FROM SERVER
+    await initserver(); //DOWNLOAD FROM SERVER
     let myprofileid = localStorage.getItem('activeuser');
 
     let image = users[myprofileid].userimage;
@@ -42,74 +42,65 @@ async function loadSideBar() {
  */
 
 function boardSquare() {
+    document.getElementById('board').classList.add('square');
+}
+
+function backlogSquare() {
+    document.getElementById('backlog').classList.add('square')
+}
+function addTaskSquare() {
+    document.getElementById('addtask').classList.add('square')
+}
+function helpSquare() {
+    document.getElementById('help').classList.add('square')
+}
+function myProfileSquare() {
+    document.getElementById('myprofile').classList.add('square')
+}
+function impressumSquare() {
+    document.getElementById('impressum').classList.add('square')
+}
+function datenschutzSquare() {
+    document.getElementById('datenschutz').classList.add('square')
+}
+/*function boardSquare() { //old version, not necessary
     if (window.location.href.endsWith('board.html')) {
         document.getElementById('board').classList.add('square');
     };
-}
-function backlogSquare() {
-    if (window.location.href.endsWith('backlog.html')) {
-        document.getElementById('backlog').classList.add('square')
-    };
-}
-function addTaskSquare() {
-    if (window.location.href.endsWith('addtask.html')) {
-        document.getElementById('addtask').classList.add('square')
-    };
-}
-function helpSquare() {
-    if (window.location.href.endsWith('help.html')) {
-        document.getElementById('help').classList.add('square')
-    };
-}
-function myProfileSquare() {
-    if (window.location.href.endsWith('myprofile.html')) {
-        document.getElementById('myprofile').classList.add('square')
-    };
-}
-function impressumSquare() {
-    if (window.location.href.endsWith('Impressum.html')) {
-        document.getElementById('impressum').classList.add('square')
-    };
-}
-function datenschutzSquare() {
-    if (window.location.href.endsWith('datenschutz.html')) {
-        document.getElementById('datenschutz').classList.add('square')
-    };
-}
-
+}*/
 
 /**
  * These functions update the sidebar on the current html
  */
 async function initBoard() {
     await loadSideBar();
-    /* boardSquare(); */
+    boardSquare();
 }
 async function initBacklog() {
-    loadSideBar();
-    //backlogSquare(); 
+    await loadSideBar();
+    backlogSquare(); 
 }
 async function initAddTask() {
-    loadSideBar();
-    //addTaskSquare(); 
+    await loadSideBar();
+    addTaskSquare(); 
 }
 
 async function initHelp() {
-    loadSideBar();
-    //helpSquare(); 
+    await loadSideBar();
+    helpSquare(); 
 }
 async function initMyProfile() {
-    loadSideBar();
-    //myProfileSquare(); 
+    await loadSideBar();
+    myProfileSquare(); 
 }
 
 async function initImpressum() {
-    loadSideBar();
-    //impressumSquare(); 
+    await loadSideBar();
+    impressumSquare(); 
 }
 async function initDatenschutz() {
-    loadSideBar();
-    //datenschutzSquare(); 
+    await loadSideBar();
+    datenschutzSquare(); 
 }
 
 
