@@ -9,7 +9,7 @@ async function uploadImage() {
   let formData = new FormData();
   formData.append("fileToUpload", photo);
   //await fetch('http://yvonne-gamboeck.developerakademie.com/Join/upload.php', { method: "POST", body: formData });   //Yvonne Server
-  await fetch('http://@johannes-nissen.developerakademie.com/Modul10_JoinGruppenarbeit/Join/upload.php', { method: "POST", body: formData });   //Johannes Server
+  await fetch('http://johannes-nissen.developerakademie.com/Join/upload.php', { method: "POST", body: formData });   //Johannes Server
   user = localStorage.getItem('activeuser');
   if (photo) {
     users[user]['userimage'] = photo.name;
