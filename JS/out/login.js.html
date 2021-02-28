@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: login.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: login.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+
+/*
+*checks if loginsuccess condition is true and proceeds to main page. 
+*/
+function loginsuccess() {
+
+    window.open('board.html', '_self');
+}
+
+/**
+ * searchuser(): checks if input user exists
+ */
+function login() {
+    //LoadLocal();
+    let usernametry = document.getElementById('nameinput').value;
+    let condition = users.findIndex(std => std.username === usernametry); //https://medium.com/tinytute/how-to-get-index-from-a-json-object-with-value-javascript-a556f93c0194
+
+    if (condition != -1) {
+        checkpassword(usernametry, condition);
+    }
+    else {
+        alert('User doesn´t exist.');
+
+    }
+}
+
+/**
+ * checkpassword: checks, if password matches selected user
+ * @param {} a : selected user that exists.
+ *  @param {} b : selected user's id'
+ */
+
+function checkpassword(a, b) {
+    // let nameexists = a;
+    let idpassword = b;
+    let password = document.getElementById('passwordinput').value;
+    let passwordHash = CryptoJS.SHA256(password);
+    let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);
+console.log(passwordHash)
+    if (passwordHashString === users[idpassword].userpassword) {
+        console.log('correct PW') //TEST. PLZ REMOVE LATER
+        document.getElementById('cardflipper').classList.add('cardflip');
+        getActiveUserId(b);
+        loginsuccess();
+        
+    }
+    else {
+        alert('Incorrect password.');
+
+    }
+}
+/**
+ * first setup only. Not used in standard application.
+ */
+function SetServer() {
+    backend.setItem('users', JSON.stringify(users));
+    backend.setItem('alltasks', JSON.stringify(alltasks));
+    backend.setItem('latesttuserid', latesttuserid);
+    backend.setItem('latesttaskid', latesttaskid);
+    backend.setItem('currenttaskusers', JSON.stringify(currenttaskusers)); 
+}
+
+/*
+*guest login: sets parameters if you wanna login with guest account
+ */
+function guestlogin() {
+        let activeuserid = 3
+        localStorage.setItem("activeuser", activeuserid);    
+    loginsuccess();
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklog">addBacklog</a></li><li><a href="global.html#addCurrentUserProfile">addCurrentUserProfile</a></li><li><a href="global.html#addMyProfileBox">addMyProfileBox</a></li><li><a href="global.html#assignuser">assignuser</a></li><li><a href="global.html#BuildMyProfile">BuildMyProfile</a></li><li><a href="global.html#checklatesttaskid">checklatesttaskid</a></li><li><a href="global.html#checkpassword">checkpassword</a></li><li><a href="global.html#checkUseralreadyexists">checkUseralreadyexists</a></li><li><a href="global.html#checkUsersImage">checkUsersImage</a></li><li><a href="global.html#ClearBoard">ClearBoard</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#deleteActiveUser">deleteActiveUser</a></li><li><a href="global.html#deleteAll">deleteAll</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#deleteuserfromtask">deleteuserfromtask</a></li><li><a href="global.html#getActiveUserId">getActiveUserId</a></li><li><a href="global.html#initBoard">initBoard</a></li><li><a href="global.html#InitLocal">InitLocal</a></li><li><a href="global.html#LoadLocal">LoadLocal</a></li><li><a href="global.html#loadSideBar">loadSideBar</a></li><li><a href="global.html#LocalLoadUsers">LocalLoadUsers</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#menuClose">menuClose</a></li><li><a href="global.html#menuOpen">menuOpen</a></li><li><a href="global.html#openMobileMenu">openMobileMenu</a></li><li><a href="global.html#pickcolor">pickcolor</a></li><li><a href="global.html#PushTask">PushTask</a></li><li><a href="global.html#saveActiveUser">saveActiveUser</a></li><li><a href="global.html#selectuserassign">selectuserassign</a></li><li><a href="global.html#ServerDeleteAndUpload">ServerDeleteAndUpload</a></li><li><a href="global.html#setActiveUser">setActiveUser</a></li><li><a href="global.html#setArray">setArray</a></li><li><a href="global.html#SetLocal">SetLocal</a></li><li><a href="global.html#SetServer">SetServer</a></li><li><a href="global.html#TaskMoveLeft">TaskMoveLeft</a></li><li><a href="global.html#TaskMoveRight">TaskMoveRight</a></li><li><a href="global.html#TasksAssignedToUser">TasksAssignedToUser</a></li><li><a href="global.html#TasksCreatedByUser">TasksCreatedByUser</a></li><li><a href="global.html#toBase64">toBase64</a></li><li><a href="global.html#updateBoard">updateBoard</a></li><li><a href="global.html#updatenewid">updatenewid</a></li><li><a href="global.html#updatetaskusers">updatetaskusers</a></li><li><a href="global.html#UpdateTodo">UpdateTodo</a></li><li><a href="global.html#uploadImage">uploadImage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 11:40:57 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

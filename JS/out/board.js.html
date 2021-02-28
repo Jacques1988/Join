@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: board.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: board.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * color defines the color assigned to the category of each task; 
+ */
+let color = 'gold';
+let salescolor = 'gold';
+let marketingcolor = 'yellowgreen';
+let productcolor = 'salmon';
+
+/**
+ *ClearBoard: sets all innerHTML to '' 
+ */
+function ClearBoard() {
+    document.getElementById('todo').innerHTML = '';
+    document.getElementById('inprogress').innerHTML = '';
+    document.getElementById('testing').innerHTML = '';
+    document.getElementById('done').innerHTML = '';
+}
+
+/**
+ * newboard: initializes the board after server download
+ */
+/*const newboard = async () => {  //https://stackoverflow.com/questions/21518381/proper-way-to-wait-for-one-function-to-finish-before-continuing
+    const result = await loadSideBar();
+    // do something else here after firstFunction completes
+    updateBoard();
+}*/
+
+async function newboard() {
+    //await downloadFromServer();
+    await initserver();
+    updateBoard();
+}
+
+
+/**
+ * updateBoard: This function updates all panels 
+ */
+function updateBoard() {
+    
+    ClearBoard();
+    for (let i = 0; i &lt; alltasks.length; i++) {
+
+        let currentid = alltasks[i].taskid; //current id = id of element no. 'i' in array, changes each iteration
+        let currenttask = alltasks[currentid]; //currenttask = task-element with id 'currentid' in array, changes each iteration
+        let taskauthorposition = currenttask.taskauthorid;
+        let taskauthor = users[taskauthorposition];
+        if (currenttask.taskstatus == 'todo') {  //status todo
+            UpdateTodo(currenttask, currentid, taskauthor);
+        }
+        else if (currenttask.taskstatus == 'inprogress') { //status inprogress
+            UpdateInprogress(currenttask, currentid, taskauthor);
+        }
+        else if (currenttask.taskstatus == 'testing') { //status testing
+            UpdateTesting(currenttask, currentid, taskauthor);
+        }
+        else if (currenttask.taskstatus == 'done') { //status done
+            UpdateDone(currenttask, currentid, taskauthor);
+        }
+    }
+}
+
+/**
+ * Update"STATUS": the following 4 functions update the assigned divs in view and fill their HTML with tasks from alltasks, if existing
+ * @param {*} currenttask: task-element that is being processed
+ * @param {*} currentid id of task that is being processed
+ */
+function UpdateTodo(currenttask, currentid, taskauthor) {
+
+    pickcolor(currenttask);
+    document.getElementById('todo').innerHTML += `
+&lt;div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
+                &lt;div class="d-flex date-img-container">
+                &lt;div class="blue board-bold"> ${currenttask['taskname']}&lt;/div>
+                &lt;div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" >&lt;img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false">&lt;/div>
+            &lt;/div>
+                &lt;div>${currenttask['taskcategory']}&lt;/div>
+                &lt;div>${currenttask['taskurgency']}&lt;/div>
+                &lt;div class="date-img-container d-flex">
+                    &lt;div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}&lt;/div>
+                    &lt;div>&lt;img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG">&lt;/div>
+                    &lt;div>&lt;img class="img-board" src="./uploads/${taskauthor['userimage']}">&lt;/div>
+                &lt;/div>
+            &lt;/div>`
+}
+
+function UpdateInprogress(currenttask, currentid, taskauthor) {
+
+    pickcolor(currenttask);
+    document.getElementById('inprogress').innerHTML += `
+    &lt;div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
+                &lt;div class="d-flex date-img-container">
+                &lt;div class="blue board-bold"> ${currenttask['taskname']}&lt;/div>
+                &lt;div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" >&lt;img src="img/dustbin_80977-forLinuxServer.PNG">&lt;/div>
+            &lt;/div>
+                &lt;div>${currenttask['taskcategory']}&lt;/div>
+                &lt;div>${currenttask['taskurgency']}&lt;/div>
+                &lt;div class="date-img-container d-flex">
+                    &lt;div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}&lt;/div>
+                    &lt;div>&lt;img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG">&lt;/div>
+                    &lt;div>&lt;img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG">&lt;/div>
+                    &lt;div>&lt;img class="img-board" src="./uploads/${taskauthor['userimage']}">&lt;/div>
+                &lt;/div>
+            &lt;/div>`
+}
+
+function UpdateTesting(currenttask, currentid, taskauthor) {
+
+    pickcolor(currenttask);
+    document.getElementById('testing').innerHTML += `
+    &lt;div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
+                &lt;div class="d-flex date-img-container">
+                &lt;div class="blue board-bold"> ${currenttask['taskname']}&lt;/div>
+                &lt;div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" >&lt;img src="img/dustbin_80977-forLinuxServer.PNG">&lt;/div>
+            &lt;/div>
+                &lt;div>${currenttask['taskcategory']}&lt;/div>
+                &lt;div>${currenttask['taskurgency']}&lt;/div>
+                &lt;div class="date-img-container d-flex">
+                    &lt;div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}&lt;/div>
+                    &lt;div>&lt;img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG">&lt;/div>
+                    &lt;div>&lt;img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG">&lt;/div>
+                    &lt;div>&lt;img class="img-board" src="./uploads/${taskauthor['userimage']}">&lt;/div>
+                &lt;/div>
+            &lt;/div>`
+}
+
+function UpdateDone(currenttask, currentid, taskauthor) {
+
+    pickcolor(currenttask);
+    document.getElementById('done').innerHTML += `
+    &lt;div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
+                &lt;div class="d-flex date-img-container">
+                &lt;div class="blue board-bold"> ${currenttask['taskname']}&lt;/div>
+                &lt;div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" >&lt;img src="img/dustbin_80977-forLinuxServer.PNG">&lt;/div>
+            &lt;/div>
+                &lt;div>${currenttask['taskcategory']}&lt;/div>
+                &lt;div>${currenttask['taskurgency']}&lt;/div>
+                &lt;div class="date-img-container d-flex">
+                    &lt;div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}&lt;/div>
+                    &lt;div>&lt;img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG">&lt;/div>
+                     &lt;div>&lt;img class="img-board" src="./uploads/${taskauthor['userimage']}">&lt;/div>
+                &lt;/div>
+            &lt;/div>`
+}
+
+/**
+ * Color for each Category is choosen
+ * @param {*} currenttask 
+ */
+function pickcolor(currenttask) {
+    if (currenttask.taskcategory == 'Marketing') {
+        color = marketingcolor;
+    }
+    else if (currenttask.taskcategory == 'Product') {
+        color = productcolor;
+    }
+    else if (currenttask.taskcategory == 'Sales') {
+        color = salescolor;
+    }
+}
+
+/**
+ * onclick="TaskMoveRight('taskid')" : task progresses in board to next panel to the right, initiates pushfunction to alltasks
+ * @param {*} id task id
+ */
+
+function TaskMoveRight(id) {
+    let tasktarget;
+    if (alltasks[id].taskstatus == 'todo') {
+        tasktarget = 'inprogress';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'inprogress') {
+        tasktarget = 'testing';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'testing') {
+        tasktarget = 'done';
+        PushTask(id, tasktarget);
+    }
+    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    updateBoard();
+
+}
+
+/**
+ * onclick="TaskMoveLeft('taskid')" : task is backrolled in board to next panel to the left, initiates pushfunction to alltasks
+ * @param {*} id task id
+ */
+function TaskMoveLeft(id) {
+    let tasktarget;
+    if (alltasks[id].taskstatus == 'done') {
+        tasktarget = 'testing';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'inprogress') {
+        tasktarget = 'todo';
+        PushTask(id, tasktarget);
+    }
+    else if (alltasks[id].taskstatus == 'testing') {
+        tasktarget = 'inprogress';
+        PushTask(id, tasktarget);
+    }
+    updateBoard();
+    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    
+}
+
+/**
+ * PushTask: initiated by TaskMoveLeft / TaskMoveRight; changes taskstatus to newly assigned status.
+ * @param {*} id : task id
+ * @param {*} tasktarget: new task status
+ */
+function PushTask(id, tasktarget) {
+    alltasks[id].taskstatus = tasktarget;
+    //ServerDeleteAndUpload()
+}
+
+/**
+ * deleteTask: "Deletes" selected task (via trashbin symbol) from view. Done by assigning new status 'TaskDeleted'. Task is still stored in alltasks!
+ * @param {*} i : task id
+ */
+function deleteTask(i) {
+    alltasks[i].taskstatus = 'TaskDeleted';
+    //alltasks.splice(i, 1);
+    updateBoard();
+    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    
+}
+
+/**
+ * NOT USED: replaces old alltasks with new one from temporary storage
+ */
+function ServerDeleteAndUpload() {
+    backend.deleteItem('alltasks'); //deletes old array from server
+    backend.setItem('alltasks', JSON.stringify(alltasks)); //sends new array to server
+}
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklog">addBacklog</a></li><li><a href="global.html#addCurrentUserProfile">addCurrentUserProfile</a></li><li><a href="global.html#addMyProfileBox">addMyProfileBox</a></li><li><a href="global.html#assignuser">assignuser</a></li><li><a href="global.html#BuildMyProfile">BuildMyProfile</a></li><li><a href="global.html#checklatesttaskid">checklatesttaskid</a></li><li><a href="global.html#checkpassword">checkpassword</a></li><li><a href="global.html#checkUseralreadyexists">checkUseralreadyexists</a></li><li><a href="global.html#checkUsersImage">checkUsersImage</a></li><li><a href="global.html#ClearBoard">ClearBoard</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#deleteActiveUser">deleteActiveUser</a></li><li><a href="global.html#deleteAll">deleteAll</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#deleteuserfromtask">deleteuserfromtask</a></li><li><a href="global.html#getActiveUserId">getActiveUserId</a></li><li><a href="global.html#initBoard">initBoard</a></li><li><a href="global.html#InitLocal">InitLocal</a></li><li><a href="global.html#LoadLocal">LoadLocal</a></li><li><a href="global.html#loadSideBar">loadSideBar</a></li><li><a href="global.html#LocalLoadUsers">LocalLoadUsers</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#menuClose">menuClose</a></li><li><a href="global.html#menuOpen">menuOpen</a></li><li><a href="global.html#openMobileMenu">openMobileMenu</a></li><li><a href="global.html#pickcolor">pickcolor</a></li><li><a href="global.html#PushTask">PushTask</a></li><li><a href="global.html#saveActiveUser">saveActiveUser</a></li><li><a href="global.html#selectuserassign">selectuserassign</a></li><li><a href="global.html#ServerDeleteAndUpload">ServerDeleteAndUpload</a></li><li><a href="global.html#setActiveUser">setActiveUser</a></li><li><a href="global.html#setArray">setArray</a></li><li><a href="global.html#SetLocal">SetLocal</a></li><li><a href="global.html#SetServer">SetServer</a></li><li><a href="global.html#TaskMoveLeft">TaskMoveLeft</a></li><li><a href="global.html#TaskMoveRight">TaskMoveRight</a></li><li><a href="global.html#TasksAssignedToUser">TasksAssignedToUser</a></li><li><a href="global.html#TasksCreatedByUser">TasksCreatedByUser</a></li><li><a href="global.html#toBase64">toBase64</a></li><li><a href="global.html#updateBoard">updateBoard</a></li><li><a href="global.html#updatenewid">updatenewid</a></li><li><a href="global.html#updatetaskusers">updatetaskusers</a></li><li><a href="global.html#UpdateTodo">UpdateTodo</a></li><li><a href="global.html#uploadImage">uploadImage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 11:40:57 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

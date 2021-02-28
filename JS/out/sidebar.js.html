@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: sidebar.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: sidebar.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**Menu is loaded on every HTML file
+ * 
+ */
+async function loadSideBar() {
+    await initserver(); //DOWNLOAD FROM SERVER
+    let myprofileid = localStorage.getItem('activeuser');
+
+    let image = users[myprofileid].userimage;
+    document.getElementById('sidebar').innerHTML += `&lt;div class="sidebar d-flex-responsive">
+
+    &lt;div class="sidebar-menu">
+        &lt;div class="sidebar-logo" onclick="initBoard()">
+         &lt;a href="board.html">   &lt;img src="./img/joinlogo-forLinuxServer.PNG"> &lt;a>
+        &lt;/div>
+
+        &lt;div id="sidebar-navigation" class="sidebar-navigation d-flex d-none-responsive">
+        &lt;div class="d-flex navigation-row" id="board"> &lt;a href="board.html" style="margin-left: 0px"> Board&lt;/a> &lt;/div>
+        &lt;div class="d-flex navigation-row" id="backlog"> &lt;a href="backlog.html">Backlog&lt;/a> &lt;/div>
+        &lt;div class="d-flex navigation-row" id="addtask" onclick="initAddTask()"> &lt;a href="addtask.html">Add Task&lt;/a> &lt;/div>
+        &lt;div class="d-flex navigation-row" id="help" onclick="initHelp()"> &lt;a href="help.html">  Help&lt;/a> &lt;/div>
+        &lt;div class="d-flex navigation-row" id="myprofile" onclick="initMyProfile()"> &lt;a href="myprofile.html">   My Profile&lt;/a> &lt;/div>
+        &lt;div class="d-flex navigation-row" id="impressum" onclick="initImpressum()"> &lt;a href="Impressum.html">   Impressum&lt;/a> &lt;/div>
+        &lt;div class="d-flex navigation-row" id="datenschutz" onclick="initDatenschutz()"> &lt;a href="datenschutz.html">   Datenschutz&lt;/a> &lt;/div>
+        &lt;/div>
+
+    &lt;/div>
+
+    &lt;div class="sidebar-profile d-none-responsive">
+        &lt;a href="myprofile.html" style="margin-bottom: 8px"> &lt;img src="./uploads/${image}">&lt;/a>
+        &lt;a class="logoutlink" href="logout.html">&lt;div class="logoutbtn" onclick="logout(), deleteActiveUser()">&lt;div class="logoutbtnanimatediv">&lt;span>Logout&lt;/span>&lt;/div>&lt;/div>&lt;/a> 
+
+    &lt;/div>
+
+    &lt;div class="hamburger-menu"> &lt;img class="d-none-big" id="hamburger" onclick="menuOpen()" src="img/hamburger-menu.png">&lt;/div>
+
+  &lt;/div>
+  `
+}
+
+/* /**Used do add the white Square in front of the current navigation
+ *
+ */
+
+function boardSquare() {
+    document.getElementById('board').classList.add('square');
+}
+
+function backlogSquare() {
+    document.getElementById('backlog').classList.add('square')
+}
+function addTaskSquare() {
+    document.getElementById('addtask').classList.add('square')
+}
+function helpSquare() {
+    document.getElementById('help').classList.add('square')
+}
+function myProfileSquare() {
+    document.getElementById('myprofile').classList.add('square')
+}
+function impressumSquare() {
+    document.getElementById('impressum').classList.add('square')
+}
+function datenschutzSquare() {
+    document.getElementById('datenschutz').classList.add('square')
+}
+/*function boardSquare() { //old version, not necessary
+    if (window.location.href.endsWith('board.html')) {
+        document.getElementById('board').classList.add('square');
+    };
+}*/
+
+/**
+ * These functions update the sidebar on the current html
+ */
+async function initBoard() {
+    await loadSideBar();
+    boardSquare();
+}
+async function initBacklog() {
+    await loadSideBar();
+    backlogSquare(); 
+}
+async function initAddTask() {
+    await loadSideBar();
+    addTaskSquare(); 
+}
+
+async function initHelp() {
+    await loadSideBar();
+    helpSquare(); 
+}
+async function initMyProfile() {
+    await loadSideBar();
+    myProfileSquare(); 
+}
+
+async function initImpressum() {
+    await loadSideBar();
+    impressumSquare(); 
+}
+async function initDatenschutz() {
+    await loadSideBar();
+    datenschutzSquare(); 
+}
+
+
+
+/**
+ *Logout: logs user out and resets to login page
+ */
+
+function logout() {
+    console.log('logged out.');
+    //activeuser reset
+    //picture reset
+}
+
+
+
+
+/*Responsive Design*/
+
+/**
+ * When click on the 3 stripes the mobile menu is opening
+ */
+function openMobileMenu() {
+    let myprofileid = localStorage.getItem('activeuser');
+    LoadLocal(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
+    let image = users[myprofileid].userimage;
+    document.getElementById('total-size').innerHTML = `
+    &lt;div id="transformation" class="box-transparent" onclick="menuClose()">
+    &lt;div class="responsive-menu">
+    &lt;div class="d-flex navigation-row"> &lt;a href="board.html">  Board&lt;/a>  &lt;/div>
+    &lt;div class="d-flex navigation-row"> &lt;a href="backlog.html">Backlog&lt;/a> &lt;/div>
+    &lt;div class="d-flex navigation-row"> &lt;a href="addtask.html">Add Task&lt;/a> &lt;/div>
+    &lt;div class="d-flex navigation-row"> &lt;a href="help.html">  Help&lt;/a> &lt;/div>
+    &lt;div class="d-flex navigation-row"> &lt;a href="myprofile.html">   My Profile&lt;/a> &lt;/div>
+    &lt;div class="d-flex navigation-row"> &lt;a href="Impressum.html">   Impressum&lt;/a> &lt;/div>
+    &lt;div class="d-flex navigation-row"> &lt;a href="datenschutz.html">   Datenschutz&lt;/a> &lt;/div>
+
+    &lt;div class="sidebar-profile">
+    &lt;a href="myprofile.html">&lt;img src="./uploads/${image}">&lt;/a>
+    &lt;a href="logout.html">&lt;button onclick="logout()" class="btn-logout-menu">Ausloggen&lt;/button> &lt;/a>
+&lt;/div>
+    &lt;/div>
+    &lt;/div>
+    `
+}
+
+/**
+ * mobile menu close
+ */
+function menuClose() {
+    document.getElementById('total-size').classList.add("d-none-responsive");
+}
+
+/**
+ * mobile menu is opening
+ */
+function menuOpen() {
+    document.getElementById('total-size').classList.remove("d-none-responsive");
+    openMobileMenu();
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklog">addBacklog</a></li><li><a href="global.html#addCurrentUserProfile">addCurrentUserProfile</a></li><li><a href="global.html#addMyProfileBox">addMyProfileBox</a></li><li><a href="global.html#assignuser">assignuser</a></li><li><a href="global.html#BuildMyProfile">BuildMyProfile</a></li><li><a href="global.html#checklatesttaskid">checklatesttaskid</a></li><li><a href="global.html#checkpassword">checkpassword</a></li><li><a href="global.html#checkUseralreadyexists">checkUseralreadyexists</a></li><li><a href="global.html#checkUsersImage">checkUsersImage</a></li><li><a href="global.html#ClearBoard">ClearBoard</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#deleteActiveUser">deleteActiveUser</a></li><li><a href="global.html#deleteAll">deleteAll</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#deleteuserfromtask">deleteuserfromtask</a></li><li><a href="global.html#getActiveUserId">getActiveUserId</a></li><li><a href="global.html#initBoard">initBoard</a></li><li><a href="global.html#InitLocal">InitLocal</a></li><li><a href="global.html#LoadLocal">LoadLocal</a></li><li><a href="global.html#loadSideBar">loadSideBar</a></li><li><a href="global.html#LocalLoadUsers">LocalLoadUsers</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#menuClose">menuClose</a></li><li><a href="global.html#menuOpen">menuOpen</a></li><li><a href="global.html#openMobileMenu">openMobileMenu</a></li><li><a href="global.html#pickcolor">pickcolor</a></li><li><a href="global.html#PushTask">PushTask</a></li><li><a href="global.html#saveActiveUser">saveActiveUser</a></li><li><a href="global.html#selectuserassign">selectuserassign</a></li><li><a href="global.html#ServerDeleteAndUpload">ServerDeleteAndUpload</a></li><li><a href="global.html#setActiveUser">setActiveUser</a></li><li><a href="global.html#setArray">setArray</a></li><li><a href="global.html#SetLocal">SetLocal</a></li><li><a href="global.html#SetServer">SetServer</a></li><li><a href="global.html#TaskMoveLeft">TaskMoveLeft</a></li><li><a href="global.html#TaskMoveRight">TaskMoveRight</a></li><li><a href="global.html#TasksAssignedToUser">TasksAssignedToUser</a></li><li><a href="global.html#TasksCreatedByUser">TasksCreatedByUser</a></li><li><a href="global.html#toBase64">toBase64</a></li><li><a href="global.html#updateBoard">updateBoard</a></li><li><a href="global.html#updatenewid">updatenewid</a></li><li><a href="global.html#updatetaskusers">updatetaskusers</a></li><li><a href="global.html#UpdateTodo">UpdateTodo</a></li><li><a href="global.html#uploadImage">uploadImage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 11:40:57 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

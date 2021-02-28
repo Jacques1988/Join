@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: backlog.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: backlog.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+/**
+ * addBacklog: Creates arranged HTML code based on alltasks array.
+ */
+async function addBacklog() {
+    await initserver();
+    document.getElementById('backlog-input').innerHTML = ''; //clear backlog
+    let tasksExist = false;
+    for (let i = 0; i &lt; alltasks.length; i++) { //iterations to display alltasks
+        let currenttask = alltasks[i];
+        let creatorid = currenttask.taskauthorid;
+        let taskcreator = users[creatorid];
+        let currenttaskid = currenttask.taskid; //task id from database
+
+        if (currenttask.taskstatus !== 'TaskDeleted') { //task will not be displayed if it was deleted
+            tasksExist = true;
+            pickcolor(currenttask);
+            document.getElementById('backlog-input').innerHTML += `
+        &lt;div class="backlog-field d-flex background-color-primary" style="border-left: 12px solid ${color};">
+                    &lt;div id="backlogtaskid${currenttaskid}" class="profil-container d-flex profil-container-mobile-width" style="width: 40%">
+                        &lt;div class=" d-flex profile-container-mobile" style="align-items: center">
+                            &lt;img class="profile-img" src="uploads/${taskcreator['userimage']}" alt="">
+                            &lt;div class="profile d-flex">
+                                &lt;span class="blue" id="mail-adress">${taskcreator['username']}&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="category category-container-mobile-width" style="width: 30%">${currenttask['taskcategory']}&lt;/div>
+                    &lt;div class="details details-container-mobile-width" style="width: 30%">${currenttask['taskname']}&lt;/div>
+                &lt;/div>`
+        }
+    }
+    if (tasksExist == false) {
+        document.getElementById('backlog-input').innerHTML = '&lt;div class="empty-backlog">You haven`t created any tasks yet.&lt;/div>';
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklog">addBacklog</a></li><li><a href="global.html#addCurrentUserProfile">addCurrentUserProfile</a></li><li><a href="global.html#addMyProfileBox">addMyProfileBox</a></li><li><a href="global.html#assignuser">assignuser</a></li><li><a href="global.html#BuildMyProfile">BuildMyProfile</a></li><li><a href="global.html#checklatesttaskid">checklatesttaskid</a></li><li><a href="global.html#checkpassword">checkpassword</a></li><li><a href="global.html#checkUseralreadyexists">checkUseralreadyexists</a></li><li><a href="global.html#checkUsersImage">checkUsersImage</a></li><li><a href="global.html#ClearBoard">ClearBoard</a></li><li><a href="global.html#color">color</a></li><li><a href="global.html#deleteActiveUser">deleteActiveUser</a></li><li><a href="global.html#deleteAll">deleteAll</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#deleteuserfromtask">deleteuserfromtask</a></li><li><a href="global.html#getActiveUserId">getActiveUserId</a></li><li><a href="global.html#initBoard">initBoard</a></li><li><a href="global.html#InitLocal">InitLocal</a></li><li><a href="global.html#LoadLocal">LoadLocal</a></li><li><a href="global.html#loadSideBar">loadSideBar</a></li><li><a href="global.html#LocalLoadUsers">LocalLoadUsers</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#menuClose">menuClose</a></li><li><a href="global.html#menuOpen">menuOpen</a></li><li><a href="global.html#openMobileMenu">openMobileMenu</a></li><li><a href="global.html#pickcolor">pickcolor</a></li><li><a href="global.html#PushTask">PushTask</a></li><li><a href="global.html#saveActiveUser">saveActiveUser</a></li><li><a href="global.html#selectuserassign">selectuserassign</a></li><li><a href="global.html#ServerDeleteAndUpload">ServerDeleteAndUpload</a></li><li><a href="global.html#setActiveUser">setActiveUser</a></li><li><a href="global.html#setArray">setArray</a></li><li><a href="global.html#SetLocal">SetLocal</a></li><li><a href="global.html#SetServer">SetServer</a></li><li><a href="global.html#TaskMoveLeft">TaskMoveLeft</a></li><li><a href="global.html#TaskMoveRight">TaskMoveRight</a></li><li><a href="global.html#TasksAssignedToUser">TasksAssignedToUser</a></li><li><a href="global.html#TasksCreatedByUser">TasksCreatedByUser</a></li><li><a href="global.html#toBase64">toBase64</a></li><li><a href="global.html#updateBoard">updateBoard</a></li><li><a href="global.html#updatenewid">updatenewid</a></li><li><a href="global.html#updatetaskusers">updatetaskusers</a></li><li><a href="global.html#UpdateTodo">UpdateTodo</a></li><li><a href="global.html#uploadImage">uploadImage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Feb 28 2021 11:40:57 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
