@@ -10,7 +10,7 @@ async function loadSideBar() {
 
     <div class="sidebar-menu">
         <div class="sidebar-logo" onclick="initBoard()">
-         <a href="board.html">   <img src="./img/joinlogo-forLinuxServer.PNG"> <a>
+         <a href="board.html"> <img src="./img/joinlogo-forLinuxServer.PNG"> <a>
         </div>
 
         <div id="sidebar-navigation" class="sidebar-navigation d-flex d-none-responsive">
@@ -33,7 +33,7 @@ async function loadSideBar() {
 
     <div class="hamburger-menu"> <img class="d-none-big" id="hamburger" onclick="menuOpen()" src="img/hamburger-menu.png"></div>
 
-  </div>
+  </div>;
   `
 }
 
@@ -125,7 +125,7 @@ function logout() {
  */
 function openMobileMenu() {
     let myprofileid = localStorage.getItem('activeuser');
-    LoadLocal(); ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING: DOWNLOAD FROM SERVER
+    LoadLocal(); 
     let image = users[myprofileid].userimage;
     document.getElementById('total-size').innerHTML = `
     <div id="transformation" class="box-transparent" onclick="menuClose()">
@@ -140,7 +140,7 @@ function openMobileMenu() {
 
     <div class="sidebar-profile">
     <a href="myprofile.html"><img src="./uploads/${image}"></a>
-    <a href="logout.html"><button onclick="logout()" class="btn-logout-menu">Ausloggen</button> </a>
+    <a href="logout.html"><button class="btn-logout-menu" onclick="logout()">Logout</button> </a>
 </div>
     </div>
     </div>

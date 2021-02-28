@@ -209,6 +209,15 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
+    .btn-logout-menu {
+        color:#012744;
+        background-color:#f9f6f4;
+        border-radius: 12px; 
+        padding: 8px; 
+        border: 2px solid grey;
+        font-weight: 800;
+    }
 }
 
 .sidebar-logo {
@@ -245,6 +254,7 @@ body {
     .btn-logout-menu {
         font-size: 18px;
     }
+
     .board-menu {
         flex-direction: column;
     }
