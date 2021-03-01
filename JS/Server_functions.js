@@ -91,16 +91,16 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     checklatesttaskid();
     BuildTask();
-        UploadTaskToServer();
+    UploadTaskToServer();
     //let last_element = alltasks[alltasks.length - 1];
     //newtaskid = last_element.taskid + 1;
     currenttaskusers = [];
-    alert('Task was created successfully')
+ /*    alert('Task was created successfully') */
   }
   else {
     alert('Please add all necessary information.')
   }
-  location.reload();
+/*   location.reload(); */
   //}
 }
 
