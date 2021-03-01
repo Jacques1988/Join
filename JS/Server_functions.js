@@ -30,7 +30,7 @@ async function addUser() {
 
   if (namecheck.length > 0 && mailcheck.length > 0 && passwordcheck.length > 0 && passwordrepeatcheck == passwordcheck && emailstringatcheck.includes('@')) {
     await buildUser();
-    SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY. DELETE LATER.
+    SetLocal();
     UploadUserToServer();
     //updatedropdown(); //not necessary yet
     //newid = newid + 1;
@@ -91,8 +91,7 @@ function addTask() {
   if (namecheck.length > 0 && descriptioncheck.length > 0) { /*checks if fields are not empty */
     checklatesttaskid();
     BuildTask();
-    //SetLocal(); //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////LOCAL TESTING ONLY.
-    UploadTaskToServer();
+        UploadTaskToServer();
     //let last_element = alltasks[alltasks.length - 1];
     //newtaskid = last_element.taskid + 1;
     currenttaskusers = [];
@@ -138,20 +137,7 @@ async function initserver() {
   latesttaskid = backend.getItem('latesttaskid');
   currenttaskusers = JSON.parse(backend.getItem('currenttaskusers')) || [];
 
-  //updatedropdown(); //NOT WORKING YET.
-  //updatenewid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  //updatetaskid(); //REDUNDANT?//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
-
-/*
-async function waitTillServerInitiation() {
-  await preinitserver();
-}
-
-function initserver() {
-  waitTillServerInitiation();
-}
-*/
 
 /**
  * ID counters
@@ -206,7 +192,7 @@ function deleteAll(name) {
 }
 
 /*
-*NOT WORKING: populate Dropdownmenu: adds values of username to dropdown options https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
+*NOT WORKING + not necessary in current build: populate Dropdownmenu: adds values of username to dropdown options https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
 */ /*
 function updatedropdown() {
   let dropdown = document.getElementById('locality-dropdown');

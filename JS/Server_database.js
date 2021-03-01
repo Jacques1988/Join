@@ -5,8 +5,10 @@
 */
 //setURL('/Join/DATA/');  //Johannes Server
 setURL('/Join/DATA/');  // Yvonne Server
+
+
 /*
-*temporary id and array storage (only needed for local functions, no permanent storage necessary)
+*id and array storage (some only needed for local functions, no permanent storage necessary)
 */
 let latesttuserid;
 let latesttaskid;
@@ -20,10 +22,15 @@ let currenttaskusers = [];
 */
 //let users = [];
 
-//Example users (testing): ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////TESTING ONLY
+//Example users (testing): //TESTING ONLY
 /*let password = "password0"
 let passwordHash = CryptoJS.SHA256(password);
 let passwordHashString = passwordHash.toString(CryptoJS.enc.Base64);*/
+
+/*
+*alltasks: array stored on server and here
+*structure elements: taskid, taskname, taskdate, taskcategory, taskstatus, taskurgency, taskdescription, taskusers
+*/
 
 let users;
 let alltasks;
@@ -68,10 +75,7 @@ let alltasks;
     "usertasks": []//[0]
   }];*/
 
-/*
-*alltasks: array stored on server and here
-*structure elements: taskid, taskname, taskdate, taskcategory, taskstatus, taskurgency, taskdescription, taskusers
-*/
+
 /*let alltasks = [{
   "taskid": 0,
   "taskname": 'Test',

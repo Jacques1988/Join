@@ -19,11 +19,6 @@ function ClearBoard() {
 /**
  * newboard: initializes the board after server download
  */
-/*const newboard = async () => {  //https://stackoverflow.com/questions/21518381/proper-way-to-wait-for-one-function-to-finish-before-continuing
-    const result = await loadSideBar();
-    // do something else here after firstFunction completes
-    updateBoard();
-}*/
 
 async function newboard() {
     //await downloadFromServer();
@@ -177,7 +172,7 @@ function TaskMoveRight(id) {
         tasktarget = 'done';
         PushTask(id, tasktarget);
     }
-    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    UploadTaskToServer(); //TASK UPLOAD TO SERVER.
     updateBoard();
 
 }
@@ -201,7 +196,7 @@ function TaskMoveLeft(id) {
         PushTask(id, tasktarget);
     }
     updateBoard();
-    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    UploadTaskToServer(); //TASK UPLOAD TO SERVER.
     
 }
 
@@ -223,7 +218,7 @@ function deleteTask(i) {
     alltasks[i].taskstatus = 'TaskDeleted';
     //alltasks.splice(i, 1);
     updateBoard();
-    UploadTaskToServer(); ///////////////////////////////////////////////////////////////////////////TASK UPLOAD TO SERVER.
+    UploadTaskToServer(); //TASK UPLOAD TO SERVER.
     
 }
 

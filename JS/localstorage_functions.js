@@ -1,10 +1,4 @@
 /**
- * IMPORTANT: THOSE FUNCTIONS ARE BUILT ONLY FOR LOCAL TESTING. DO NOT USE THEM IN FINISHED VERSION!
- * REMOVE ANY TRACES OF THEM IN ALL HTML AND JS !
- *  */
-
-
-/**
  * Save to and load arrays from local storage
  * @param {} key name of array
  * @param {*} array name of array (same as key)
@@ -19,7 +13,7 @@ function getArray(key) {
 }
 
 /**
- * LocalLoad/LocalSave: Each function specifies targets for setArray() and getArray() and runs them. Those functions are included in other javascripts.
+ * LocalLoad/LocalSave: Remodeled to Server Upload. Each function specifies targets for setArray() and getArray() and runs them. Those functions are included in other javascripts.
  */
 
 function LocalLoadUsers() {

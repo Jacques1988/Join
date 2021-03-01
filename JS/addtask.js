@@ -8,7 +8,7 @@ function updatetaskusers() {
     for (i = 0; i < currenttaskusers.length; i++) {
         let currentuserid = currenttaskusers[i];
         console.log(currentuserid);
-        let userimage = users[currentuserid].userimage; //hier base64 oder verbindung zum uploadnamen
+        let userimage = users[currentuserid].userimage; 
         let assignedusername = users[currentuserid].username;
         document.getElementById('usersassignedtotask').innerHTML += `<div class="people-assigned"><img src="./img/${userimage}" alt=""  onclick="deleteuserfromtask(${i})"></img><div>${assignedusername}</div></div>`;
     }
@@ -47,7 +47,7 @@ function selectuserassign(id) {
         let selecteduser = users[id].userid;
         currenttaskusers.push(selecteduser); //pushes userid into currenttaskusers array 
         let PushTaskToUser = users[id].usertasks;
-        PushTaskToUser.push(newtaskid); //pushes taskid into user array (HIER STIMMT NOCH ETWAS NICHT, DAS MUSS ERST IN SERVERFUNCTIONS PASSIEREN!)
+        PushTaskToUser.push(newtaskid); //pushes taskid into user array
 
         updatetaskusers();
     }
