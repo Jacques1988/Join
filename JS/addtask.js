@@ -65,7 +65,7 @@ function deleteuserfromtask(position) {
 
 
 function addSnackBar() {
-    console.log('snackbar'); 
+    console.log('snackbar');
     // Get the snackbar DIV
     let x = document.getElementById("snackbar");
   

@@ -95,13 +95,12 @@ function addTask() {
     //let last_element = alltasks[alltasks.length - 1];
     //newtaskid = last_element.taskid + 1;
     currenttaskusers = [];
- /*    alert('Task was created successfully') */
+    addSnackBar();
+    setTimeout(function () { window.open('board.html', '_self'); }, 2000);
   }
   else {
     alert('Please add all necessary information.')
   }
-/*   location.reload(); */
-  //}
 }
 
 function BuildTask() {
