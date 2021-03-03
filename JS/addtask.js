@@ -8,9 +8,9 @@ function updatetaskusers() {
     for (i = 0; i < currenttaskusers.length; i++) {
         let currentuserid = currenttaskusers[i];
         console.log(currentuserid);
-        let userimage = users[currentuserid].userimage; 
+        let userimage = users[currentuserid].userimage;
         let assignedusername = users[currentuserid].username;
-        document.getElementById('usersassignedtotask').innerHTML += `<div class="people-assigned"><img src="./img/${userimage}" alt=""  onclick="deleteuserfromtask(${i})"></img><div>${assignedusername}</div></div>`;
+        document.getElementById('usersassignedtotask').innerHTML += `<div class="people-assigned"><img src="./uploads/${userimage}" alt=""  onclick="deleteuserfromtask(${i})"></img><div>${assignedusername}</div></div>`;
     }
 }
 
@@ -27,7 +27,7 @@ function assignuser() {
     for (let i = 0; i < users.length; i++) {
         let user = users[i];
         document.getElementById('addtaskuserlist').innerHTML += `<div class="people" id="assignuserlist${user['userid']}" onclick="selectuserassign(${user['userid']})">
-        <img src="./img/${user['userimage']}" ><div>${user['username']}</div></div>`;
+        <img src="./uploads/${user['userimage']}" ><div>${user['username']}</div></div>`;
     }
 
 }
@@ -68,10 +68,17 @@ function addSnackBar() {
     console.log('snackbar');
     // Get the snackbar DIV
     let x = document.getElementById("snackbar");
-  
+
     // Add the "show" class to DIV
     x.className = "show";
-  
+
     // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 7000);
-  }
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 7000);
+}
+
+/**
+ * his function adds a scrollbar to the asigned-user-div
+ */
+function scrollUserlist() {
+        document.getElementById('usersassignedtotask').classList.add('scroll');
+}

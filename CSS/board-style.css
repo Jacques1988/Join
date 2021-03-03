@@ -35,7 +35,7 @@
     font-size: 18px;
     text-transform: uppercase;
     color: #012744;
-    text-shadow: 15px 15px 30px grey;
+   /*  text-shadow: 15px 15px 30px grey; */
 }
 
 .container-board {
@@ -47,9 +47,9 @@
     padding-left: 12px;
     padding-right: 12px;
     padding-top: 8px;
-    padding-bottom: 8px; 
-    box-shadow: 0px 0px 4px lightgray; 
-    margin-bottom: 10px; 
+    padding-bottom: 8px;
+    box-shadow: 0px 0px 4px lightgray;
+    margin-bottom: 10px;
 }
 
 .img-board {
@@ -71,21 +71,20 @@
 }
 
 .date-board {
-    font-size: 10px; 
+    font-size: 10px;
     flex-direction: reverse;
-    display: flex; 
+    display: flex;
     flex-direction: row-reverse;
 }
 
-.dustbin img{
-width: 20px; 
-cursor: pointer;
+.dustbin img {
+    width: 20px;
+    cursor: pointer;
 }
 
-[draggable = true] {
-    cursor:move;
+[draggable=true] {
+    cursor: move;
 }
-
 
 /*
 *style of div that displays task details
@@ -96,27 +95,25 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-     left: 0px;
-     right: 0px;
-     top: 60px;
-     bottom: 50px;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+    bottom: 50px;
     background-color: lightgrey;
     opacity: 0.85;
 }
 
 .board-taskdetails {
-font-size: 15px;
-
+    font-size: 15px;
 }
 
 .z-minus5 {
     z-index: -5;
 }
 
-
 @media(max-width: 1150px) {
     .container-board {
-        width: 62%; 
+        width: 62%;
     }
 }
 
@@ -132,12 +129,12 @@ font-size: 15px;
 
 @media(max-width: 650px) {
     .container-board {
-        width: 85%; 
+        width: 85%;
     }
 }
 
 @media(max-width: 400px) {
     .container-board {
-        width: 75%; 
+        width: 75%;
     }
 }
