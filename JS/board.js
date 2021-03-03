@@ -30,7 +30,7 @@ async function newboard() {
  * updateBoard: This function updates all panels 
  */
 function updateBoard() {
-    
+
     ClearBoard();
     for (let i = 0; i < alltasks.length; i++) {
 
@@ -64,7 +64,7 @@ function UpdateTodo(currenttask, currentid, taskauthor) {
     document.getElementById('todo').innerHTML += `
 <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
-                <div class="blue board-bold"> ${currenttask['taskname']}</div>
+                <div class="blue board-bold" onclick="taskDetails(${currentid})"> ${currenttask['taskname']}</div>
                 <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
@@ -83,7 +83,7 @@ function UpdateInprogress(currenttask, currentid, taskauthor) {
     document.getElementById('inprogress').innerHTML += `
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
-                <div class="blue board-bold"> ${currenttask['taskname']}</div>
+                <div class="blue board-bold" onclick="taskDetails(${currentid})"> ${currenttask['taskname']}</div>
                 <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
@@ -103,7 +103,7 @@ function UpdateTesting(currenttask, currentid, taskauthor) {
     document.getElementById('testing').innerHTML += `
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
-                <div class="blue board-bold"> ${currenttask['taskname']}</div>
+                <div class="blue board-bold" onclick="taskDetails(${currentid})"> ${currenttask['taskname']}</div>
                 <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
@@ -123,7 +123,7 @@ function UpdateDone(currenttask, currentid, taskauthor) {
     document.getElementById('done').innerHTML += `
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
-                <div class="blue board-bold"> ${currenttask['taskname']}</div>
+                <div class="blue board-bold" onclick="taskDetails(${currentid})"> ${currenttask['taskname']}</div>
                 <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
@@ -134,6 +134,43 @@ function UpdateDone(currenttask, currentid, taskauthor) {
                      <div><img class="img-board" src="./uploads/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
+}
+
+/**
+ * taskDetails displays a div that contains details for the selected task
+ * @param {string} task id: id of current task
+ */
+function taskDetails(taskid) {
+    document.getElementById('taskdetails-container').classList.remove('d-none');
+    document.getElementById('taskdetails-container').classList.remove('z-minus5');
+    document.getElementById('taskdetails-container').classList.add('z-2');
+
+    taskDetailsHTML(taskid);
+}
+/**
+ * taskDetailsHTML builds the fitting HTML to display in taskDetails
+ * @param {string} taskid: id of current task
+ */
+function taskDetailsHTML(taskid) {
+    let selectedtask = alltasks[taskid];
+    let taskauthor = users[selectedtask.taskauthorid].username;
+    document.getElementById('taskdetails').innerHTML = '';
+    document.getElementById('taskdetails').innerHTML +=
+        `  <div> <b> Task Details: </b></div> 
+                <div> Name: ${selectedtask['taskname']}</div> 
+                <div> Creator: ${taskauthor}</div> 
+                <div> Category: ${selectedtask['taskcategory']}</div> 
+                <div> Due Date:${selectedtask['taskdate'].replace("-", ".").replace("-", ".")}</div> 
+                <div> Urgency:${selectedtask['taskurgency']}</div> 
+                <div> Description:${selectedtask['taskdescription']}</div>  `
+}
+/**
+ * closeTaskDetails: removes divs with task details from view 
+ */
+function closeTaskDetails() {
+    document.getElementById('taskdetails-container').classList.add('z-minus5');
+    document.getElementById('taskdetails-container').classList.add('d-none');
+    document.getElementById('taskdetails').innerHTML = '';
 }
 
 /**
@@ -196,7 +233,7 @@ function TaskMoveLeft(id) {
     }
     updateBoard();
     UploadTaskToServer(); //TASK UPLOAD TO SERVER.
-    
+
 }
 
 /**
@@ -218,7 +255,7 @@ function deleteTask(i) {
     //alltasks.splice(i, 1);
     updateBoard();
     UploadTaskToServer(); //TASK UPLOAD TO SERVER.
-    
+
 }
 
 /**

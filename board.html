@@ -28,16 +28,32 @@
     <script src="./JS/myprofile.js"></script>
 </head>
 
-<body onload="initserver(); initBoard(); newboard()"> 
-<!-- ; initserver()  updateBoard()-->
+<body onload="initserver(); initBoard(); newboard()">
+    <!-- ; initserver()  updateBoard()-->
     <div class="total-size d-none-responsive" id="total-size">
     </div>
 
-    <div class="always">
+    <div class="always positionrelative">
+        <!--divs for task details (onclick result of task title)-->
+        <div class="d-none board-taskdetails-container z-minus5" id="taskdetails-container" onclick="closeTaskDetails()">
+            <div class="board-taskdetails" id="taskdetails">
+                <div> <b> Task Details: </b></div> 
+                <div> Name: </div> 
+                <div> Creator: </div> 
+                <div> Category:</div> 
+                <div> Due Date:</div> 
+                <div> Urgency:</div> 
+                <div> Description:</div> 
+
+            </div>
+        </div>
+
         <div id="sidebar" class="sidebar-container sidebar-import"></div>
+        
 
         <div class="board-menu">
-            <div id="dropcontainer-todo" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'todo')" >
+            <div id="dropcontainer-todo" class="task-container" ondragover="allowDrop(event)"
+                ondrop="drop(event, 'todo')">
                 <div class="text-center board-bold">To Do</div>
                 <div id="todo" class="task background-color-primary d-flex">
 
@@ -59,15 +75,18 @@
                 </div>
             </div>
 
-            <div id="dropcontainer-inprogress" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'inprogress')" >
+            <div id="dropcontainer-inprogress" class="task-container" ondragover="allowDrop(event)"
+                ondrop="drop(event, 'inprogress')">
                 <div class="text-center board-bold">In Progress</div>
                 <div id="inprogress" class="task background-color-primary d-flex"></div>
             </div>
-            <div id="dropcontainer-testing" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'testing')" >
+            <div id="dropcontainer-testing" class="task-container" ondragover="allowDrop(event)"
+                ondrop="drop(event, 'testing')">
                 <div class="text-center board-bold">Testing</div>
                 <div id="testing" class="task background-color-primary d-flex"></div>
             </div>
-            <div id="dropcontainer-done" class="task-container" ondragover="allowDrop(event)" ondrop="drop(event, 'done')" >
+            <div id="dropcontainer-done" class="task-container" ondragover="allowDrop(event)"
+                ondrop="drop(event, 'done')">
                 <div class="text-center board-bold">Done</div>
                 <div id="done" class="task background-color-primary d-flex"></div>
             </div>
