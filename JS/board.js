@@ -21,7 +21,6 @@ function ClearBoard() {
  */
 
 async function newboard() {
-    //await downloadFromServer();
     await initserver();
     updateBoard();
 }
@@ -85,7 +84,7 @@ function UpdateInprogress(currenttask, currentid, taskauthor) {
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
@@ -105,7 +104,7 @@ function UpdateTesting(currenttask, currentid, taskauthor) {
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
@@ -125,7 +124,7 @@ function UpdateDone(currenttask, currentid, taskauthor) {
     <div id="dragelement-${currentid}" class="container-board" style="border-left: 12px solid ${color}" draggable="true" ondragstart="dragstart(event)">
                 <div class="d-flex date-img-container">
                 <div class="blue board-bold"> ${currenttask['taskname']}</div>
-                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG"></div>
+                <div class="dustbin" style="font-size: 10px" onclick="deleteTask(${currentid})" ><img src="img/dustbin_80977-forLinuxServer.PNG" draggable="false"></div>
             </div>
                 <div>${currenttask['taskcategory']}</div>
                 <div>${currenttask['taskurgency']}</div>
