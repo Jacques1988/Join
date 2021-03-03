@@ -602,5 +602,8 @@ textarea {
         .mobile-assigned {
             margin-top: -26px;
         }
+        #snackbar {
+            left: 45%; 
+        }
     }
 }
