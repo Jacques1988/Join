@@ -105,6 +105,7 @@
 .signup a {
     text-decoration: none;
     color: #af1616;
+    font-weight: 700; 
 }
 
 .cardflipper {
@@ -185,35 +186,46 @@
 /*
 *bottom card, impressum + compliance
 */
+
 .loginbottomcontainer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 20px;
-        width: 300px;
-        height: 25px;
-        background-color: #f9f6f4;
-        box-shadow: 15px 15px 70px grey;
-        border-radius: 12px;
-        padding: 20px;
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    width: 300px; 
+    background-color: #f9f6f4;
+    box-shadow: 15px 15px 70px grey;
+    border-radius: 12px;
+    padding: 20px;
 }
 
+.loginbottomcontainer a{
+    color: #012744;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
 /*
 * guest login
 */
+
 .loginguestcontainer {
     z-index: 30;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 15px;
-    width: 120px;
-    height: 10px;
+    margin-top: 20px;
     background-color: #f9f6f4;
     box-shadow: 5px 5px 40px grey;
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
+}
+
+.loginguestcontainer a {
+    color: #012744;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 /*Responsive Design*/
@@ -229,6 +241,7 @@
         width: 90%;
     }
 }
+
 @media(max-width: 650px) {
     .inputfield1-adduser {
         width: 93%;
