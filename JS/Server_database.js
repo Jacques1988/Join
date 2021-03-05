@@ -3,8 +3,8 @@
 /*
 *sets URL for Server connection (the php backend will refer to this url)
 */
-//setURL('/Join/DATA/');  //Johannes Server
-setURL('/Join/DATA/');  // Yvonne Server
+setURL('/Join/DATA/');  //Johannes Server
+//setURL('/Join/DATA/');  // Yvonne Server
 
 
 /*
