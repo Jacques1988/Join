@@ -71,7 +71,7 @@ function UpdateTodo(currenttask, currentid, taskauthor) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG" draggable="false"></div>
                     <div><img class="img-board" src="./uploads/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
@@ -90,8 +90,8 @@ function UpdateInprogress(currenttask, currentid, taskauthor) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG" draggable="false"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG" draggable="false"></div>
                     <div><img class="img-board" src="./uploads/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
@@ -110,8 +110,8 @@ function UpdateTesting(currenttask, currentid, taskauthor) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG" draggable="false"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveRight(${currenttask['taskid']})" src="./img/arrow-34-128-right-forLinuxServer.PNG" draggable="false"></div>
                     <div><img class="img-board" src="./uploads/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
@@ -130,7 +130,7 @@ function UpdateDone(currenttask, currentid, taskauthor) {
                 <div>${currenttask['taskurgency']}</div>
                 <div class="date-img-container d-flex">
                     <div class="date-board">${currenttask['taskdate'].replace("-", ".").replace("-", ".")}</div>
-                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG"></div>
+                    <div><img class="img-board cursorpointer" onclick="TaskMoveLeft(${currenttask['taskid']})" src="./img/arrow-34-128-left-forLinuxServer.PNG" draggable="false"></div>
                      <div><img class="img-board" src="./uploads/${taskauthor['userimage']}"></div>
                 </div>
             </div>`
