@@ -374,6 +374,9 @@ textarea {
     }
 }
 
+
+/*MEDIA*/
+
 @media(max-width: 1680px) {
     .container-upload {
         width: 45%;
@@ -578,6 +581,9 @@ textarea {
         }
         .assigned-to-plus {
             left: 70px;
+        }
+        .availableusersheader {
+            width: 100%;
         }
     }
     @media(max-width: 450px) {
