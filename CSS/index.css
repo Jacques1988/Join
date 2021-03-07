@@ -246,6 +246,9 @@
     .inputfield1-adduser {
         width: 93%;
     }
+    .loginbottomcontainer {
+        flex-direction: column;
+    }
 }
 
 @media(max-width: 850px) {
