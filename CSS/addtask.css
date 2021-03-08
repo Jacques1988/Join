@@ -405,9 +405,9 @@ textarea {
     .inputfield1 {
         width: 90%;
     }
-    .cancel {
+    /* .cancel {
         top: 70px;
-    }
+    } */
 }
 
 @media(max-width: 1300px) {
